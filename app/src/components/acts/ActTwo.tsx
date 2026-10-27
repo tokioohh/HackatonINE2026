@@ -6,16 +6,16 @@ import { participationByAge } from "@/lib/data";
 import { ComparisonChart } from "../charts/ComparisonChart";
 
 export function ActTwo() {
-  const data2009 = participationByAge.find((d) => d.year === 2009)!;
-  const data2018 = participationByAge.find((d) => d.year === 2018)!;
+  const data2012 = participationByAge.find((d) => d.year === 2012)!;
+  const data2024 = participationByAge.find((d) => d.year === 2024)!;
 
   return (
     <>
       {/* Foto del Zócalo — ya en era digital, colores oscuros */}
       <div className="relative h-[60svh] overflow-hidden" style={{ background: "var(--surface)" }}>
         <img
-          src="/images/crowds-at-lopez-obrador-rally-2627056034.jpg"
-          alt="Multitud en el Zócalo de la Ciudad de México con la Catedral Metropolitana al fondo"
+          src="/images/votacion-elecciones-federales-de-mexico-de-2018.jpg"
+          alt="Casilla electoral durante las elecciones federales de México, 2018"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "grayscale(0.3) contrast(1.1)", opacity: 0.5 }}
           loading="lazy"
@@ -33,7 +33,7 @@ export function ActTwo() {
         />
         <div className="absolute bottom-0 left-0 right-0" style={{ padding: "0 var(--margin) 48px" }}>
           <p style={{ fontSize: "13px", color: "var(--muted)" }}>
-            Zócalo, Ciudad de México. Foto: Randal Sheppard, CC BY-SA 2.0
+            Casilla electoral, México 2018. Foto: ProtoplasmaKid, CC BY-SA 4.0
           </p>
         </div>
       </div>
@@ -70,7 +70,7 @@ export function ActTwo() {
                   aria-hidden="true"
                 />
                 <span style={{ fontSize: "var(--step-small)", color: "var(--muted)" }}>
-                  Presidenciales 2012–2018
+                  Presidenciales 2012 · 2018 · 2024
                 </span>
               </div>
             </FadeIn>
@@ -86,39 +86,25 @@ export function ActTwo() {
                     color: "var(--ink)",
                   }}
                 >
-                  El Despertar
-                </span>
-              </MaskedReveal>
-              <MaskedReveal delay={0.11} className="block">
-                <span
-                  className="block font-bold"
-                  style={{
-                    fontSize: "clamp(2.5rem, 5.6vw, 5.5rem)",
-                    letterSpacing: "-0.03em",
-                    lineHeight: 0.95,
-                    color: "var(--ine-purple-bright)",
-                  }}
-                >
-                  Digital
+                  El Vaivén
                 </span>
               </MaskedReveal>
             </h2>
 
             <FadeIn delay={0.3} className="mt-8 max-w-[45ch]">
               <p style={{ fontSize: "var(--step-lead)", lineHeight: 1.4, color: "var(--muted)" }}>
-                2012 fue el año que lo cambió todo. El movimiento #YoSoy132 demostró
-                que cuando los jóvenes se sienten escuchados, votan. Fue el{" "}
-                <strong style={{ color: "var(--ink)" }}>mejor año</strong>{" "}
-                para la participación juvenil en lo que va del siglo. La pregunta es: ¿duró?
+                En las elecciones presidenciales la participación sube para todos
+                los grupos de edad. En 2012 los jóvenes alcanzaron su{" "}
+                <strong style={{ color: "var(--ink)" }}>máximo: 55.6%</strong>.
+                En 2018 llegaron al 51%. En 2024, al 47%.
               </p>
             </FadeIn>
             <FadeIn delay={0.4} className="mt-6 max-w-[45ch]">
               <p style={{ fontSize: "var(--step-body)", lineHeight: 1.5, color: "var(--muted)" }}>
-                En 2018, con AMLO en la boleta y WhatsApp inundado de mensajes
-                políticos, más gente que nunca salió a votar. Los jóvenes también.
-                Pero el patrón ya era claro: sin importar la emoción del momento,{" "}
-                <strong style={{ color: "var(--ink)" }}>los jóvenes siempre se quedaban atrás</strong>{" "}
-                de los adultos.
+                El patrón se repite en cada presidencial: todos votan más, pero{" "}
+                <strong style={{ color: "var(--ink)" }}>la brecha entre jóvenes y adultos mayores se mantiene</strong>{" "}
+                en torno a 14 puntos porcentuales. El tipo de elección mueve las
+                cifras; la distancia entre grupos, no tanto.
               </p>
             </FadeIn>
           </div>
@@ -127,7 +113,7 @@ export function ActTwo() {
             <p style={{ fontSize: "var(--step-small)", color: "var(--muted)", marginBottom: "24px" }}>
               Cómo cambió la participación
             </p>
-            <ComparisonChart before={data2009} after={data2018} beforeLabel="2009" afterLabel="2018" />
+            <ComparisonChart before={data2012} after={data2024} beforeLabel="2012" afterLabel="2024" />
           </FadeIn>
         </div>
       </section>

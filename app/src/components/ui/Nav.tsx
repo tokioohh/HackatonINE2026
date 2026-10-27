@@ -103,9 +103,9 @@ export function Nav() {
       >
         {(
           [
-            ["#acto-1", "El Silencio"],
-            ["#acto-2", "El Despertar"],
-            ["#acto-3", "La Desconexión"],
+            ["#acto-1", "La Brecha"],
+            ["#acto-2", "El Vaivén"],
+            ["#acto-3", "La Persistencia"],
           ] as [string, string][]
         ).map(([href, label]) => (
           <a
@@ -137,7 +137,7 @@ export function Nav() {
           letterSpacing: isPaper ? "0.04em" : "0",
         }}
       >
-        Explorar datos
+        Explorar por edad
       </a>
     </nav>
   );

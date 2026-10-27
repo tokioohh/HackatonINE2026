@@ -85,7 +85,7 @@ export function ActThree() {
                 color: "var(--ink)",
               }}
             >
-              La Desconexión
+              La Persistencia
             </span>
           </MaskedReveal>
         </h2>
@@ -98,15 +98,16 @@ export function ActThree() {
                   className="font-medium md:w-[50%] mb-4 md:mb-0"
                   style={{ fontSize: "var(--step-lead)", color: "var(--ink)" }}
                 >
-                  ¿Más internet significó más participación?
+                  ¿La brecha se está cerrando?
                 </p>
                 <div className="md:w-[50%]">
                   <p style={{ fontSize: "var(--step-body)", color: "var(--muted)" }}>
-                    No. México pasó de ser un país con poca internet a uno
-                    donde casi todos están conectados. Pero mientras las pantallas
-                    crecían, los votos jóvenes{" "}
-                    <strong style={{ color: "var(--ink)" }}>disminuían</strong>.
-                    Tener información no te convierte en votante.
+                    No. El votante promedio tenía{" "}
+                    <strong style={{ color: "var(--ink)" }}>42 años</strong> en 2012.
+                    En 2024 tiene{" "}
+                    <strong style={{ color: "var(--ink)" }}>45</strong>. La proporción
+                    de votos jóvenes en el total pasó de 15% a 13%. El peso de los
+                    jóvenes en el resultado encoge.
                   </p>
                 </div>
               </div>
@@ -118,16 +119,15 @@ export function ActThree() {
                   className="font-medium md:w-[50%] mb-4 md:mb-0"
                   style={{ fontSize: "var(--step-lead)", color: "var(--ink)" }}
                 >
-                  ¿Las campañas en redes convirtieron a los jóvenes en votantes?
+                  ¿Los jóvenes votan menos que antes?
                 </p>
                 <div className="md:w-[50%]">
                   <p style={{ fontSize: "var(--step-body)", color: "var(--muted)" }}>
-                    Quien decide las elecciones en México va envejeciendo.
-                    En 2012, el votante promedio tenía{" "}
-                    <strong style={{ color: "var(--ink)" }}>42 años</strong>. En 2024,
-                    tenía <strong style={{ color: "var(--ink)" }}>45</strong>. Las campañas
-                    en TikTok llegan a millones — pero llegar a la pantalla no es
-                    lo mismo que llegar a la casilla.
+                    Depende de la comparación. En 2024, el{" "}
+                    <strong style={{ color: "var(--ink)" }}>47%</strong> de los
+                    jóvenes inscritos votó — más que en 2009 (36%), 2015 (36%)
+                    y 2021 (42%). Pero menos que en el pico de 2012 (56%). El
+                    patrón varía con el tipo de elección, no con una tendencia lineal.
                   </p>
                 </div>
               </div>
@@ -139,14 +139,14 @@ export function ActThree() {
                   className="font-medium md:w-[50%] mb-4 md:mb-0"
                   style={{ fontSize: "var(--step-lead)", color: "var(--ink)" }}
                 >
-                  ¿Cuántos votos jóvenes se perdieron?
+                  ¿Cuántos votos más habría con la tasa de 2012?
                 </p>
                 <div className="md:w-[50%]">
                   <p style={{ fontSize: "var(--step-body)", color: "var(--muted)", marginBottom: "16px" }}>
-                    Si los jóvenes de 2024 hubieran votado al mismo ritmo que los de
-                    2012, habría habido:
+                    Escenario hipotético: si en 2024 los jóvenes hubieran
+                    participado al 55.6% (su máximo histórico, en 2012), habría habido
+                    aproximadamente:
                   </p>
-                  {/* Cifra en rojo mexicano — señal de pérdida y urgencia */}
                   <p
                     className="font-bold leading-none"
                     style={{
@@ -157,7 +157,7 @@ export function ActThree() {
                     {(lostVotes / 1_000_000).toFixed(1)} millones
                   </p>
                   <p style={{ fontSize: "var(--step-body)", color: "var(--muted)", marginTop: "8px" }}>
-                    más de votos jóvenes en la elección de 2024.
+                    de votos jóvenes adicionales. Un ejercicio con supuestos, no una predicción.
                   </p>
                 </div>
               </div>

@@ -2,8 +2,10 @@
 
 import { Nav } from "@/components/ui/Nav";
 import { Hero } from "@/components/acts/Hero";
+import { TornTransition } from "@/components/ui/TornTransition";
 import { ActOne } from "@/components/acts/ActOne";
 import { StatsSentence } from "@/components/acts/StatsSentence";
+import { LostVotesEstimate } from "@/components/acts/LostVotesEstimate";
 import { HorizontalTimeline } from "@/components/acts/HorizontalTimeline";
 import { ActTwo } from "@/components/acts/ActTwo";
 import { MapSection } from "@/components/acts/MapSection";
@@ -20,8 +22,10 @@ export default function Home() {
       <Nav />
       <main className="relative z-[1]" style={{ background: "var(--bg)" }}>
         <Hero />
+        <TornTransition />
         <ActOne />
         <StatsSentence />
+        <LostVotesEstimate />
         <HorizontalTimeline />
         <ActTwo />
         <MapSection />
@@ -29,8 +33,8 @@ export default function Home() {
         <BigStat
           figure="12.8"
           unit="%"
-          claim="De cada 8 votos en México,"
-          caption="Solo 1 vino de alguien menor de 25 años. La generación con más acceso a información de la historia es la que menos aparece en las urnas."
+          claim="De cada 100 votos en 2024,"
+          caption="solo 13 vinieron de alguien de 18 a 24 años. El 47% de los jóvenes inscritos sí votó — pero su proporción en el total sigue siendo la menor de todos los grupos de edad."
           source="Fuente: CCPC INE 2024 — Conteo censal de participación ciudadana"
           background="var(--bg)"
           figureColor="var(--rojo-mx)"

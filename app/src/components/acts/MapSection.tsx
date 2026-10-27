@@ -27,11 +27,11 @@ export function MapSection() {
     <section className="min-h-svh relative" style={{ padding: "120px var(--margin)" }}>
       <FadeIn>
         <h2 className="text-[var(--step-head)] font-bold tracking-tight mb-2">
-          El mapa de la tinta que se desvanece
+          Participación juvenil por estado
         </h2>
         <p className="text-[var(--muted)] text-[var(--step-body)] max-w-[50ch] mb-12">
-          ¿Dónde votan los jóvenes y dónde se quedan en casa? El color más oscuro
-          significa más jóvenes en las urnas. Explora cómo cambió estado por estado.
+          El color más oscuro indica mayor participación de 18–24 años.
+          Selecciona un año y haz clic en un estado para ver su dato.
         </p>
       </FadeIn>
 

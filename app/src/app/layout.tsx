@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "El Voto Joven — Una Historia en Tres Actos",
     description:
-      "¿Por qué cada elección votan menos jóvenes? Un recorrido por 15 años de datos electorales.",
+      "Seis elecciones federales, 2009–2024: cómo cambió la participación de 18 a 24 años y cómo se compara con la de otros grupos.",
     type: "website",
     locale: "es_MX",
   },
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Special+Elite&family=Caveat:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </head>

@@ -64,11 +64,20 @@ export function MexicoMap({ year, onHoverState, hoveredState }: MexicoMapProps) 
     return colors;
   }, [year]);
 
+  const stateLabels = useMemo(() => {
+    const labels: Record<string, string> = {};
+    states.forEach((state) => {
+      const value = state.youthParticipation[year] ?? 0;
+      labels[state.id] = `${state.name}: ${value}% participación juvenil en ${year}`;
+    });
+    return labels;
+  }, [year]);
+
   return (
     <svg
       viewBox="0 40 470 420"
       className="w-full h-auto"
-      role="img"
+      role="group"
       aria-label={`Mapa de participación juvenil en México, ${year}`}
     >
       {Object.entries(statePathsData).map(([id, d]) => (
@@ -79,9 +88,23 @@ export function MexicoMap({ year, onHoverState, hoveredState }: MexicoMapProps) 
           transition={{ duration: 0.6, ease: "easeInOut" }}
           stroke={hoveredState === id ? "var(--accent)" : "var(--bg)"}
           strokeWidth={hoveredState === id ? 2 : 1}
-          className="cursor-pointer"
+          className="cursor-pointer outline-none"
+          tabIndex={0}
+          role="button"
+          aria-label={stateLabels[id] || id}
           onMouseEnter={() => onHoverState(id)}
           onMouseLeave={() => onHoverState(null)}
+          onClick={() => onHoverState(hoveredState === id ? null : id)}
+          onFocus={() => onHoverState(id)}
+          onBlur={() => onHoverState(null)}
+          onKeyDown={(e: React.KeyboardEvent) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onHoverState(hoveredState === id ? null : id);
+            }
+          }}
+          style={{ outline: "none" }}
+          whileFocus={{ strokeWidth: 2, stroke: "var(--accent)" }}
         />
       ))}
     </svg>

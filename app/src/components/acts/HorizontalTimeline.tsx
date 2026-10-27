@@ -221,16 +221,48 @@ export function HorizontalTimeline() {
           </motion.div>
         </div>
 
-        <div style={{ padding: "0 var(--margin) 32px", display: "flex", gap: "4px" }}>
-          {elections.map((election, i) => (
-            <ElectionDot
-              key={election.year}
-              i={i}
-              scrollYProgress={scrollYProgress}
-              totalCount={elections.length}
-              accent={eraStyles[i]?.accent || "#a855f7"}
-            />
-          ))}
+        <div style={{ padding: "0 var(--margin) 32px" }}>
+          <div style={{ display: "flex", gap: "4px" }}>
+            {elections.map((election, i) => (
+              <ElectionDot
+                key={election.year}
+                i={i}
+                scrollYProgress={scrollYProgress}
+                totalCount={elections.length}
+                accent={eraStyles[i]?.accent || "#a855f7"}
+              />
+            ))}
+          </div>
+          <div style={{ display: "flex", gap: "4px", marginTop: "6px" }}>
+            {elections.map((election, i) => (
+              <button
+                key={election.year}
+                onClick={() => {
+                  if (!containerRef.current) return;
+                  const top = containerRef.current.offsetTop;
+                  const height = containerRef.current.offsetHeight;
+                  const vh = window.innerHeight;
+                  const target = top + (i / (elections.length - 1)) * (height - vh);
+                  window.scrollTo({ top: target, behavior: "smooth" });
+                }}
+                style={{
+                  flex: 1,
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "4px 0",
+                  fontFamily: eraStyles[i]?.fontFamily || "inherit",
+                  fontSize: "11px",
+                  textAlign: "center",
+                }}
+                aria-label={`Ir al año ${election.year}`}
+              >
+                <motion.span style={{ color: titleColor, opacity: 0.55 }}>
+                  {election.year}
+                </motion.span>
+              </button>
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>

@@ -15,7 +15,7 @@ export function Footer() {
           <p style={{ color: "var(--purple-1)", fontWeight: 500, marginBottom: "12px" }}>Datos</p>
           <ul className="space-y-2" style={{ color: "var(--purple-2)" }}>
             <li>CCPC INE 2009–2024</li>
-            <li>98.3M registros procesados</li>
+            <li>98.3M personas en lista nominal 2024</li>
             <li>32 entidades federativas</li>
           </ul>
         </div>

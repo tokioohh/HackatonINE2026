@@ -30,8 +30,8 @@ export function CtaSection() {
             className="max-w-[45ch] leading-[1.3]"
             style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "var(--ink)" }}
           >
-            La tinta indeleble se desvanece con cada elección que pasa sin la
-            participación de los jóvenes. Los datos lo confirman.{" "}
+            En seis elecciones, la brecha entre la participación juvenil y la de
+            otros grupos no se ha cerrado. Los datos están abiertos.{" "}
             <a
               href="https://ine.mx/transparencia/datos-abiertos/visualizacion-datos/conteos-censales-participacion/"
               target="_blank"

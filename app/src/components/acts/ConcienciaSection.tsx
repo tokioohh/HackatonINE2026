@@ -15,8 +15,8 @@ const LINE_LEFT = {
 
 const statements = [
   "Tu voto vale exactamente lo mismo que el de cualquier otro. El problema es que no está.",
-  "Los jóvenes son el único grupo que puede inclinar cualquier resultado. Y eligen no aparecer.",
-  "En 2027 habrá otra oportunidad. Cada voto joven puede cambiar el guión.",
+  "14.8 millones de jóvenes están en la lista nominal. Su peso en el resultado depende de que lleguen a la casilla.",
+  "En 2027 habrá otra elección. Los datos de las últimas seis muestran el espacio que queda por llenar.",
 ];
 
 export function ConcienciaSection() {
@@ -82,7 +82,6 @@ export function ConcienciaSection() {
           variants={STAGGER}
           style={{ marginBottom: "72px" }}
         >
-          {/* "Los que pueden" */}
           <motion.p
             variants={LINE_LEFT}
             style={{
@@ -94,10 +93,9 @@ export function ConcienciaSection() {
               lineHeight: 1.2,
             }}
           >
-            Los que pueden
+            La brecha
           </motion.p>
 
-          {/* "cambiar el futuro" */}
           <motion.p
             variants={LINE_LEFT}
             style={{
@@ -108,10 +106,9 @@ export function ConcienciaSection() {
               lineHeight: 1.15,
             }}
           >
-            cambiar el futuro
+            lleva seis elecciones
           </motion.p>
 
-          {/* "deciden" — grande, sans-serif, dominante */}
           <motion.p
             variants={LINE_LEFT}
             style={{
@@ -124,10 +121,9 @@ export function ConcienciaSection() {
               marginTop: "8px",
             }}
           >
-            deciden
+            abierta.
           </motion.p>
 
-          {/* "no hacerlo." — morado INE, igual de grande */}
           <motion.p
             variants={LINE_LEFT}
             style={{
@@ -139,10 +135,9 @@ export function ConcienciaSection() {
               letterSpacing: "-0.035em",
             }}
           >
-            no hacerlo.
+            ¿La séptima?
           </motion.p>
 
-          {/* "Hasta hoy." — pequeño, rojo, italic — el giro */}
           <motion.p
             variants={LINE_LEFT}
             style={{
@@ -155,7 +150,7 @@ export function ConcienciaSection() {
               marginTop: "20px",
             }}
           >
-            Hasta hoy.
+            Esa depende de ti.
           </motion.p>
         </motion.div>
 

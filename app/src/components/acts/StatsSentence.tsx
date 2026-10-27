@@ -70,24 +70,22 @@ export function StatsSentence({ id, background }: StatsSentenceProps) {
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       >
         <span style={{ color: "var(--ink-faded)", fontWeight: 400 }}>En </span>
-        <Chip rotate="-1deg">15 años</Chip>
-        <span style={{ color: "var(--ink-faded)", fontWeight: 400 }}> y </span>
         <Chip rotate="0.6deg" font="'Times New Roman', serif">6 elecciones</Chip>
         <span style={{ color: "var(--ink-faded)", fontWeight: 400 }}>
-          , los jóvenes pasaron de llenar{" "}
+          , la proporción de votos jóvenes pasó de{" "}
         </span>
-        <Chip rotate="1.1deg" font="'Courier New', monospace">1 de cada 7 votos</Chip>
-        <span style={{ color: "var(--ink-faded)", fontWeight: 400 }}> a llenar apenas </span>
+        <Chip rotate="1.1deg" font="'Courier New', monospace">15 de cada 100</Chip>
+        <span style={{ color: "var(--ink-faded)", fontWeight: 400 }}> a solo </span>
         <Chip
           color="var(--headline-red)"
           bg="#fff5f5"
           rotate="-1.4deg"
           font="'Times New Roman', serif"
         >
-          1 de cada 8
+          13 de cada 100
         </Chip>
         <span style={{ color: "var(--ink-faded)", fontWeight: 400 }}>
-          . Parece poco. Son millones de voces que no se escucharon.
+          . Su peso en el resultado encoge mientras el padrón crece.
         </span>
       </motion.p>
     </section>
