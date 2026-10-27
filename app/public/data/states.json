@@ -1,0 +1,994 @@
+[
+  {
+    "code": 1,
+    "name": "AGUASCALIENTES",
+    "abbrev": "AGU",
+    "years": {
+      "2009": {
+        "overallParticipation": 37.69,
+        "youthParticipation": 30.31
+      },
+      "2012": {
+        "overallParticipation": 58.91,
+        "youthParticipation": 51.51
+      },
+      "2015": {
+        "overallParticipation": 34.89,
+        "youthParticipation": 26.46
+      },
+      "2018": {
+        "overallParticipation": 57.13,
+        "youthParticipation": 49.35
+      },
+      "2021": {
+        "overallParticipation": 48.11,
+        "youthParticipation": 40.35
+      },
+      "2024": {
+        "overallParticipation": 57.06,
+        "youthParticipation": 48.16
+      }
+    }
+  },
+  {
+    "code": 2,
+    "name": "BAJA CALIFORNIA",
+    "abbrev": "BCN",
+    "years": {
+      "2009": {
+        "overallParticipation": 29.11,
+        "youthParticipation": 23.78
+      },
+      "2012": {
+        "overallParticipation": 52.2,
+        "youthParticipation": 47.48
+      },
+      "2015": {
+        "overallParticipation": 29.52,
+        "youthParticipation": 22.18
+      },
+      "2018": {
+        "overallParticipation": 50.41,
+        "youthParticipation": 45.4
+      },
+      "2021": {
+        "overallParticipation": 35.12,
+        "youthParticipation": 28.14
+      },
+      "2024": {
+        "overallParticipation": 43.67,
+        "youthParticipation": 37.33
+      }
+    }
+  },
+  {
+    "code": 3,
+    "name": "BAJA CALIFORNIA SUR",
+    "abbrev": "BCS",
+    "years": {
+      "2009": {
+        "overallParticipation": 32.04,
+        "youthParticipation": 21.84
+      },
+      "2012": {
+        "overallParticipation": 57.04,
+        "youthParticipation": 45.43
+      },
+      "2015": {
+        "overallParticipation": 42.06,
+        "youthParticipation": 32.32
+      },
+      "2018": {
+        "overallParticipation": 53.01,
+        "youthParticipation": 41.85
+      },
+      "2021": {
+        "overallParticipation": 45.64,
+        "youthParticipation": 35.41
+      },
+      "2024": {
+        "overallParticipation": 50.64,
+        "youthParticipation": 38.4
+      }
+    }
+  },
+  {
+    "code": 4,
+    "name": "CAMPECHE",
+    "abbrev": "CAM",
+    "years": {
+      "2009": {
+        "overallParticipation": 61.31,
+        "youthParticipation": 56.27
+      },
+      "2012": {
+        "overallParticipation": 66.13,
+        "youthParticipation": 61.04
+      },
+      "2015": {
+        "overallParticipation": 51.93,
+        "youthParticipation": 45.82
+      },
+      "2018": {
+        "overallParticipation": 61.97,
+        "youthParticipation": 56.78
+      },
+      "2021": {
+        "overallParticipation": 56.96,
+        "youthParticipation": 51.02
+      },
+      "2024": {
+        "overallParticipation": 53.57,
+        "youthParticipation": 46.31
+      }
+    }
+  },
+  {
+    "code": 5,
+    "name": "COAHUILA",
+    "abbrev": "COA",
+    "years": {
+      "2009": {
+        "overallParticipation": 43.52,
+        "youthParticipation": 34.14
+      },
+      "2012": {
+        "overallParticipation": 60.89,
+        "youthParticipation": 51.9
+      },
+      "2015": {
+        "overallParticipation": 43.02,
+        "youthParticipation": 32.27
+      },
+      "2018": {
+        "overallParticipation": 59.47,
+        "youthParticipation": 50.46
+      },
+      "2021": {
+        "overallParticipation": 55.32,
+        "youthParticipation": 45.83
+      },
+      "2024": {
+        "overallParticipation": 55.28,
+        "youthParticipation": 47.32
+      }
+    }
+  },
+  {
+    "code": 6,
+    "name": "COLIMA",
+    "abbrev": "COL",
+    "years": {
+      "2009": {
+        "overallParticipation": 57.3,
+        "youthParticipation": 53.03
+      },
+      "2012": {
+        "overallParticipation": 61.98,
+        "youthParticipation": 56.49
+      },
+      "2015": {
+        "overallParticipation": 54.24,
+        "youthParticipation": 47
+      },
+      "2018": {
+        "overallParticipation": 60.58,
+        "youthParticipation": 52.98
+      },
+      "2021": {
+        "overallParticipation": 51.15,
+        "youthParticipation": 42.12
+      },
+      "2024": {
+        "overallParticipation": 55.01,
+        "youthParticipation": 46.5
+      }
+    }
+  },
+  {
+    "code": 7,
+    "name": "CHIAPAS",
+    "abbrev": "CHP",
+    "years": {
+      "2009": {
+        "overallParticipation": 37.92,
+        "youthParticipation": 31.89
+      },
+      "2012": {
+        "overallParticipation": 66.03,
+        "youthParticipation": 60.75
+      },
+      "2015": {
+        "overallParticipation": 43.15,
+        "youthParticipation": 36.38
+      },
+      "2018": {
+        "overallParticipation": 61,
+        "youthParticipation": 53.97
+      },
+      "2021": {
+        "overallParticipation": 54.95,
+        "youthParticipation": 48.93
+      },
+      "2024": {
+        "overallParticipation": 54.46,
+        "youthParticipation": 45.83
+      }
+    }
+  },
+  {
+    "code": 8,
+    "name": "CHIHUAHUA",
+    "abbrev": "CHH",
+    "years": {
+      "2009": {
+        "overallParticipation": 30,
+        "youthParticipation": 25.76
+      },
+      "2012": {
+        "overallParticipation": 51.57,
+        "youthParticipation": 45.88
+      },
+      "2015": {
+        "overallParticipation": 30.25,
+        "youthParticipation": 22.92
+      },
+      "2018": {
+        "overallParticipation": 47.05,
+        "youthParticipation": 40.57
+      },
+      "2021": {
+        "overallParticipation": 39.96,
+        "youthParticipation": 33.2
+      },
+      "2024": {
+        "overallParticipation": 44.12,
+        "youthParticipation": 36.33
+      }
+    }
+  },
+  {
+    "code": 9,
+    "name": "DISTRITO FEDERAL",
+    "abbrev": "CMX",
+    "years": {
+      "2009": {
+        "overallParticipation": 40.36,
+        "youthParticipation": 31.84
+      },
+      "2012": {
+        "overallParticipation": 66.11,
+        "youthParticipation": 60.5
+      },
+      "2015": {
+        "overallParticipation": 41.97,
+        "youthParticipation": 32.41
+      },
+      "2018": {
+        "overallParticipation": 67.99,
+        "youthParticipation": 63.03
+      },
+      "2021": {
+        "overallParticipation": 51.01,
+        "youthParticipation": 42.74
+      },
+      "2024": {
+        "overallParticipation": 67.98,
+        "youthParticipation": 61.98
+      }
+    }
+  },
+  {
+    "code": 10,
+    "name": "DURANGO",
+    "abbrev": "DUR",
+    "years": {
+      "2009": {
+        "overallParticipation": 40.83,
+        "youthParticipation": 36.25
+      },
+      "2012": {
+        "overallParticipation": 58.2,
+        "youthParticipation": 52.99
+      },
+      "2015": {
+        "overallParticipation": 38.18,
+        "youthParticipation": 31.18
+      },
+      "2018": {
+        "overallParticipation": 52.48,
+        "youthParticipation": 47.05
+      },
+      "2021": {
+        "overallParticipation": 40.96,
+        "youthParticipation": 33.95
+      },
+      "2024": {
+        "overallParticipation": 52.66,
+        "youthParticipation": 44.53
+      }
+    }
+  },
+  {
+    "code": 11,
+    "name": "GUANAJUATO",
+    "abbrev": "GUA",
+    "years": {
+      "2009": {
+        "overallParticipation": 44.64,
+        "youthParticipation": 38.58
+      },
+      "2012": {
+        "overallParticipation": 58.78,
+        "youthParticipation": 52.39
+      },
+      "2015": {
+        "overallParticipation": 41.48,
+        "youthParticipation": 33.1
+      },
+      "2018": {
+        "overallParticipation": 48.58,
+        "youthParticipation": 41.5
+      },
+      "2021": {
+        "overallParticipation": 42.51,
+        "youthParticipation": 34.84
+      },
+      "2024": {
+        "overallParticipation": 53.66,
+        "youthParticipation": 45.16
+      }
+    }
+  },
+  {
+    "code": 12,
+    "name": "GUERRERO",
+    "abbrev": "GRO",
+    "years": {
+      "2009": {
+        "overallParticipation": 31,
+        "youthParticipation": 24.09
+      },
+      "2012": {
+        "overallParticipation": 58.31,
+        "youthParticipation": 53.6
+      },
+      "2015": {
+        "overallParticipation": 46.64,
+        "youthParticipation": 40.65
+      },
+      "2018": {
+        "overallParticipation": 58.05,
+        "youthParticipation": 50.31
+      },
+      "2021": {
+        "overallParticipation": 54.83,
+        "youthParticipation": 45.68
+      },
+      "2024": {
+        "overallParticipation": 53.88,
+        "youthParticipation": 41.36
+      }
+    }
+  },
+  {
+    "code": 13,
+    "name": "HIDALGO",
+    "abbrev": "HID",
+    "years": {
+      "2009": {
+        "overallParticipation": 41.37,
+        "youthParticipation": 33.24
+      },
+      "2012": {
+        "overallParticipation": 64.81,
+        "youthParticipation": 57.33
+      },
+      "2015": {
+        "overallParticipation": 43.28,
+        "youthParticipation": 32.66
+      },
+      "2018": {
+        "overallParticipation": 55.99,
+        "youthParticipation": 47.93
+      },
+      "2021": {
+        "overallParticipation": 44.69,
+        "youthParticipation": 35.65
+      },
+      "2024": {
+        "overallParticipation": 59.8,
+        "youthParticipation": 49.97
+      }
+    }
+  },
+  {
+    "code": 14,
+    "name": "JALISCO",
+    "abbrev": "JAL",
+    "years": {
+      "2009": {
+        "overallParticipation": 50.07,
+        "youthParticipation": 44.85
+      },
+      "2012": {
+        "overallParticipation": 63.8,
+        "youthParticipation": 59.29
+      },
+      "2015": {
+        "overallParticipation": 50.24,
+        "youthParticipation": 42.51
+      },
+      "2018": {
+        "overallParticipation": 54.36,
+        "youthParticipation": 47.81
+      },
+      "2021": {
+        "overallParticipation": 45.78,
+        "youthParticipation": 38.42
+      },
+      "2024": {
+        "overallParticipation": 53.71,
+        "youthParticipation": 46.33
+      }
+    }
+  },
+  {
+    "code": 15,
+    "name": "MEXICO",
+    "abbrev": "MEX",
+    "years": {
+      "2009": {
+        "overallParticipation": 49.59,
+        "youthParticipation": 42.91
+      },
+      "2012": {
+        "overallParticipation": 65.39,
+        "youthParticipation": 58.93
+      },
+      "2015": {
+        "overallParticipation": 46.35,
+        "youthParticipation": 37.5
+      },
+      "2018": {
+        "overallParticipation": 63.32,
+        "youthParticipation": 57.03
+      },
+      "2021": {
+        "overallParticipation": 52.17,
+        "youthParticipation": 44.92
+      },
+      "2024": {
+        "overallParticipation": 61.1,
+        "youthParticipation": 52.83
+      }
+    }
+  },
+  {
+    "code": 16,
+    "name": "MICHOACAN",
+    "abbrev": "MIC",
+    "years": {
+      "2009": {
+        "overallParticipation": 31.55,
+        "youthParticipation": 26.22
+      },
+      "2012": {
+        "overallParticipation": 51.46,
+        "youthParticipation": 45.57
+      },
+      "2015": {
+        "overallParticipation": 49.92,
+        "youthParticipation": 42.81
+      },
+      "2018": {
+        "overallParticipation": 53.73,
+        "youthParticipation": 47.01
+      },
+      "2021": {
+        "overallParticipation": 45.3,
+        "youthParticipation": 39
+      },
+      "2024": {
+        "overallParticipation": 49.52,
+        "youthParticipation": 42.26
+      }
+    }
+  },
+  {
+    "code": 17,
+    "name": "MORELOS",
+    "abbrev": "MOR",
+    "years": {
+      "2009": {
+        "overallParticipation": 48.52,
+        "youthParticipation": 43.12
+      },
+      "2012": {
+        "overallParticipation": 63.17,
+        "youthParticipation": 59.37
+      },
+      "2015": {
+        "overallParticipation": 52.37,
+        "youthParticipation": 44.54
+      },
+      "2018": {
+        "overallParticipation": 62.71,
+        "youthParticipation": 56.25
+      },
+      "2021": {
+        "overallParticipation": 49.8,
+        "youthParticipation": 42.35
+      },
+      "2024": {
+        "overallParticipation": 57.53,
+        "youthParticipation": 49.44
+      }
+    }
+  },
+  {
+    "code": 18,
+    "name": "NAYARIT",
+    "abbrev": "NAY",
+    "years": {
+      "2009": {
+        "overallParticipation": 40.47,
+        "youthParticipation": 33.48
+      },
+      "2012": {
+        "overallParticipation": 60.88,
+        "youthParticipation": 54.21
+      },
+      "2015": {
+        "overallParticipation": 39.17,
+        "youthParticipation": 29.7
+      },
+      "2018": {
+        "overallParticipation": 54.55,
+        "youthParticipation": 45.12
+      },
+      "2021": {
+        "overallParticipation": 49.77,
+        "youthParticipation": 40.75
+      },
+      "2024": {
+        "overallParticipation": 51.73,
+        "youthParticipation": 41.36
+      }
+    }
+  },
+  {
+    "code": 19,
+    "name": "NUEVO LEON",
+    "abbrev": "NLE",
+    "years": {
+      "2009": {
+        "overallParticipation": 51.43,
+        "youthParticipation": 44.35
+      },
+      "2012": {
+        "overallParticipation": 59.8,
+        "youthParticipation": 52.26
+      },
+      "2015": {
+        "overallParticipation": 55.12,
+        "youthParticipation": 47.26
+      },
+      "2018": {
+        "overallParticipation": 49.78,
+        "youthParticipation": 43.47
+      },
+      "2021": {
+        "overallParticipation": 46.33,
+        "youthParticipation": 39.85
+      },
+      "2024": {
+        "overallParticipation": 51.58,
+        "youthParticipation": 44.21
+      }
+    }
+  },
+  {
+    "code": 20,
+    "name": "OAXACA",
+    "abbrev": "OAX",
+    "years": {
+      "2009": {
+        "overallParticipation": 40.6,
+        "youthParticipation": 31.57
+      },
+      "2012": {
+        "overallParticipation": 60.33,
+        "youthParticipation": 52.2
+      },
+      "2015": {
+        "overallParticipation": 34.2,
+        "youthParticipation": 24.81
+      },
+      "2018": {
+        "overallParticipation": 61.69,
+        "youthParticipation": 50.87
+      },
+      "2021": {
+        "overallParticipation": 54.31,
+        "youthParticipation": 44.26
+      },
+      "2024": {
+        "overallParticipation": 54.67,
+        "youthParticipation": 41.11
+      }
+    }
+  },
+  {
+    "code": 21,
+    "name": "PUEBLA",
+    "abbrev": "PUE",
+    "years": {
+      "2009": {
+        "overallParticipation": 37.24,
+        "youthParticipation": 29.36
+      },
+      "2012": {
+        "overallParticipation": 61.76,
+        "youthParticipation": 54.69
+      },
+      "2015": {
+        "overallParticipation": 40.28,
+        "youthParticipation": 30.79
+      },
+      "2018": {
+        "overallParticipation": 62.54,
+        "youthParticipation": 55.58
+      },
+      "2021": {
+        "overallParticipation": 53.8,
+        "youthParticipation": 46.97
+      },
+      "2024": {
+        "overallParticipation": 59.52,
+        "youthParticipation": 51
+      }
+    }
+  },
+  {
+    "code": 22,
+    "name": "QUERETARO",
+    "abbrev": "QUE",
+    "years": {
+      "2009": {
+        "overallParticipation": 58.13,
+        "youthParticipation": 50.17
+      },
+      "2012": {
+        "overallParticipation": 65.83,
+        "youthParticipation": 58.6
+      },
+      "2015": {
+        "overallParticipation": 53.99,
+        "youthParticipation": 44.78
+      },
+      "2018": {
+        "overallParticipation": 60.8,
+        "youthParticipation": 52.64
+      },
+      "2021": {
+        "overallParticipation": 49.86,
+        "youthParticipation": 41.59
+      },
+      "2024": {
+        "overallParticipation": 59.59,
+        "youthParticipation": 50.99
+      }
+    }
+  },
+  {
+    "code": 23,
+    "name": "QUINTANA ROO",
+    "abbrev": "ROO",
+    "years": {
+      "2009": {
+        "overallParticipation": 35.88,
+        "youthParticipation": 27.37
+      },
+      "2012": {
+        "overallParticipation": 56.3,
+        "youthParticipation": 46.79
+      },
+      "2015": {
+        "overallParticipation": 32.45,
+        "youthParticipation": 24.66
+      },
+      "2018": {
+        "overallParticipation": 56.5,
+        "youthParticipation": 47.49
+      },
+      "2021": {
+        "overallParticipation": 41.32,
+        "youthParticipation": 35.33
+      },
+      "2024": {
+        "overallParticipation": 53.01,
+        "youthParticipation": 45.69
+      }
+    }
+  },
+  {
+    "code": 24,
+    "name": "SAN LUIS POTOSI",
+    "abbrev": "SLP",
+    "years": {
+      "2009": {
+        "overallParticipation": 53.93,
+        "youthParticipation": 48.48
+      },
+      "2012": {
+        "overallParticipation": 62.89,
+        "youthParticipation": 55.43
+      },
+      "2015": {
+        "overallParticipation": 52.47,
+        "youthParticipation": 43.23
+      },
+      "2018": {
+        "overallParticipation": 59.8,
+        "youthParticipation": 51.03
+      },
+      "2021": {
+        "overallParticipation": 55.56,
+        "youthParticipation": 48.01
+      },
+      "2024": {
+        "overallParticipation": 56.72,
+        "youthParticipation": 47.8
+      }
+    }
+  },
+  {
+    "code": 25,
+    "name": "SINALOA",
+    "abbrev": "SIN",
+    "years": {
+      "2009": {
+        "overallParticipation": 38.83,
+        "youthParticipation": 30.76
+      },
+      "2012": {
+        "overallParticipation": 60.03,
+        "youthParticipation": 52.29
+      },
+      "2015": {
+        "overallParticipation": 36.14,
+        "youthParticipation": 26.96
+      },
+      "2018": {
+        "overallParticipation": 49.23,
+        "youthParticipation": 41.99
+      },
+      "2021": {
+        "overallParticipation": 44.11,
+        "youthParticipation": 34.58
+      },
+      "2024": {
+        "overallParticipation": 49.23,
+        "youthParticipation": 38.39
+      }
+    }
+  },
+  {
+    "code": 26,
+    "name": "SONORA",
+    "abbrev": "SON",
+    "years": {
+      "2009": {
+        "overallParticipation": 49.77,
+        "youthParticipation": 43.91
+      },
+      "2012": {
+        "overallParticipation": 57.31,
+        "youthParticipation": 50.43
+      },
+      "2015": {
+        "overallParticipation": 43.23,
+        "youthParticipation": 34.95
+      },
+      "2018": {
+        "overallParticipation": 43.23,
+        "youthParticipation": 36.25
+      },
+      "2021": {
+        "overallParticipation": 39.44,
+        "youthParticipation": 31.07
+      },
+      "2024": {
+        "overallParticipation": 44.44,
+        "youthParticipation": 34.65
+      }
+    }
+  },
+  {
+    "code": 27,
+    "name": "TABASCO",
+    "abbrev": "TAB",
+    "years": {
+      "2009": {
+        "overallParticipation": 37.93,
+        "youthParticipation": 31.7
+      },
+      "2012": {
+        "overallParticipation": 70.09,
+        "youthParticipation": 64.25
+      },
+      "2015": {
+        "overallParticipation": 48.62,
+        "youthParticipation": 42.22
+      },
+      "2018": {
+        "overallParticipation": 60.46,
+        "youthParticipation": 54.15
+      },
+      "2021": {
+        "overallParticipation": 51.1,
+        "youthParticipation": 44.7
+      },
+      "2024": {
+        "overallParticipation": 55,
+        "youthParticipation": 45.96
+      }
+    }
+  },
+  {
+    "code": 28,
+    "name": "TAMAULIPAS",
+    "abbrev": "TAM",
+    "years": {
+      "2009": {
+        "overallParticipation": 40.28,
+        "youthParticipation": 34.12
+      },
+      "2012": {
+        "overallParticipation": 57.25,
+        "youthParticipation": 51.53
+      },
+      "2015": {
+        "overallParticipation": 43.04,
+        "youthParticipation": 34.44
+      },
+      "2018": {
+        "overallParticipation": 56.21,
+        "youthParticipation": 49.46
+      },
+      "2021": {
+        "overallParticipation": 49.22,
+        "youthParticipation": 41.54
+      },
+      "2024": {
+        "overallParticipation": 50.22,
+        "youthParticipation": 42.08
+      }
+    }
+  },
+  {
+    "code": 29,
+    "name": "TLAXCALA",
+    "abbrev": "TLA",
+    "years": {
+      "2009": {
+        "overallParticipation": 35.79,
+        "youthParticipation": 28.54
+      },
+      "2012": {
+        "overallParticipation": 62.81,
+        "youthParticipation": 55.96
+      },
+      "2015": {
+        "overallParticipation": 38.39,
+        "youthParticipation": 30.71
+      },
+      "2018": {
+        "overallParticipation": 62.19,
+        "youthParticipation": 55.44
+      },
+      "2021": {
+        "overallParticipation": 62.21,
+        "youthParticipation": 56.73
+      },
+      "2024": {
+        "overallParticipation": 65.63,
+        "youthParticipation": 59.59
+      }
+    }
+  },
+  {
+    "code": 30,
+    "name": "VERACRUZ",
+    "abbrev": "VER",
+    "years": {
+      "2009": {
+        "overallParticipation": 45.88,
+        "youthParticipation": 37.06
+      },
+      "2012": {
+        "overallParticipation": 65.33,
+        "youthParticipation": 57.21
+      },
+      "2015": {
+        "overallParticipation": 44.23,
+        "youthParticipation": 33.73
+      },
+      "2018": {
+        "overallParticipation": 59.93,
+        "youthParticipation": 50.4
+      },
+      "2021": {
+        "overallParticipation": 57.74,
+        "youthParticipation": 48.25
+      },
+      "2024": {
+        "overallParticipation": 55.8,
+        "youthParticipation": 42.23
+      }
+    }
+  },
+  {
+    "code": 31,
+    "name": "YUCATAN",
+    "abbrev": "YUC",
+    "years": {
+      "2009": {
+        "overallParticipation": 55.4,
+        "youthParticipation": 46.97
+      },
+      "2012": {
+        "overallParticipation": 75.28,
+        "youthParticipation": 70.4
+      },
+      "2015": {
+        "overallParticipation": 65.76,
+        "youthParticipation": 59.11
+      },
+      "2018": {
+        "overallParticipation": 68.41,
+        "youthParticipation": 62.03
+      },
+      "2021": {
+        "overallParticipation": 59.46,
+        "youthParticipation": 54.58
+      },
+      "2024": {
+        "overallParticipation": 66,
+        "youthParticipation": 59.75
+      }
+    }
+  },
+  {
+    "code": 32,
+    "name": "ZACATECAS",
+    "abbrev": "ZAC",
+    "years": {
+      "2009": {
+        "overallParticipation": 43.33,
+        "youthParticipation": 38.01
+      },
+      "2012": {
+        "overallParticipation": 59.66,
+        "youthParticipation": 54.16
+      },
+      "2015": {
+        "overallParticipation": 44.1,
+        "youthParticipation": 36.04
+      },
+      "2018": {
+        "overallParticipation": 62.49,
+        "youthParticipation": 56.95
+      },
+      "2021": {
+        "overallParticipation": 54.3,
+        "youthParticipation": 48.19
+      },
+      "2024": {
+        "overallParticipation": 56.54,
+        "youthParticipation": 50.22
+      }
+    }
+  }
+]

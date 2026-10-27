@@ -1,0 +1,584 @@
+[
+  {
+    "year": 2009,
+    "byIndividualAge": {
+      "18": {
+        "listaNominal": 900091,
+        "voted": 432717,
+        "participation": 48.07
+      },
+      "19": {
+        "listaNominal": 1722240,
+        "voted": 692351,
+        "participation": 40.2
+      },
+      "20": {
+        "listaNominal": 1877559,
+        "voted": 692491,
+        "participation": 36.88
+      },
+      "21": {
+        "listaNominal": 1923312,
+        "voted": 677589,
+        "participation": 35.23
+      },
+      "22": {
+        "listaNominal": 1983372,
+        "voted": 673384,
+        "participation": 33.95
+      },
+      "23": {
+        "listaNominal": 1985324,
+        "voted": 662140,
+        "participation": 33.35
+      },
+      "24": {
+        "listaNominal": 1998807,
+        "voted": 661910,
+        "participation": 33.12
+      },
+      "25": {
+        "listaNominal": 2007246,
+        "voted": 664696,
+        "participation": 33.11
+      },
+      "26": {
+        "listaNominal": 2031362,
+        "voted": 675476,
+        "participation": 33.25
+      },
+      "27": {
+        "listaNominal": 2008905,
+        "voted": 673697,
+        "participation": 33.54
+      },
+      "28": {
+        "listaNominal": 1984535,
+        "voted": 672086,
+        "participation": 33.87
+      },
+      "29": {
+        "listaNominal": 1996883,
+        "voted": 685917,
+        "participation": 34.35
+      },
+      "30": {
+        "listaNominal": 1979921,
+        "voted": 693374,
+        "participation": 35.02
+      }
+    },
+    "byAgeGroup": {
+      "18-24": {
+        "listaNominal": 12390705,
+        "voted": 4492582,
+        "participation": 36.26
+      },
+      "25-34": {
+        "listaNominal": 19996096,
+        "voted": 7038798,
+        "participation": 35.2
+      },
+      "35-44": {
+        "listaNominal": 17359064,
+        "voted": 7503162,
+        "participation": 43.22
+      },
+      "45-59": {
+        "listaNominal": 16350282,
+        "voted": 8479144,
+        "participation": 51.86
+      },
+      "60+": {
+        "listaNominal": 11376180,
+        "voted": 5800433,
+        "participation": 50.99
+      }
+    }
+  },
+  {
+    "year": 2012,
+    "byIndividualAge": {
+      "18": {
+        "listaNominal": 1159703,
+        "voted": 772355,
+        "participation": 66.6
+      },
+      "19": {
+        "listaNominal": 1855348,
+        "voted": 1093870,
+        "participation": 58.96
+      },
+      "20": {
+        "listaNominal": 2003706,
+        "voted": 1119301,
+        "participation": 55.86
+      },
+      "21": {
+        "listaNominal": 2019375,
+        "voted": 1097519,
+        "participation": 54.35
+      },
+      "22": {
+        "listaNominal": 2032518,
+        "voted": 1078284,
+        "participation": 53.05
+      },
+      "23": {
+        "listaNominal": 1987926,
+        "voted": 1045245,
+        "participation": 52.58
+      },
+      "24": {
+        "listaNominal": 1970137,
+        "voted": 1034960,
+        "participation": 52.53
+      },
+      "25": {
+        "listaNominal": 1990798,
+        "voted": 1038520,
+        "participation": 52.17
+      },
+      "26": {
+        "listaNominal": 1969479,
+        "voted": 1027104,
+        "participation": 52.15
+      },
+      "27": {
+        "listaNominal": 1969352,
+        "voted": 1028579,
+        "participation": 52.23
+      },
+      "28": {
+        "listaNominal": 1967384,
+        "voted": 1030649,
+        "participation": 52.39
+      },
+      "29": {
+        "listaNominal": 1987407,
+        "voted": 1044187,
+        "participation": 52.54
+      },
+      "30": {
+        "listaNominal": 1958779,
+        "voted": 1034227,
+        "participation": 52.8
+      }
+    },
+    "byAgeGroup": {
+      "18-24": {
+        "listaNominal": 13028713,
+        "voted": 7241534,
+        "participation": 55.58
+      },
+      "25-34": {
+        "listaNominal": 19351334,
+        "voted": 10345385,
+        "participation": 53.46
+      },
+      "35-44": {
+        "listaNominal": 16505057,
+        "voted": 10498071,
+        "participation": 63.61
+      },
+      "45-59": {
+        "listaNominal": 16449395,
+        "voted": 11645609,
+        "participation": 70.8
+      },
+      "60+": {
+        "listaNominal": 11147160,
+        "voted": 7648076,
+        "participation": 68.61
+      }
+    }
+  },
+  {
+    "year": 2015,
+    "byIndividualAge": {
+      "18": {
+        "listaNominal": 1248151,
+        "voted": 571414,
+        "participation": 45.78
+      },
+      "19": {
+        "listaNominal": 1990084,
+        "voted": 771634,
+        "participation": 38.77
+      },
+      "20": {
+        "listaNominal": 2181192,
+        "voted": 780541,
+        "participation": 35.79
+      },
+      "21": {
+        "listaNominal": 2218338,
+        "voted": 762838,
+        "participation": 34.39
+      },
+      "22": {
+        "listaNominal": 2250410,
+        "voted": 756991,
+        "participation": 33.64
+      },
+      "23": {
+        "listaNominal": 2236767,
+        "voted": 743108,
+        "participation": 33.22
+      },
+      "24": {
+        "listaNominal": 2200106,
+        "voted": 728782,
+        "participation": 33.12
+      },
+      "25": {
+        "listaNominal": 2175112,
+        "voted": 711046,
+        "participation": 32.69
+      },
+      "26": {
+        "listaNominal": 2112016,
+        "voted": 687757,
+        "participation": 32.56
+      },
+      "27": {
+        "listaNominal": 2087692,
+        "voted": 684482,
+        "participation": 32.79
+      },
+      "28": {
+        "listaNominal": 2102335,
+        "voted": 691724,
+        "participation": 32.9
+      },
+      "29": {
+        "listaNominal": 2070731,
+        "voted": 689151,
+        "participation": 33.28
+      },
+      "30": {
+        "listaNominal": 1992833,
+        "voted": 694980,
+        "participation": 34.87
+      }
+    },
+    "byAgeGroup": {
+      "18-24": {
+        "listaNominal": 14325048,
+        "voted": 5115308,
+        "participation": 35.71
+      },
+      "25-34": {
+        "listaNominal": 19983293,
+        "voted": 7020234,
+        "participation": 35.13
+      },
+      "35-44": {
+        "listaNominal": 17420859,
+        "voted": 7844022,
+        "participation": 45.03
+      },
+      "45-59": {
+        "listaNominal": 18668743,
+        "voted": 9733008,
+        "participation": 52.14
+      },
+      "60+": {
+        "listaNominal": 13156417,
+        "voted": 7210532,
+        "participation": 54.81
+      }
+    }
+  },
+  {
+    "year": 2018,
+    "byIndividualAge": {
+      "18": {
+        "listaNominal": 1522960,
+        "voted": 920449,
+        "participation": 60.44
+      },
+      "19": {
+        "listaNominal": 2010518,
+        "voted": 1073867,
+        "participation": 53.41
+      },
+      "20": {
+        "listaNominal": 2128590,
+        "voted": 1083868,
+        "participation": 50.92
+      },
+      "21": {
+        "listaNominal": 2139461,
+        "voted": 1063564,
+        "participation": 49.71
+      },
+      "22": {
+        "listaNominal": 2217054,
+        "voted": 1079308,
+        "participation": 48.68
+      },
+      "23": {
+        "listaNominal": 2280371,
+        "voted": 1102594,
+        "participation": 48.35
+      },
+      "24": {
+        "listaNominal": 2276041,
+        "voted": 1103215,
+        "participation": 48.47
+      },
+      "25": {
+        "listaNominal": 2280420,
+        "voted": 1109680,
+        "participation": 48.66
+      },
+      "26": {
+        "listaNominal": 2267366,
+        "voted": 1108411,
+        "participation": 48.89
+      },
+      "27": {
+        "listaNominal": 2220319,
+        "voted": 1092828,
+        "participation": 49.22
+      },
+      "28": {
+        "listaNominal": 2193231,
+        "voted": 1081538,
+        "participation": 49.31
+      },
+      "29": {
+        "listaNominal": 2098719,
+        "voted": 1053079,
+        "participation": 50.18
+      },
+      "30": {
+        "listaNominal": 2010604,
+        "voted": 1048950,
+        "participation": 52.17
+      }
+    },
+    "byAgeGroup": {
+      "18-24": {
+        "listaNominal": 14574995,
+        "voted": 7426865,
+        "participation": 50.96
+      },
+      "25-34": {
+        "listaNominal": 20789848,
+        "voted": 10712295,
+        "participation": 51.53
+      },
+      "35-44": {
+        "listaNominal": 18027709,
+        "voted": 10662517,
+        "participation": 59.15
+      },
+      "45-59": {
+        "listaNominal": 20761683,
+        "voted": 13428927,
+        "participation": 64.68
+      },
+      "60+": {
+        "listaNominal": 14960534,
+        "voted": 9548717,
+        "participation": 63.83
+      }
+    }
+  },
+  {
+    "year": 2021,
+    "byIndividualAge": {
+      "18": {
+        "listaNominal": 1318635,
+        "voted": 703902,
+        "participation": 53.38
+      },
+      "19": {
+        "listaNominal": 1904362,
+        "voted": 887137,
+        "participation": 46.58
+      },
+      "20": {
+        "listaNominal": 2213397,
+        "voted": 938797,
+        "participation": 42.41
+      },
+      "21": {
+        "listaNominal": 2256069,
+        "voted": 914232,
+        "participation": 40.52
+      },
+      "22": {
+        "listaNominal": 2201064,
+        "voted": 865524,
+        "participation": 39.32
+      },
+      "23": {
+        "listaNominal": 2201655,
+        "voted": 851912,
+        "participation": 38.69
+      },
+      "24": {
+        "listaNominal": 2180332,
+        "voted": 836589,
+        "participation": 38.37
+      },
+      "25": {
+        "listaNominal": 2248554,
+        "voted": 852167,
+        "participation": 37.9
+      },
+      "26": {
+        "listaNominal": 2297200,
+        "voted": 867857,
+        "participation": 37.78
+      },
+      "27": {
+        "listaNominal": 2284444,
+        "voted": 864371,
+        "participation": 37.84
+      },
+      "28": {
+        "listaNominal": 2291319,
+        "voted": 869739,
+        "participation": 37.96
+      },
+      "29": {
+        "listaNominal": 2265575,
+        "voted": 862497,
+        "participation": 38.07
+      },
+      "30": {
+        "listaNominal": 2191354,
+        "voted": 860812,
+        "participation": 39.28
+      }
+    },
+    "byAgeGroup": {
+      "18-24": {
+        "listaNominal": 14275514,
+        "voted": 5998093,
+        "participation": 42.02
+      },
+      "25-34": {
+        "listaNominal": 21695514,
+        "voted": 8585620,
+        "participation": 39.57
+      },
+      "35-44": {
+        "listaNominal": 18492424,
+        "voted": 8921543,
+        "participation": 48.24
+      },
+      "45-59": {
+        "listaNominal": 22412586,
+        "voted": 12806260,
+        "participation": 57.14
+      },
+      "60+": {
+        "listaNominal": 16646710,
+        "voted": 10073300,
+        "participation": 60.51
+      }
+    }
+  },
+  {
+    "year": 2024,
+    "byIndividualAge": {
+      "18": {
+        "listaNominal": 1481999,
+        "voted": 852306,
+        "participation": 57.51
+      },
+      "19": {
+        "listaNominal": 2081119,
+        "voted": 1038337,
+        "participation": 49.89
+      },
+      "20": {
+        "listaNominal": 2193261,
+        "voted": 1033232,
+        "participation": 47.11
+      },
+      "21": {
+        "listaNominal": 2240844,
+        "voted": 1024323,
+        "participation": 45.71
+      },
+      "22": {
+        "listaNominal": 2257453,
+        "voted": 1016825,
+        "participation": 45.04
+      },
+      "23": {
+        "listaNominal": 2317579,
+        "voted": 1025130,
+        "participation": 44.23
+      },
+      "24": {
+        "listaNominal": 2303719,
+        "voted": 1014338,
+        "participation": 44.03
+      },
+      "25": {
+        "listaNominal": 2226449,
+        "voted": 976381,
+        "participation": 43.85
+      },
+      "26": {
+        "listaNominal": 2214268,
+        "voted": 972747,
+        "participation": 43.93
+      },
+      "27": {
+        "listaNominal": 2185764,
+        "voted": 963064,
+        "participation": 44.06
+      },
+      "28": {
+        "listaNominal": 2250264,
+        "voted": 988885,
+        "participation": 43.95
+      },
+      "29": {
+        "listaNominal": 2260842,
+        "voted": 1015867,
+        "participation": 44.93
+      },
+      "30": {
+        "listaNominal": 2192625,
+        "voted": 1030783,
+        "participation": 47.01
+      }
+    },
+    "byAgeGroup": {
+      "18-24": {
+        "listaNominal": 14875974,
+        "voted": 7004491,
+        "participation": 47.09
+      },
+      "25-34": {
+        "listaNominal": 21895896,
+        "voted": 10146002,
+        "participation": 46.34
+      },
+      "35-44": {
+        "listaNominal": 19017625,
+        "voted": 10331774,
+        "participation": 54.33
+      },
+      "45-59": {
+        "listaNominal": 23801180,
+        "voted": 14869244,
+        "participation": 62.47
+      },
+      "60+": {
+        "listaNominal": 18730241,
+        "voted": 12542756,
+        "participation": 66.97
+      }
+    }
+  }
+]

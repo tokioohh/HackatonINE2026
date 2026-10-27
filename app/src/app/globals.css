@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  /* ── Era digital / INE (fondo oscuro, base del sitio) ── */
+  --bg: #0d0221;
+  --surface: #160336;
+  --ink: #ffffff;
+  --muted: #9b7ab8;
+  --accent: #dafa9c;
+  --accent-ink: #0d0221;
+  --field-1: #ffffff;
+  --field-1-ink: #0d0221;
+  --field-2: #dafa9c;
+  --field-2-ink: #0d0221;
+
+  /* ── Era periódico (papel, claro) ── */
+  --paper: #f2ead6;
+  --paper-dark: #dfd0b0;
+  --ink-press: #1a1208;
+  --ink-aged: #3d2b0f;
+  --ink-faded: #6b5535;
+  --headline-red: #9b1c1c;
+  --paper-stain: #c8a96b;
+
+  /* ── INE + México ── */
+  --ine-purple: #6b21a8;
+  --ine-purple-bright: #a855f7;
+  --ine-purple-dark: #3b0764;
+  --verde-mx: #006847;
+  --rojo-mx: #ce1126;
+
+  /* ── Escala morada ── */
+  --purple-1: #e8d5f5;
+  --purple-2: #c9a0e0;
+  --purple-3: #a66bc8;
+  --purple-4: #8338b2;
+  --purple-5: #5e1d8e;
+  --purple-6: #3b0764;
+
+  /* ── Escala tipográfica ── */
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --step-display: clamp(3.5rem, 2rem + 6.6vw, 6.5rem);
+
+  --axis: 42%;
+  --margin: 48px;
+  --margin-mobile: 20px;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-paper: var(--paper);
+  --color-paper-dark: var(--paper-dark);
+  --color-ink-press: var(--ink-press);
+  --color-ink-aged: var(--ink-aged);
+  --color-ink-faded: var(--ink-faded);
+  --color-headline-red: var(--headline-red);
+  --color-paper-stain: var(--paper-stain);
+  --color-ine-purple: var(--ine-purple);
+  --color-ine-purple-bright: var(--ine-purple-bright);
+  --color-ine-purple-dark: var(--ine-purple-dark);
+  --color-verde-mx: var(--verde-mx);
+  --color-rojo-mx: var(--rojo-mx);
+  --color-purple-1: var(--purple-1);
+  --color-purple-2: var(--purple-2);
+  --color-purple-3: var(--purple-3);
+  --color-purple-4: var(--purple-4);
+  --color-purple-5: var(--purple-5);
+  --color-purple-6: var(--purple-6);
+  /* Fuente serif para la era periódico */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'General Sans', system-ui, sans-serif;
+  font-size: var(--step-body);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selección de texto — era digital */
+::selection {
+  background: var(--ine-purple);
+  color: #ffffff;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+/* Scrollbar temático */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--ine-purple); border-radius: 2px; }
+
+/* ── Texturas de la era periódico ── */
+
+/* Grano de papel: superposición de ruido SVG */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  mix-blend-mode: multiply;
+  opacity: 0.07;
+  z-index: 1;
+}
+
+/* Puntos de trama (halftone) para fotos de periódico */
+.halftone-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, var(--paper) 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.3;
+  mix-blend-mode: screen;
+  z-index: 2;
+}
+
+/* Botón estilo periódico */
+.btn-newspaper {
+  display: inline-block;
+  border: 2px solid var(--ink-press);
+  color: var(--ink-press);
+  background: transparent;
+  padding: 14px 32px;
+  font-family: var(--font-serif);
+  letter-spacing: 0.02em;
+  transition: background 180ms ease, color 180ms ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-newspaper:hover {
+  background: var(--ink-press);
+  color: var(--paper);
+}
+
+/* Botón digital */
+.btn-digital {
+  display: inline-block;
+  background: var(--ine-purple);
+  color: #ffffff;
+  padding: 14px 32px;
+  font-family: 'General Sans', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  transition: background 180ms ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-digital:hover {
+  background: var(--ine-purple-bright);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --margin: 20px;
+  }
+}
