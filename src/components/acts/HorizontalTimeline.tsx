@@ -171,8 +171,8 @@ export function HorizontalTimeline() {
     <section ref={containerRef} id="timeline" className="relative h-[500vh]">
       {/* Contenedor fijo a pantalla completa durante el scroll */}
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-between notebook-canvas border-b border-dashed border-neutral-300">
-        {/* Cabecera superior fijada con suficiente padding-top para librar el Nav fijo */}
-        <div className="relative z-20 pt-20 sm:pt-24 px-4 sm:px-8 md:px-14 flex items-center justify-between border-b border-dashed border-neutral-300/80 pb-3 bg-[#FAF8F5]/90 backdrop-blur-xs">
+        {/* Cabecera superior fijada */}
+        <div className="relative z-20 pt-8 sm:pt-10 px-4 sm:px-8 md:px-14 flex items-center justify-between border-b border-dashed border-neutral-300/80 pb-3 bg-[#FAF8F5]/90 backdrop-blur-xs">
           <div>
             <div className="flex items-center gap-2">
               <span className="urgent-tag text-[10px]">

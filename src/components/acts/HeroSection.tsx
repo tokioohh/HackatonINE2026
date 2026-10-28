@@ -10,38 +10,16 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full text-[#111110] px-4 sm:px-8 md:px-14 pt-24 pb-12 flex flex-col justify-between notebook-canvas overflow-hidden border-b border-dashed border-neutral-300"
+      className="relative h-screen min-h-[640px] w-full text-[#111110] px-4 sm:px-8 md:px-14 py-8 flex flex-col justify-between notebook-canvas overflow-hidden border-b border-dashed border-neutral-300"
     >
-      {/* Cintas adhesivas en las esquinas superiores */}
-      <ScotchTape className="top-16 left-6 sm:left-12 w-28 sm:w-36 h-7 sm:h-9" tilt="-5deg" />
-      <ScotchTape className="top-16 right-6 sm:right-12 w-24 sm:w-32 h-7 sm:h-9" tilt="4deg" />
+      {/* Scotch tape en la esquina superior izquierda como en la rama Oskar */}
+      <ScotchTape className="top-5 left-6 w-28 sm:w-36 h-7 sm:h-9" tilt="-5deg" />
 
-      {/* ═══ MASTHEAD / CABECERA DE CUADERNO / EXPEDIENTE ═══ */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full pt-4 pb-6 border-b-2 border-[#141312]">
-        <div className="flex items-baseline justify-between flex-wrap gap-3">
-          <div className="flex items-center gap-3">
-            <span className="font-typewriter text-xs sm:text-sm text-[#141312] font-bold tracking-[0.2em] uppercase">
-              EL VOTO JOVEN // CCPC INE
-            </span>
-            <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-[#DC2626]" />
-            <span className="hidden sm:inline-block font-mono text-xs text-[#4B5563] italic">
-              Eje 3: Storytelling con Datos
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="inline-block font-mono text-[11px] font-bold uppercase tracking-widest text-[#B91C1C] border-2 border-[#B91C1C] px-2.5 py-0.5 rotate-[-2deg] bg-white/70 shadow-xs">
-              OCT. 2026
-            </span>
-            <span className="font-mono text-xs text-[#6B7280]">
-              MÉXICO 2009–2024
-            </span>
-          </div>
-        </div>
-      </div>
+      {/* Espaciador superior limpio para aire visual */}
+      <div className="pt-4" />
 
       {/* ═══ CENTRO: TITULAR PRINCIPAL DE DEV CON ESTILO OSKAR ═══ */}
-      <div className="my-auto z-10 max-w-6xl mx-auto w-full py-12 flex flex-col items-center justify-center text-center">
+      <div className="my-auto z-10 max-w-5xl mx-auto w-full flex flex-col items-center justify-center text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -89,7 +67,7 @@ export function HeroSection() {
       </div>
 
       {/* ═══ PIE DEL HERO: CTA + ESTÉNCIL ═══ */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div className="relative z-10 max-w-6xl mx-auto w-full pt-4 pb-2 flex flex-col sm:flex-row justify-between items-center gap-4">
         {/* Esténcil de protesta al margen */}
         <div
           className="font-poster text-2xl sm:text-3xl text-[#141312]/15 tracking-widest uppercase rotate-[-2deg] select-none"
