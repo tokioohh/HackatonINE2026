@@ -48,15 +48,15 @@ export function MexicoMap() {
           <div className="flex items-center gap-2 mb-1">
             <span className="urgent-tag flex items-center gap-1.5 text-[10px]">
               <AlertCircle className="w-3.5 h-3.5" />
-              <span>ATLAS CENSAL DE GRAVEDAD CÍVICA</span>
+              <span>MAPA INTERACTIVO NACIONAL</span>
             </span>
-            <span className="font-mono text-xs text-[#DC2626] font-bold">INE CCPC // 32 ENTIDADES</span>
+            <span className="font-mono text-xs text-[#DC2626] font-bold">INE CCPC // 32 ENTIDADES FEDERATIVAS</span>
           </div>
           <h3 className="font-poster text-3xl sm:text-5xl text-[#141312] tracking-wide uppercase">
-            GEOGRAFÍA DE LOS DESIERTOS ELECTORALES
+            PARTICIPACIÓN JUVENIL POR ESTADO
           </h3>
-          <p className="font-sans text-xs sm:text-sm text-[#4B5563] mt-1">
-            Selecciona un año y pasa el cursor sobre cualquier estado para ver su nivel de participación juvenil.
+          <p className="font-sans text-xs sm:text-sm text-[#4B5563] mt-1 max-w-2xl">
+            El color más oscuro indica mayor participación de 18–24 años. Selecciona un año y haz clic en un estado para ver su dato.
           </p>
         </div>
 

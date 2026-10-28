@@ -5,13 +5,13 @@ const fs = require('fs');
 const chrome = spawn('C:/Program Files/Google/Chrome/Application/chrome.exe', [
   '--headless=new',
   '--disable-gpu',
-  '--remote-debugging-port=9228',
+  '--remote-debugging-port=9232',
   '--window-size=1440,900',
   'http://localhost:3000'
 ]);
 
 setTimeout(() => {
-  http.get('http://127.0.0.1:9228/json/list', (res) => {
+  http.get('http://127.0.0.1:9232/json/list', (res) => {
     let data = '';
     res.on('data', d => data += d);
     res.on('end', async () => {
@@ -36,17 +36,24 @@ setTimeout(() => {
       await send('Page.enable');
       await new Promise(r => setTimeout(r, 2000));
 
+      // Disable smooth scroll for instant CDP position jumping
+      await send('Runtime.evaluate', {
+        expression: "document.documentElement.style.scrollBehavior = 'auto';"
+      });
+
       const targets = [
         { name: '01-hero.png', id: '#hero' },
         { name: '02-acto1.png', id: '#acto-1' },
-        { name: '03-votos-perdidos.png', id: '#votos-perdidos' },
-        { name: '04-timeline.png', id: '#timeline' },
-        { name: '05-acto2.png', id: '#acto-2' },
-        { name: '06-mapa.png', id: '#mapa' },
-        { name: '07-acto3.png', id: '#acto-3' },
-        { name: '08-explora.png', id: '#explora' },
-        { name: '09-conciencia.png', id: '#conciencia' },
-        { name: '10-footer.png', id: 'footer' }
+        { name: '03-stats-sentence.png', id: '#sentencia-estadistica' },
+        { name: '04-votos-perdidos.png', id: '#votos-perdidos' },
+        { name: '05-timeline.png', id: '#timeline' },
+        { name: '06-acto2.png', id: '#acto-2' },
+        { name: '07-mapa.png', id: '#mapa' },
+        { name: '08-acto3.png', id: '#acto-3' },
+        { name: '09-bigstat.png', id: '#gran-estadistica' },
+        { name: '10-explora.png', id: '#explora' },
+        { name: '11-conciencia.png', id: '#conciencia' },
+        { name: '12-footer.png', id: 'footer' }
       ];
 
       for (const t of targets) {

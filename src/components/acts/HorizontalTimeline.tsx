@@ -1,208 +1,264 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { elections } from "@/lib/data";
-import { SpiralPaperCard } from "@/components/ui/NotebookPaper";
-import { ImpactQuote } from "@/components/ui/ImpactQuote";
-import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
-import { Sparkles, Calendar, TrendingUp } from "lucide-react";
+import { ScotchTape } from "@/components/ui/DoodleStickers";
 
-export function HorizontalTimeline() {
-  const [selectedYear, setSelectedYear] = useState<number>(2012); // Default to historic peak 2012
-  const activeElection = elections.find((e) => e.year === selectedYear) || elections[1];
+/* Estilos de tarjeta por época para dar variedad de fanzine / cuaderno */
+const ERA_THEMES = [
+  { accent: "#B91C1C", tag: "INTERMEDIA", stamp: "2009 // ARCHIVO", badgeBg: "bg-red-100 text-red-800" },
+  { accent: "#0284C7", tag: "PRESIDENCIAL", stamp: "2012 // PICO CÍVICO", badgeBg: "bg-sky-100 text-sky-800" },
+  { accent: "#7C3AED", tag: "INTERMEDIA", stamp: "2015 // TRANSICIÓN", badgeBg: "bg-purple-100 text-purple-800" },
+  { accent: "#D97706", tag: "PRESIDENCIAL", stamp: "2018 // ALTERNANCIA", badgeBg: "bg-amber-100 text-amber-800" },
+  { accent: "#059669", tag: "INTERMEDIA", stamp: "2021 // PANDEMIA", badgeBg: "bg-emerald-100 text-emerald-800" },
+  { accent: "#DC2626", tag: "PRESIDENCIAL", stamp: "2024 // PRESENTE", badgeBg: "bg-rose-100 text-rose-800" },
+];
 
-  const POSTIT_COLORS = [
-    { bg: "bg-[#FEF08A]", text: "text-[#713F12]", border: "border-[#EAB308]/60", tilt: "-rotate-2" }, // 2009
-    { bg: "bg-[#BAE6FD]", text: "text-[#0369A1]", border: "border-[#38BDF8]/60", tilt: "rotate-1.5" }, // 2012
-    { bg: "bg-[#BBF7D0]", text: "text-[#166534]", border: "border-[#4ADE80]/60", tilt: "-rotate-1" }, // 2015
-    { bg: "bg-[#FED7AA]", text: "text-[#9A3412]", border: "border-[#FB923C]/60", tilt: "rotate-2" }, // 2018
-    { bg: "bg-[#E9D5FF]", text: "text-[#6B21A8]", border: "border-[#C084FC]/60", tilt: "-rotate-2" }, // 2021
-    { bg: "bg-[#FECDD3]", text: "text-[#9F1239]", border: "border-[#FB7185]/60", tilt: "rotate-1" }, // 2024
-  ];
+interface ElectionSlideProps {
+  election: (typeof elections)[0];
+  index: number;
+  total: number;
+  scrollYProgress: MotionValue<number>;
+}
+
+function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlideProps) {
+  const theme = ERA_THEMES[index] || ERA_THEMES[0];
+
+  // Opacidad y transición suave al pasar por el viewport
+  const cardOpacity = useTransform(
+    scrollYProgress,
+    [index / total, (index + 0.5) / total, Math.min(1, (index + 1) / total)],
+    [0.55, 1, 0.55]
+  );
+
+  // Animación de la barra de participación juvenil sincronizada con el scroll
+  const youthBarWidth = useTransform(
+    scrollYProgress,
+    [
+      Math.max(0, (index - 0.2) / total),
+      (index + 0.3) / total,
+    ],
+    ["0%", `${election.youthParticipation}%`]
+  );
 
   return (
-    <section
-      id="timeline"
-      className="relative py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden border-b border-dashed border-neutral-300"
-    >
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Cabecera de la Línea de Tiempo */}
-        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-3 mb-8 pb-4 border-b border-dashed border-neutral-300">
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="urgent-tag text-[10px]">
-                CRONOLOGÍA COMPARADA (2009–2024)
-              </span>
-              <span className="font-mono text-xs text-[#DC2626] font-bold">
-                CCPC · SEIS ELECCIONES FEDERALES
-              </span>
-            </div>
-            <h3 className="font-poster text-3xl sm:text-5xl text-[#141312] uppercase tracking-wide">
-              HITOS Y ELECCIONES EN EL TIEMPO
-            </h3>
-            <p className="font-sans text-xs sm:text-sm text-[#4B5563] mt-1">
-              Haz clic en cualquiera de los Post-Its para abrir el expediente del proceso electoral.
-            </p>
-          </div>
-          <span className="text-xs font-mono text-[#DC2626] uppercase font-bold shrink-0">
-            SELECCIONA UN AÑO ↓
-          </span>
-        </div>
+    <div className="w-screen h-full flex items-center justify-center shrink-0 px-4 sm:px-8 md:px-14 select-none">
+      <motion.div
+        style={{ opacity: cardOpacity }}
+        className="w-full max-w-5xl mx-auto"
+      >
+        {/* Carpeta / Hoja de libreta escolar para el año */}
+        <div className="relative bg-[#FAF8F5] p-6 sm:p-10 md:p-12 border border-neutral-300 shadow-[4px_10px_30px_rgba(0,0,0,0.12)] rotate-[-0.3deg]">
+          {/* Cintas adhesivas en las esquinas superiores */}
+          <ScotchTape className="-top-3.5 left-10 w-28 h-6" tilt="-2deg" />
+          <ScotchTape className="-top-3.5 right-10 w-28 h-6" tilt="2.5deg" />
 
-        {/* ═══ 6 POST-ITS MULTICOLORES CON CINTA ADHESIVA ═══ */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-8">
-          {elections.map((item, idx) => {
-            const active = selectedYear === item.year;
-            const style = POSTIT_COLORS[idx % POSTIT_COLORS.length];
-
-            return (
-              <button
-                key={item.year}
-                onClick={() => setSelectedYear(item.year)}
-                aria-pressed={active}
-                className={`group relative p-3.5 sm:p-4 text-left transition-all duration-200 cursor-pointer rounded-xs border ${
-                  style.bg
-                } ${style.text} ${style.border} ${
-                  active
-                    ? "ring-2 ring-[#DC2626] ring-offset-2 scale-105 rotate-0 z-20 shadow-[4px_8px_18px_rgba(0,0,0,0.22)]"
-                    : `${style.tilt} hover:rotate-0 hover:scale-105 hover:z-10 shadow-[2px_4px_10px_rgba(0,0,0,0.1)]`
-                }`}
-              >
-                {/* Cinta adhesiva en la parte superior del Post-It */}
-                <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-10 h-3.5 bg-white/70 shadow-xs border-l border-r border-dashed border-gray-400/50 backdrop-blur-xs pointer-events-none" />
-
-                {/* Indicador de activo */}
-                {active && (
-                  <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#DC2626] rounded-full border border-white shadow-xs animate-ping" />
-                )}
-
-                <div className="flex items-baseline justify-between mb-1">
-                  <span className="font-poster text-2xl sm:text-3xl leading-none">
-                    {item.year}
-                  </span>
-                  <span className="text-[9px] font-mono uppercase font-black opacity-80">
-                    {item.type}
-                  </span>
-                </div>
-
-                <div className="font-typewriter text-[11px] font-bold leading-tight line-clamp-2 pt-0.5 opacity-90">
-                  {item.milestone}
-                </div>
-
-                {/* Micro dato porcentual */}
-                <div className="mt-3 pt-2 border-t border-black/15 flex justify-between items-center text-[10px] font-mono">
-                  <span>Jóvenes:</span>
-                  <span className="font-bold text-[#DC2626]">{item.youthParticipation}%</span>
-                </div>
-
-                {/* Sombra de despegado en esquina inferior */}
-                <div className="absolute bottom-0 right-0 w-3 h-3 bg-gradient-to-tl from-black/15 to-transparent pointer-events-none" />
-              </button>
-            );
-          })}
-        </div>
-
-        {/* ═══ EXPEDIENTE DESPLEGABLE EN HOJA DE LIBRETA ═══ */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeElection.year}
-            initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.35 }}
+          {/* Marca de agua de año gigante */}
+          <div
+            className="absolute top-4 right-6 sm:right-10 font-poster text-8xl sm:text-[12rem] md:text-[14rem] text-[#141312]/8 leading-none select-none pointer-events-none"
+            aria-hidden="true"
           >
-            <SpiralPaperCard tilt="rotate-[0.2deg]">
-              <div className="flex flex-col lg:flex-row justify-between gap-8 items-start">
-                {/* Bloque Izquierdo: Narrativa del hito */}
-                <div className="lg:max-w-2xl space-y-4">
-                  <div className="flex items-center gap-3 text-xs font-mono">
-                    <span className="text-[#DC2626] font-bold uppercase tracking-wider">
-                      PROCESO FEDERAL {activeElection.year} // {activeElection.type.toUpperCase()}
-                    </span>
-                    <span className="text-neutral-400">/</span>
-                    <span className="text-[#4B5563] font-bold">
-                      ERA: {activeElection.platformSummary}
-                    </span>
-                  </div>
+            {election.year}
+          </div>
 
-                  <h4 className="font-poster text-3xl sm:text-5xl text-[#141312] uppercase tracking-wide">
-                    {activeElection.milestone}
-                  </h4>
+          <div className="relative z-10 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+            {/* Columna Izquierda: Año, tipo y narrativa oficial de dev */}
+            <div className="md:col-span-7 space-y-4">
+              <div className="flex items-center gap-2.5 flex-wrap">
+                <span className={`px-2.5 py-0.5 text-xs font-mono font-bold uppercase rounded-xs border border-current ${theme.badgeBg}`}>
+                  Elección {election.milestone} {election.year}
+                </span>
+                <span className="font-mono text-xs text-[#DC2626] font-bold tracking-wider">
+                  ★ {theme.stamp}
+                </span>
+              </div>
 
-                  <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed pt-1">
-                    {activeElection.milestoneDetail}
-                  </p>
+              <h3 className="font-poster text-4xl sm:text-6xl text-[#141312] leading-none uppercase tracking-wide">
+                {election.year} · {election.milestone}
+              </h3>
 
-                  <div className="pt-2">
-                    <ImpactQuote
-                      quote={`En ${activeElection.year}, la participación juvenil fue de ${activeElection.youthParticipation}%, frente a un promedio nacional de ${activeElection.overallParticipation}%.`}
-                      author={`Diagnóstico Electoral ${activeElection.year}`}
-                      color="yellow"
-                      tilt="rotate-[0deg]"
-                      className="my-2"
-                    />
-                  </div>
-                </div>
+              <p className="font-serif italic text-base sm:text-xl text-[#374151] leading-relaxed">
+                {election.milestoneDetail}
+              </p>
 
-                {/* Bloque Derecho: Tarjeta de Métricas Comparativas */}
-                <div className="w-full lg:w-[320px] bg-white p-5 border border-neutral-300 shadow-md rotate-[0.5deg] space-y-4 shrink-0">
-                  <div className="flex items-center gap-2 pb-2 border-b border-dashed border-neutral-300">
-                    <Calendar className="w-4 h-4 text-[#DC2626]" />
-                    <span className="font-mono text-xs font-bold uppercase text-[#141312]">
-                      REGISTRO CCPC OFICIAL:
-                    </span>
-                  </div>
+              <div className="pt-2 text-xs font-mono text-[#6B7280] flex items-center gap-4 border-t border-dashed border-neutral-300">
+                <span>PADRÓN TOTAL: <strong>{(election.overallParticipation).toFixed(1)}%</strong></span>
+                <span>•</span>
+                <span>JÓVENES (18–24): <strong>{(election.youthParticipation).toFixed(1)}%</strong></span>
+              </div>
+            </div>
 
-                  {/* Comparativa General vs Juventud */}
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between text-xs font-mono mb-1">
-                        <span className="text-[#4B5563]">Participación General:</span>
-                        <span className="font-bold text-[#141312]">{activeElection.overallParticipation}%</span>
-                      </div>
-                      <div className="h-3 w-full bg-neutral-200 relative overflow-hidden rounded-xs">
-                        <div
-                          className="h-full bg-[#1F2937]"
-                          style={{ width: `${activeElection.overallParticipation}%` }}
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between text-xs font-mono mb-1">
-                        <span className="text-[#DC2626] font-bold">Juventud (18–24 años):</span>
-                        <span className="font-bold text-[#DC2626]">{activeElection.youthParticipation}%</span>
-                      </div>
-                      <div className="h-3 w-full bg-neutral-200 relative overflow-hidden rounded-xs">
-                        <div
-                          className="h-full bg-[#DC2626]"
-                          style={{ width: `${activeElection.youthParticipation}%` }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Datos complementarios */}
-                  <div className="pt-3 border-t border-dashed border-neutral-300 space-y-2 text-xs font-mono">
-                    <div className="flex justify-between">
-                      <span className="text-[#4B5563]">Edad media del votante:</span>
-                      <span className="font-bold">{activeElection.averageVoterAge} años</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-[#4B5563]">Peso juvenil en urnas:</span>
-                      <span className="font-bold text-[#DC2626]">{activeElection.youthShareOfVoters}%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-[#4B5563]">Lista Nominal Total:</span>
-                      <span className="font-bold">{(activeElection.listaNominal / 1_000_000).toFixed(1)}M</span>
-                    </div>
-                  </div>
+            {/* Columna Derecha: Tarjeta de métricas comparativas */}
+            <div className="md:col-span-5 bg-white p-5 sm:p-6 border border-neutral-300 shadow-sm space-y-5 rotate-[0.5deg]">
+              {/* Participación general */}
+              <div>
+                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#6B7280] block mb-1">
+                  PARTICIPACIÓN GENERAL
+                </span>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-poster text-5xl sm:text-6xl text-[#141312] leading-none">
+                    {election.overallParticipation}
+                  </span>
+                  <span className="font-poster text-2xl text-[#6B7280]">%</span>
                 </div>
               </div>
-            </SpiralPaperCard>
+
+              {/* Barra de jóvenes (18-24) */}
+              <div>
+                <div className="flex justify-between items-center text-xs font-mono mb-1.5">
+                  <span className="font-bold text-[#DC2626] uppercase">Participación juvenil (18–24)</span>
+                  <span className="font-bold text-[#DC2626]">{election.youthParticipation}%</span>
+                </div>
+                <div className="w-full h-5 bg-neutral-200 border border-neutral-300 relative overflow-hidden">
+                  <motion.div
+                    style={{ width: youthBarWidth }}
+                    className="h-full bg-[#DC2626]"
+                  />
+                </div>
+              </div>
+
+              {/* Edad promedio del votante */}
+              <div>
+                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#6B7280] block mb-1">
+                  EDAD PROMEDIO DEL VOTANTE
+                </span>
+                <span className="font-poster text-3xl sm:text-4xl text-[#141312] leading-none">
+                  {election.averageVoterAge} <span className="text-xl text-[#6B7280]">años</span>
+                </span>
+              </div>
+
+              {/* Proporción en el total de votantes */}
+              <div className="pt-3 border-t border-dashed border-neutral-300 flex justify-between items-center text-xs font-mono">
+                <span className="text-[#6B7280]">PESO JUVENIL EN URNAS:</span>
+                <span className="font-bold text-[#141312] px-2 py-0.5 bg-yellow-100 border border-yellow-300">
+                  {election.youthShareOfVoters}% de los votos
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+export function HorizontalTimeline() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeYearIndex, setActiveYearIndex] = useState(0);
+
+  // useScroll mapeado a la sección de 500vh
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  // Desplazamiento horizontal de las 6 tarjetas (100vw cada una)
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-83.333%"]);
+  const progressBarWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  useEffect(() => {
+    return scrollYProgress.on("change", (latest) => {
+      const idx = Math.min(
+        elections.length - 1,
+        Math.max(0, Math.round(latest * (elections.length - 1)))
+      );
+      setActiveYearIndex(idx);
+    });
+  }, [scrollYProgress]);
+
+  return (
+    <section ref={containerRef} id="timeline" className="relative h-[500vh]">
+      {/* Contenedor fijo a pantalla completa durante el scroll */}
+      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-between notebook-canvas border-b border-dashed border-neutral-300">
+        {/* Cabecera superior fijada con suficiente padding-top para librar el Nav fijo */}
+        <div className="relative z-20 pt-20 sm:pt-24 px-4 sm:px-8 md:px-14 flex items-center justify-between border-b border-dashed border-neutral-300/80 pb-3 bg-[#FAF8F5]/90 backdrop-blur-xs">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="urgent-tag text-[10px]">
+                LÍNEA DEL TIEMPO
+              </span>
+              <span className="font-mono text-xs text-[#DC2626] font-bold">
+                2009 — 2024
+              </span>
+            </div>
+            <h2 className="font-poster text-2xl sm:text-4xl text-[#141312] uppercase tracking-wide mt-1">
+              SEIS ELECCIONES EN EL TIEMPO
+            </h2>
+          </div>
+
+          <div className="text-right hidden sm:block font-mono text-xs text-[#6B7280]">
+            <span>DESPLAZA HACIA ABAJO PARA NAVEGAR EL CRONOGRAMA LATERAL ↓</span>
+          </div>
+        </div>
+
+        {/* Barra de progreso de lectura horizontal superior */}
+        <div className="relative z-20 w-full h-1 bg-neutral-200">
+          <motion.div
+            style={{ width: progressBarWidth }}
+            className="h-full bg-[#DC2626]"
+          />
+        </div>
+
+        {/* Pista horizontal con las 6 elecciones */}
+        <div className="flex-1 flex items-center overflow-hidden">
+          <motion.div
+            style={{ x, width: `${elections.length * 100}vw` }}
+            className="flex h-full items-center"
+          >
+            {elections.map((election, index) => (
+              <ElectionSlide
+                key={election.year}
+                election={election}
+                index={index}
+                total={elections.length}
+                scrollYProgress={scrollYProgress}
+              />
+            ))}
           </motion.div>
-        </AnimatePresence>
+        </div>
+
+        {/* Barra inferior de navegación interactiva por años */}
+        <div className="relative z-20 pb-5 pt-3 px-4 sm:px-8 md:px-14 bg-[#FAF8F5]/95 backdrop-blur-xs border-t border-dashed border-neutral-300">
+          <div className="max-w-5xl mx-auto flex items-center justify-between gap-2">
+            {elections.map((election, i) => {
+              const isActive = activeYearIndex === i;
+              return (
+                <button
+                  key={election.year}
+                  onClick={() => {
+                    if (!containerRef.current) return;
+                    const top = containerRef.current.offsetTop;
+                    const height = containerRef.current.offsetHeight;
+                    const vh = window.innerHeight;
+                    const target = top + (i / (elections.length - 1)) * (height - vh);
+                    window.scrollTo({ top: target, behavior: "smooth" });
+                  }}
+                  className={`group flex-1 flex flex-col items-center py-1 px-1 rounded-xs transition-all cursor-pointer ${
+                    isActive ? "bg-white border border-[#DC2626] shadow-xs" : "hover:bg-neutral-100"
+                  }`}
+                  aria-label={`Ir al año ${election.year}`}
+                >
+                  <div
+                    className={`w-full h-1.5 rounded-full overflow-hidden mb-1 transition-colors ${
+                      isActive ? "bg-[#DC2626]" : "bg-neutral-300 group-hover:bg-neutral-400"
+                    }`}
+                  />
+                  <span
+                    className={`font-poster text-sm sm:text-base leading-none transition-colors ${
+                      isActive ? "text-[#DC2626]" : "text-[#141312] group-hover:text-[#DC2626]"
+                    }`}
+                  >
+                    {election.year}
+                  </span>
+                  <span className="text-[10px] font-mono text-[#6B7280] uppercase hidden sm:block pt-0.5">
+                    {election.milestone}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

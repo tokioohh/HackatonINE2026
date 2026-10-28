@@ -5,7 +5,7 @@ import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { PostItNote, SpiralPaperCard } from "@/components/ui/NotebookPaper";
 import { ComparisonChart } from "@/components/charts/ComparisonChart";
-import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
+import { ScotchTape } from "@/components/ui/DoodleStickers";
 import { ImpactQuote } from "@/components/ui/ImpactQuote";
 import { participationByAge } from "@/lib/data";
 
@@ -32,11 +32,10 @@ export function ActTwo() {
               ACTO II // PRESIDENCIALES 2012 · 2018 · 2024
             </span>
             <span className="font-mono text-xs uppercase text-[#1D4ED8] tracking-widest font-bold">
-              ★ EL ESPEJISMO DE LA PARTICIPACIÓN
+              ★ CICLOS ELECTORALES CONCURRENTES
             </span>
           </div>
 
-          {/* Dos renglones independientes para estabilidad */}
           <div className="flex flex-col gap-1 sm:gap-2 mb-4">
             <div className="flex items-center justify-start w-full min-h-[40px] sm:min-h-[56px]">
               <TypewriterText
@@ -50,7 +49,7 @@ export function ActTwo() {
           </div>
 
           <p className="font-serif text-xl sm:text-2xl text-[#4B5563] max-w-3xl italic mt-2">
-            El tipo de elección mueve las cifras generales, pero la distancia entre las juventudes y los adultos mayores permanece casi inamovible.
+            El tipo de elección mueve las cifras; la distancia entre grupos, no tanto.
           </p>
         </motion.div>
 
@@ -69,43 +68,40 @@ export function ActTwo() {
             <div className="relative aspect-[16/9] overflow-hidden bg-neutral-900 border border-neutral-200">
               <img
                 src="/images/votacion-elecciones-federales-de-mexico-de-2018.jpg"
-                alt="Afluencia de votantes en casilla electoral, México 2018"
+                alt="Casilla electoral durante las elecciones federales de México 2018"
                 className="w-full h-full object-cover filter contrast-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-4 right-4 text-white text-xs font-mono drop-shadow-md">
-                Casilla electoral durante las elecciones federales de México 2018 · Foto: ProtoplasmaKid (CC BY-SA 4.0)
+                Casilla electoral durante las elecciones federales de México, 2018 · Foto: ProtoplasmaKid (CC BY-SA 4.0)
               </div>
             </div>
 
             <div className="mt-3 flex justify-between items-center text-[11px] font-mono text-[#6B7280]">
               <span className="uppercase font-bold text-[#141312]">
-                REGISTRO HISTÓRICO: ELECCIÓN PRESIDENCIAL 2018
+                ARCHIVO CENSAL: ELECCIÓN PRESIDENCIAL 2018
               </span>
-              <span>CCPC · 56 MILLONES DE VOTANTES</span>
+              <span>CCPC · REGISTRO CENSAL NACIONAL</span>
             </div>
           </div>
         </motion.div>
 
         {/* ═══ DOS COLUMNAS: TEXTO ARGUMENTAL + COMPARISON CHART ═══ */}
         <div className="grid lg:grid-cols-12 gap-10 items-start mb-16">
-          {/* Columna Izquierda: Crónica de dev */}
+          {/* Columna Izquierda: Crónica textual exacta de dev */}
           <div className="lg:col-span-6 space-y-6">
             <PostItNote color="yellow" tilt="rotate-[-1deg]" className="w-full">
-              <span className="font-mono text-xs font-bold uppercase text-[#1D4ED8] block mb-1">
-                EL PATRÓN DE LAS PRESIDENCIALES
-              </span>
               <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                En las elecciones presidenciales la afluencia sube para todos los grupos de edad. En <strong>2012</strong> los jóvenes alcanzaron su máximo histórico (<strong>55.6%</strong>). En <strong>2018</strong> llegaron al <strong>51%</strong>. En <strong>2024</strong>, bajó al <strong>47.1%</strong>.
+                En las elecciones presidenciales la participación sube para todos los grupos de edad. En <strong>2012</strong> los jóvenes alcanzaron su máximo: <strong>55.6%</strong>. En <strong>2018</strong> llegaron al <strong>51%</strong>. En <strong>2024</strong>, al <strong>47%</strong>.
               </p>
             </PostItNote>
 
             <div className="bg-white/80 p-6 border border-neutral-300 shadow-sm space-y-4">
               <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
-                El patrón se repite en cada proceso presidencial: todos votan más cuando está en juego la titularidad del Ejecutivo, pero <strong className="text-[#DC2626]">la brecha entre jóvenes y adultos mayores se mantiene en torno a 14 puntos porcentuales</strong>.
+                El patrón se repite en cada presidencial: todos votan más, pero <strong className="text-[#DC2626]">la brecha entre jóvenes y adultos mayores se mantiene en torno a 14 puntos porcentuales</strong>.
               </p>
               <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
-                La tecnología y los nuevos canales no rompieron esa inercia estructural. El tipo de elección mueve las cifras generales hacia arriba o hacia abajo, pero la distancia relativa entre edades se mantiene firme.
+                El tipo de elección mueve las cifras; la distancia entre grupos, no tanto.
               </p>
 
               <div className="pt-3 border-t border-dashed border-neutral-300 flex justify-between items-center text-xs font-mono">
@@ -121,7 +117,7 @@ export function ActTwo() {
               <div className="flex justify-between items-center mb-4 pb-2 border-b border-dashed border-neutral-300">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-wider text-[#1D4ED8] font-bold block">
-                    ★ ANÁLISIS DE EVOLUCIÓN CENSAL
+                    ★ COMPARATIVA CENSAL
                   </span>
                   <h4 className="font-poster text-2xl sm:text-3xl text-[#141312]">
                     CÓMO CAMBIÓ LA PARTICIPACIÓN
@@ -132,15 +128,11 @@ export function ActTwo() {
                 </span>
               </div>
 
-              <p className="font-sans text-xs sm:text-sm text-[#4B5563] mb-6">
-                Comparativa por grupo de edad entre el pico juvenil de 2012 y la elección de 2024:
-              </p>
-
               <ComparisonChart
                 before={data2012}
                 after={data2024}
-                beforeLabel="2012 (Máximo #YoSoy132)"
-                afterLabel="2024 (Presidencial)"
+                beforeLabel="2012"
+                afterLabel="2024"
               />
             </SpiralPaperCard>
           </div>
@@ -148,8 +140,8 @@ export function ActTwo() {
 
         {/* Cita de Cierre de Acto */}
         <ImpactQuote
-          quote="El tipo de elección mueve las cifras globales; la distancia entre generaciones, no tanto. Catorce puntos porcentuales separan sistemáticamente a los jóvenes de los adultos mayores."
-          author="CCPC INE — Diagnóstico Histórico 2009–2024"
+          quote="El tipo de elección mueve las cifras; la distancia entre grupos, no tanto."
+          author="CCPC INE — Diagnóstico Presidencial 2012–2024"
           color="white"
           tilt="rotate-[-0.5deg]"
           className="w-full"

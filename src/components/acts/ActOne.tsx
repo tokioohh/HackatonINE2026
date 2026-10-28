@@ -5,7 +5,7 @@ import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { PostItNote, SpiralPaperCard } from "@/components/ui/NotebookPaper";
 import { HandDrawnBarChart } from "@/components/charts/HandDrawnBarChart";
-import { ScotchTape, DoodleUnderline } from "@/components/ui/DoodleStickers";
+import { ScotchTape } from "@/components/ui/DoodleStickers";
 import { ImpactQuote } from "@/components/ui/ImpactQuote";
 import { participationByAge } from "@/lib/data";
 
@@ -28,14 +28,13 @@ export function ActOne() {
         >
           <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
             <span className="urgent-tag">
-              ACTO I // 2009: EL PUNTO DE PARTIDA
+              ACTO I // 2009
             </span>
             <span className="font-mono text-xs uppercase text-[#DC2626] tracking-widest font-bold">
-              ★ ELECCIÓN INTERMEDIA · CAMPAÑAS TRADICIONALES
+              ★ ELECCIÓN INTERMEDIA · EL PUNTO DE PARTIDA
             </span>
           </div>
 
-          {/* Dos renglones independientes para estabilidad */}
           <div className="flex flex-col gap-1 sm:gap-2 mb-4">
             <div className="flex items-center justify-start w-full min-h-[40px] sm:min-h-[56px]">
               <TypewriterText
@@ -53,7 +52,7 @@ export function ActOne() {
           </p>
         </motion.div>
 
-        {/* ═══ FOTO DOCUMENTAL PERIODÍSTICA PEGADA CON CINTA ═══ */}
+        {/* ═══ FOTO DOCUMENTAL PERIODÍSTICA: CASILLA ELECTORAL ═══ */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +78,7 @@ export function ActOne() {
 
             <div className="mt-3 flex justify-between items-center text-[11px] font-mono text-[#6B7280]">
               <span className="uppercase font-bold text-[#141312]">
-                ARCHIVO HISTÓRICO: ELECCIONES FEDERALES 2009
+                ARCHIVO CENSAL: ELECCIÓN INTERMEDIA 2009
               </span>
               <span>CCPC · REGISTRO CENSAL NACIONAL</span>
             </div>
@@ -88,27 +87,24 @@ export function ActOne() {
 
         {/* ═══ DOS COLUMNAS: TEXTO NARRATIVO + GRÁFICA DE BARRAS ═══ */}
         <div className="grid lg:grid-cols-12 gap-10 items-start mb-16">
-          {/* Columna Izquierda: Crónica de 2009 de dev */}
+          {/* Columna Izquierda: Crónica textual exacta de dev */}
           <div className="lg:col-span-6 space-y-6">
             <PostItNote color="yellow" tilt="rotate-[-1deg]" className="w-full">
-              <span className="font-mono text-xs font-bold uppercase text-[#DC2626] block mb-1">
-                CRÓNICA CENSAL 2009
-              </span>
               <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                2009 fue una elección intermedia. Las campañas eran carteles pegados en las bardas y anuncios en la televisión a las ocho de la noche. La participación general fue baja (<strong>43%</strong>) y la de los jóvenes de 18 a 24 años fue aún menor: apenas <strong>36.3%</strong>.
+                2009. Elección intermedia. Las campañas eran carteles pegados en las bardas y anuncios en la tele a las ocho de la noche. La participación general fue baja — <strong>43%</strong> — y la de los jóvenes de 18 a 24 fue aún menor.
               </p>
             </PostItNote>
 
             <div className="bg-white/80 p-6 border border-neutral-300 shadow-sm space-y-4">
               <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
-                De cada 10 jóvenes inscritos para votar, solo <strong className="text-[#DC2626]">4 fueron a la casilla</strong>. Pero no era un problema exclusivo de los jóvenes: el grupo de 25–34 años participó casi igual (35.2%).
+                De cada 10 jóvenes inscritos para votar, solo <strong className="text-[#DC2626]">4 fueron a la casilla</strong>. Pero no era un problema exclusivo de los jóvenes: el grupo de 25–34 participó casi igual (35%). La brecha real estaba con los mayores de 45, que superaban el 50%.
               </p>
               <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
-                La brecha real estaba con los mayores de 45 años, que superaban el 51%. La desafección juvenil mexicana no nació en Silicon Valley: ya estaba profundamente instalada en la estructura política antes de que los smartphones existieran.
+                La brecha entre jóvenes y adultos mayores ya existía antes de las redes sociales, antes de los memes y antes de TikTok. Es el punto de partida de esta historia.
               </p>
 
               {/* Anotación manuscrita al margen */}
-              <div className="pt-2 border-t border-dashed border-neutral-300">
+              <div className="pt-3 border-t border-dashed border-neutral-300">
                 <p className="font-serif italic text-base sm:text-lg text-[#DC2626] font-normal">
                   &ldquo;La brecha no empezó después. Ya estaba ahí antes de que alguien la nombrara.&rdquo;
                 </p>
@@ -133,18 +129,14 @@ export function ActOne() {
                 </span>
               </div>
 
-              <p className="font-sans text-xs sm:text-sm text-[#4B5563] mb-6">
-                Participación porcentual de la lista nominal por grupo de edad:
-              </p>
-
               <HandDrawnBarChart data={data2009} highlightGroup="18-24" year={2009} />
             </SpiralPaperCard>
           </div>
         </div>
 
-        {/* Cita de Impacto de Cierre de Acto */}
+        {/* Dato de Impacto */}
         <ImpactQuote
-          quote="Participación juvenil 2009: 36.3%. La tasa más baja de todos los grupos censales. El punto de partida de 15 años de historia."
+          quote="Participación juvenil 2009: 36.3% — La más baja de todos los grupos de edad."
           author="INE — Conteos Censales de Participación Ciudadana"
           color="white"
           tilt="rotate-[-0.5deg]"

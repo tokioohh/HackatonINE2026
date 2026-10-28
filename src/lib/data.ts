@@ -46,45 +46,45 @@ export const MILESTONES: Record<
 > = {
   2009: {
     type: "Intermedia",
-    milestone: "El Silencio de las Bardas",
+    milestone: "Intermedia",
     milestoneDetail:
-      "Elección intermedia con baja participación general (43%). Solo 36% de los jóvenes inscritos votó. Las campañas se libraban en mítines y spots de TV; solo 27% tenía internet en casa.",
-    platformSummary: "Mítines y TV",
+      "Elección intermedia con baja participación general (43%). Solo 36% de los jóvenes inscritos votó — pero la diferencia con otros grupos ya era visible. La brecha no empezó después.",
+    platformSummary: "Elección Intermedia",
   },
   2012: {
     type: "Presidencial",
-    milestone: "El Despertar: #YoSoy132",
+    milestone: "Presidencial",
     milestoneDetail:
-      "La participación juvenil alcanzó su pico histórico: 55.6%. 131 estudiantes con credenciales encendieron la cámara y las redes sociales convocaron marchas de 100,000 personas en Paseo de la Reforma.",
-    platformSummary: "Twitter y YouTube",
+      "La participación subió en todos los grupos de edad. Los jóvenes alcanzaron su máximo en la serie: 55.6%. Coincidió con alta movilización política, pero los datos no miden qué la causó.",
+    platformSummary: "Elección Presidencial",
   },
   2015: {
     type: "Intermedia",
-    milestone: "El Ciclo y la Resaca",
+    milestone: "Intermedia",
     milestoneDetail:
-      "Como en toda intermedia, la afluencia cayó para todos los grupos. El 35.7% juvenil fue casi idéntico a 2009. Comienza la migración a grupos cerrados de mensajería y fake news.",
-    platformSummary: "WhatsApp inicial",
+      "Como en toda elección intermedia, la participación cayó para todos los grupos, no solo para los jóvenes. El 35.7% juvenil fue similar al de 2009. El patrón presidencial-intermedia se repite.",
+    platformSummary: "Elección Intermedia",
   },
   2018: {
     type: "Presidencial",
-    milestone: "El Clímax de la Red",
+    milestone: "Presidencial",
     milestoneDetail:
-      "Récord de 56 millones de votos totales. Los jóvenes alcanzaron 51% de participación, pero la brecha con adultos mayores (74%) se mantuvo constante en 14 puntos.",
-    platformSummary: "Smartphones masivos",
+      "Otra elección presidencial, otra subida general. Los jóvenes llegaron al 51%, pero no alcanzaron el nivel de 2012. La brecha con los mayores de 45 se mantuvo en 14 puntos.",
+    platformSummary: "Elección Presidencial",
   },
   2021: {
     type: "Intermedia",
-    milestone: "Pandemia y Fatiga Digital",
+    milestone: "Intermedia",
     milestoneDetail:
-      "Elección en pandemia. Participación general de 51.8% y juvenil de 42%. El consumo de redes se satura con formatos ultracortos, pero la desconexión con las instituciones se acentúa.",
-    platformSummary: "Auge de TikTok",
+      "Elección intermedia en contexto de pandemia. La participación general fue del 50% y la juvenil del 42%. Tercera vez consecutiva que la intermedia baja respecto a la presidencial anterior.",
+    platformSummary: "Elección Intermedia",
   },
   2024: {
     type: "Presidencial",
-    milestone: "La Paradoja de la Desconexión",
+    milestone: "Presidencial",
     milestoneDetail:
-      "México eligió a su primera presidenta. 97% de los jóvenes cuenta con internet, pero la participación juvenil fue de 47.1%: solo 13 de cada 100 votos provinieron de 18 a 24 años.",
-    platformSummary: "Conectividad total",
+      "México eligió a su primera presidenta. La participación juvenil fue del 47% — mayor que en 2009, 2015 y 2021, pero menor que en 2012 y 2018. La brecha con otros grupos persiste.",
+    platformSummary: "Elección Presidencial",
   },
 };
 

@@ -31,11 +31,17 @@ setTimeout(() => {
           ws.send(JSON.stringify({ id, method: m, params: p }));
         });
       }
+      await send('Runtime.enable');
+      await send('Page.enable');
+      await send('Page.navigate', { url: 'http://localhost:3000' });
+      await new Promise(r => setTimeout(r, 3000));
       const res = await send('Runtime.evaluate', {
-        expression: 'Array.from(document.querySelectorAll("section, footer")).map(s => ({ tag: s.tagName, id: s.id, offsetTop: s.offsetTop, height: s.offsetHeight }))',
+        expression: 'Array.from(document.querySelectorAll("section, footer, [id]")).filter(s => s.id).map(s => ({ tag: s.tagName, id: s.id, offsetTop: s.offsetTop, height: s.offsetHeight }))',
         returnByValue: true
       });
-      console.log('Sections:', JSON.stringify(res.result.value, null, 2));
+      console.log('Sections with IDs:', JSON.stringify(res.result.value, null, 2));
+      chrome.kill();
+      process.exit(0);
       chrome.kill();
       process.exit(0);
     });
