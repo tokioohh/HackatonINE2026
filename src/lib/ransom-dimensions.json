@@ -1,0 +1,212 @@
+{
+  "0": {
+    "width": 246,
+    "height": 240,
+    "aspectRatio": 1.025
+  },
+  "1": {
+    "width": 152,
+    "height": 240,
+    "aspectRatio": 0.6333
+  },
+  "2": {
+    "width": 216,
+    "height": 240,
+    "aspectRatio": 0.9
+  },
+  "3": {
+    "width": 250,
+    "height": 240,
+    "aspectRatio": 1.0417
+  },
+  "4": {
+    "width": 220,
+    "height": 240,
+    "aspectRatio": 0.9167
+  },
+  "5": {
+    "width": 226,
+    "height": 240,
+    "aspectRatio": 0.9417
+  },
+  "6": {
+    "width": 208,
+    "height": 240,
+    "aspectRatio": 0.8667
+  },
+  "7": {
+    "width": 224,
+    "height": 240,
+    "aspectRatio": 0.9333
+  },
+  "8": {
+    "width": 250,
+    "height": 240,
+    "aspectRatio": 1.0417
+  },
+  "9": {
+    "width": 230,
+    "height": 240,
+    "aspectRatio": 0.9583
+  },
+  "A": {
+    "width": 214,
+    "height": 240,
+    "aspectRatio": 0.8917
+  },
+  "B": {
+    "width": 218,
+    "height": 240,
+    "aspectRatio": 0.9083
+  },
+  "C": {
+    "width": 216,
+    "height": 240,
+    "aspectRatio": 0.9
+  },
+  "D": {
+    "width": 228,
+    "height": 240,
+    "aspectRatio": 0.95
+  },
+  "E": {
+    "width": 214,
+    "height": 240,
+    "aspectRatio": 0.8917
+  },
+  "F": {
+    "width": 224,
+    "height": 240,
+    "aspectRatio": 0.9333
+  },
+  "G": {
+    "width": 218,
+    "height": 240,
+    "aspectRatio": 0.9083
+  },
+  "H": {
+    "width": 222,
+    "height": 240,
+    "aspectRatio": 0.925
+  },
+  "I": {
+    "width": 126,
+    "height": 240,
+    "aspectRatio": 0.525
+  },
+  "J": {
+    "width": 232,
+    "height": 240,
+    "aspectRatio": 0.9667
+  },
+  "K": {
+    "width": 218,
+    "height": 240,
+    "aspectRatio": 0.9083
+  },
+  "L": {
+    "width": 220,
+    "height": 240,
+    "aspectRatio": 0.9167
+  },
+  "M": {
+    "width": 320,
+    "height": 240,
+    "aspectRatio": 1.3333
+  },
+  "N": {
+    "width": 216,
+    "height": 240,
+    "aspectRatio": 0.9
+  },
+  "O": {
+    "width": 234,
+    "height": 240,
+    "aspectRatio": 0.975
+  },
+  "P": {
+    "width": 222,
+    "height": 240,
+    "aspectRatio": 0.925
+  },
+  "Q": {
+    "width": 236,
+    "height": 240,
+    "aspectRatio": 0.9833
+  },
+  "R": {
+    "width": 222,
+    "height": 240,
+    "aspectRatio": 0.925
+  },
+  "S": {
+    "width": 210,
+    "height": 240,
+    "aspectRatio": 0.875
+  },
+  "T": {
+    "width": 220,
+    "height": 240,
+    "aspectRatio": 0.9167
+  },
+  "U": {
+    "width": 238,
+    "height": 240,
+    "aspectRatio": 0.9917
+  },
+  "V": {
+    "width": 244,
+    "height": 240,
+    "aspectRatio": 1.0167
+  },
+  "W": {
+    "width": 322,
+    "height": 240,
+    "aspectRatio": 1.3417
+  },
+  "X": {
+    "width": 230,
+    "height": 240,
+    "aspectRatio": 0.9583
+  },
+  "Y": {
+    "width": 232,
+    "height": 240,
+    "aspectRatio": 0.9667
+  },
+  "Z": {
+    "width": 236,
+    "height": 240,
+    "aspectRatio": 0.9833
+  },
+  "Á": {
+    "width": 214,
+    "height": 240,
+    "aspectRatio": 0.8917
+  },
+  "É": {
+    "width": 214,
+    "height": 240,
+    "aspectRatio": 0.8917
+  },
+  "Í": {
+    "width": 126,
+    "height": 240,
+    "aspectRatio": 0.525
+  },
+  "Ó": {
+    "width": 234,
+    "height": 240,
+    "aspectRatio": 0.975
+  },
+  "Ú": {
+    "width": 238,
+    "height": 240,
+    "aspectRatio": 0.9917
+  },
+  "Ñ": {
+    "width": 216,
+    "height": 240,
+    "aspectRatio": 0.9
+  }
+}
