@@ -1,275 +1,155 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { TIMELINE_MILESTONES } from "@/lib/data";
+import { motion } from "framer-motion";
 import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterText } from "@/components/ui/TypewriterText";
-import { SpiralPaperCard, PostItNote, TornPaperScrap } from "@/components/ui/NotebookPaper";
+import { PostItNote, SpiralPaperCard } from "@/components/ui/NotebookPaper";
+import { ComparisonChart } from "@/components/charts/ComparisonChart";
+import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
 import { ImpactQuote } from "@/components/ui/ImpactQuote";
-import {
-  DoodleCircle,
-  DoodleArrow,
-  DoodleUnderline,
-  ScotchTape,
-} from "@/components/ui/DoodleStickers";
-import { Megaphone, Smartphone, TrendingUp, Sparkles } from "lucide-react";
+import { participationByAge } from "@/lib/data";
 
 export function ActTwo() {
-  const [selectedMilestone, setSelectedMilestone] = useState(TIMELINE_MILESTONES[2]); // #YoSoy132
+  const data2012 = participationByAge.find((d) => d.year === 2012)!;
+  const data2024 = participationByAge.find((d) => d.year === 2024)!;
 
   return (
     <section
       id="acto-2"
-      className="relative min-h-screen py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden"
+      className="relative min-h-screen py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden border-b border-dashed border-neutral-300"
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Cabecera de Acto */}
         <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
           className="mb-14 border-b border-dashed border-neutral-300 pb-6"
         >
           <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
             <span className="urgent-tag">
-              ACTO II // 2012–2018: LA MOVILIZACIÓN
+              ACTO II // PRESIDENCIALES 2012 · 2018 · 2024
             </span>
             <span className="font-mono text-xs uppercase text-[#1D4ED8] tracking-widest font-bold">
-              ★ EL ESPEJISMO DE LA HIPERPARTICIPACIÓN
+              ★ EL ESPEJISMO DE LA PARTICIPACIÓN
             </span>
           </div>
 
-          {/* Dos renglones estables e independientes para que el typewriter no empuje el Ransom Note */}
+          {/* Dos renglones independientes para estabilidad */}
           <div className="flex flex-col gap-1 sm:gap-2 mb-4">
             <div className="flex items-center justify-start w-full min-h-[40px] sm:min-h-[56px]">
               <TypewriterText
-                text="LA CALLE Y LA"
+                text="EL CICLO Y"
                 className="text-3xl sm:text-5xl md:text-6xl text-[#141312] leading-none uppercase font-bold tracking-wide"
               />
             </div>
             <div className="flex items-center justify-start w-full pt-1">
-              <RansomNoteTitle text="PANTALLA" size="lg" />
+              <RansomNoteTitle text="EL VAIVÉN" size="lg" />
             </div>
           </div>
 
           <p className="font-serif text-xl sm:text-2xl text-[#4B5563] max-w-3xl italic mt-2">
-            131 universitarios encendieron la cámara de sus teléfonos. De pronto, la red social no era un pasatiempo: era la herramienta que convocaba marchas de 100,000 personas.
+            El tipo de elección mueve las cifras generales, pero la distancia entre las juventudes y los adultos mayores permanece casi inamovible.
           </p>
         </motion.div>
 
-        {/* 3 Columnas convertidas a Post-Its y pedazos de papel arrancados con cinta */}
+        {/* ═══ FOTO DOCUMENTAL PERIODÍSTICA: CASILLA 2018 ═══ */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="grid md:grid-cols-3 gap-8 mb-16 border-b border-dashed border-neutral-300 pb-12"
+          transition={{ duration: 0.8 }}
+          className="mb-16"
         >
-          {/* Columna 1: Primerizos 2012 (Post-it amarillo) */}
-          <PostItNote color="yellow" tilt="rotate-[-2deg]" className="w-full">
-            <div className="flex justify-between items-center mb-1">
-              <span className="flex items-center gap-1.5 text-[#DC2626] font-mono text-xs font-bold">
-                <Megaphone className="w-3.5 h-3.5" />
-                <span>PRIMERIZOS (18-19 AÑOS)</span>
-              </span>
-              <span className="text-[10px] font-mono text-[#4B5563] font-bold">2012</span>
-            </div>
-            <div className="font-poster text-5xl sm:text-6xl text-[#DC2626] leading-none my-2">
-              <DoodleCircle color="#DC2626">
-                <span>6</span>
-              </DoodleCircle>{" "}
-              <span className="text-2xl sm:text-3xl text-[#141312]">DE 10</span>
-            </div>
-            <p className="font-typewriter text-xs sm:text-sm text-[#141312] leading-relaxed pt-1">
-              Más de <strong className="highlighter-yellow text-black font-bold">4.2 millones de jóvenes</strong> estrenaron su credencial para votar. El pico cívico más alto registrado tras el movimiento #YoSoy132.
-            </p>
-            <div className="mt-3 pt-2 border-t border-black/15 text-[9px] font-mono text-[#4B5563]">
-              CCPC: 56.1% participación efectiva
-            </div>
-          </PostItNote>
+          <div className="relative max-w-4xl mx-auto bg-white p-3 sm:p-5 border border-neutral-300 shadow-[4px_8px_20px_rgba(0,0,0,0.15)] rotate-[0.4deg]">
+            <ScotchTape className="-top-3 left-12 w-28 h-6" tilt="2deg" />
+            <ScotchTape className="-top-3 right-12 w-28 h-6" tilt="-3deg" />
 
-          {/* Columna 2: Elección 2018 (Papel arrancado de libreta) */}
-          <TornPaperScrap tilt="rotate-[1.5deg]" tapePosition="top" className="w-full">
-            <div className="flex justify-between items-center mb-1">
-              <span className="flex items-center gap-1.5 text-[#141312] font-mono text-xs font-bold">
-                <TrendingUp className="w-3.5 h-3.5 text-[#1D4ED8]" />
-                <span>RÉCORD HISTÓRICO</span>
-              </span>
-              <span className="text-[10px] font-mono text-[#4B5563] font-bold">2018</span>
+            <div className="relative aspect-[16/9] overflow-hidden bg-neutral-900 border border-neutral-200">
+              <img
+                src="/images/votacion-elecciones-federales-de-mexico-de-2018.jpg"
+                alt="Afluencia de votantes en casilla electoral, México 2018"
+                className="w-full h-full object-cover filter contrast-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-3 left-4 right-4 text-white text-xs font-mono drop-shadow-md">
+                Casilla electoral durante las elecciones federales de México 2018 · Foto: ProtoplasmaKid (CC BY-SA 4.0)
+              </div>
             </div>
-            <div className="font-poster text-5xl sm:text-6xl text-[#141312] leading-none my-2">
-              56 <span className="text-2xl sm:text-3xl text-[#1D4ED8]">MILLONES</span>
-            </div>
-            <p className="font-typewriter text-xs sm:text-sm text-[#141312] leading-relaxed pt-1">
-              La mayor marea cívica contabilizada en México. Las redes sociales y las juventudes universitarias marcaron el ritmo de la conversación nacional.
-            </p>
-            <div className="mt-3 pt-2 border-t border-[#141312]/15 text-[9px] font-mono text-[#4B5563]">
-              CCPC: 62.4% afluencia nacional
-            </div>
-          </TornPaperScrap>
 
-          {/* Columna 3: La Mudanza al Smartphone (Post-it rosa / fanzine) */}
-          <PostItNote color="pink" tilt="rotate-[-1deg]" className="w-full">
-            <div className="flex justify-between items-center mb-1">
-              <span className="flex items-center gap-1.5 text-[#141312] font-mono text-xs font-bold">
-                <Smartphone className="w-3.5 h-3.5 text-[#D97706]" />
-                <span>CIUDADANÍA EN EL BOLSILLO</span>
+            <div className="mt-3 flex justify-between items-center text-[11px] font-mono text-[#6B7280]">
+              <span className="uppercase font-bold text-[#141312]">
+                REGISTRO HISTÓRICO: ELECCIÓN PRESIDENCIAL 2018
               </span>
-              <span className="text-[10px] font-mono text-[#4B5563] font-bold">REDES</span>
+              <span>CCPC · 56 MILLONES DE VOTANTES</span>
             </div>
-            <div className="font-poster text-5xl sm:text-6xl text-[#141312] leading-none my-2">
-              80 <span className="text-2xl sm:text-3xl text-[#D97706]">MILLONES</span>
-            </div>
-            <p className="font-typewriter text-xs sm:text-sm text-[#141312] leading-relaxed pt-1">
-              Para 2018, 80 millones de mexicanos ya portaban un smartphone. La plaza pública se mudó de Paseo de la Reforma a las pantallas individuales.
-            </p>
-            <div className="mt-3 pt-2 border-t border-black/15 text-[9px] font-mono text-[#4B5563]">
-              IFT / INEGI: 65.8% penetración digital
-            </div>
-          </PostItNote>
+          </div>
         </motion.div>
 
-        {/* Cronología Documental Estilo Libreta de Apuntes */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="border-b border-dashed border-neutral-300 pb-12 mb-12"
-        >
-          <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6 pb-2 border-b border-dashed border-neutral-300">
-            <div>
-              <span className="font-mono text-xs font-bold text-[#DC2626] uppercase tracking-wider block mb-1">
-                ★ ARCHIVO HEMEROGRÁFICO DE PROTESTA
+        {/* ═══ DOS COLUMNAS: TEXTO ARGUMENTAL + COMPARISON CHART ═══ */}
+        <div className="grid lg:grid-cols-12 gap-10 items-start mb-16">
+          {/* Columna Izquierda: Crónica de dev */}
+          <div className="lg:col-span-6 space-y-6">
+            <PostItNote color="yellow" tilt="rotate-[-1deg]" className="w-full">
+              <span className="font-mono text-xs font-bold uppercase text-[#1D4ED8] block mb-1">
+                EL PATRÓN DE LAS PRESIDENCIALES
               </span>
-              <h3 className="font-poster text-3xl sm:text-4xl text-[#141312]">
-                HITOS DE LA DEMOCRACIA DIGITAL MEXICANA
-              </h3>
+              <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
+                En las elecciones presidenciales la afluencia sube para todos los grupos de edad. En <strong>2012</strong> los jóvenes alcanzaron su máximo histórico (<strong>55.6%</strong>). En <strong>2018</strong> llegaron al <strong>51%</strong>. En <strong>2024</strong>, bajó al <strong>47.1%</strong>.
+              </p>
+            </PostItNote>
+
+            <div className="bg-white/80 p-6 border border-neutral-300 shadow-sm space-y-4">
+              <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
+                El patrón se repite en cada proceso presidencial: todos votan más cuando está en juego la titularidad del Ejecutivo, pero <strong className="text-[#DC2626]">la brecha entre jóvenes y adultos mayores se mantiene en torno a 14 puntos porcentuales</strong>.
+              </p>
+              <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
+                La tecnología y los nuevos canales no rompieron esa inercia estructural. El tipo de elección mueve las cifras generales hacia arriba o hacia abajo, pero la distancia relativa entre edades se mantiene firme.
+              </p>
+
+              <div className="pt-3 border-t border-dashed border-neutral-300 flex justify-between items-center text-xs font-mono">
+                <span className="font-bold text-[#141312]">BRECHA GENERACIONAL:</span>
+                <span className="font-bold text-[#DC2626]">~14 PUNTOS CONSTANTES</span>
+              </div>
             </div>
-            <span className="text-xs font-mono text-[#4B5563] uppercase font-bold">
-              SELECCIONA UN EVENTO ↓
-            </span>
           </div>
 
-          {/* Botones de eventos tipo Post-Its de distintos colores con cinta adhesiva */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4 mb-8">
-            {TIMELINE_MILESTONES.map((item, idx) => {
-              const active = selectedMilestone.title === item.title;
-              const postItStyles = [
-                { bg: "bg-[#FEF08A]", text: "text-[#713F12]", border: "border-[#EAB308]/50", shadow: "shadow-[#EAB308]/20", defaultTilt: "-rotate-2" },
-                { bg: "bg-[#BAE6FD]", text: "text-[#0369A1]", border: "border-[#38BDF8]/50", shadow: "shadow-[#38BDF8]/20", defaultTilt: "rotate-1" },
-                { bg: "bg-[#FDE047]", text: "text-[#854D0E]", border: "border-[#CA8A04]/50", shadow: "shadow-[#CA8A04]/20", defaultTilt: "-rotate-1" },
-                { bg: "bg-[#BBF7D0]", text: "text-[#166534]", border: "border-[#4ADE80]/50", shadow: "shadow-[#4ADE80]/20", defaultTilt: "rotate-2" },
-                { bg: "bg-[#FBCFE8]", text: "text-[#9D174D]", border: "border-[#F472B6]/50", shadow: "shadow-[#F472B6]/20", defaultTilt: "-rotate-2" },
-                { bg: "bg-[#FED7AA]", text: "text-[#9A3412]", border: "border-[#FB923C]/50", shadow: "shadow-[#FB923C]/20", defaultTilt: "rotate-1.5" },
-                { bg: "bg-[#E9D5FF]", text: "text-[#6B21A8]", border: "border-[#C084FC]/50", shadow: "shadow-[#C084FC]/20", defaultTilt: "-rotate-1.5" },
-                { bg: "bg-[#FECDD3]", text: "text-[#9F1239]", border: "border-[#FB7185]/50", shadow: "shadow-[#FB7185]/20", defaultTilt: "rotate-2" },
-              ][idx % 8];
-
-              return (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedMilestone(item)}
-                  aria-pressed={active}
-                  className={`group relative p-3 sm:p-3.5 text-left transition-all duration-200 cursor-pointer rounded-xs border ${
-                    postItStyles.bg
-                  } ${postItStyles.text} ${postItStyles.border} ${
-                    active
-                      ? "ring-2 ring-[#DC2626] ring-offset-2 scale-105 rotate-0 z-20 shadow-[4px_8px_16px_rgba(0,0,0,0.2)]"
-                      : `${postItStyles.defaultTilt} hover:rotate-0 hover:scale-105 hover:z-10 shadow-[2px_4px_10px_rgba(0,0,0,0.1)]`
-                  }`}
-                >
-                  {/* Cinta adhesiva semi-transparente en la parte superior del Post-it */}
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-9 h-3.5 bg-white/70 shadow-xs border-l border-r border-dashed border-gray-400/50 backdrop-blur-xs pointer-events-none" />
-
-                  {/* Indicador de activo */}
-                  {active && (
-                    <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#DC2626] rounded-full border border-white shadow-xs animate-ping" />
-                  )}
-
-                  <div className="flex items-baseline justify-between mb-1">
-                    <span className="font-poster text-xl sm:text-2xl leading-none">
-                      {item.year}
-                    </span>
-                    <span className="text-[9px] font-mono uppercase tracking-wider font-bold opacity-75">
-                      {item.platform}
-                    </span>
-                  </div>
-
-                  <div className="font-typewriter text-[11px] leading-tight line-clamp-2 pt-0.5 opacity-90">
-                    {item.title}
-                  </div>
-
-                  {/* Sombra de despegado en la esquina inferior */}
-                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-gradient-to-tl from-black/15 to-transparent pointer-events-none" />
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Plana Desplegable del Evento dentro de SpiralPaperCard */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedMilestone.title}
-              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <SpiralPaperCard tilt="rotate-[0.3deg]">
-                <div className="flex flex-col md:flex-row justify-between gap-6 items-start">
-                  <div className="max-w-2xl space-y-3">
-                    <div className="flex items-center gap-3 text-xs font-mono">
-                      <span className="text-[#DC2626] font-bold uppercase">
-                        {selectedMilestone.dateStr}
-                      </span>
-                      <span className="text-[#141312]/30">/</span>
-                      <span className="text-[#4B5563] font-bold">
-                        PLATAFORMA: {selectedMilestone.platform}
-                      </span>
-                    </div>
-
-                    <h4 className="font-poster text-3xl sm:text-4xl text-[#141312] uppercase tracking-wide">
-                      {selectedMilestone.title}
-                    </h4>
-
-                    {/* Impact Quote destacado dentro del hito */}
-                    <ImpactQuote
-                      quote={selectedMilestone.subtitle}
-                      author={`Movimiento ${selectedMilestone.year}`}
-                      color="yellow"
-                      tilt="rotate-[0deg]"
-                      className="my-3"
-                    />
-
-                    <p className="font-sans text-sm text-[#141312] leading-relaxed pt-1">
-                      {selectedMilestone.description}
-                    </p>
-                  </div>
-
-                  {selectedMilestone.electionContext && (
-                    <div className="bg-[#FFE66D] border border-neutral-400 p-4 text-xs font-mono text-[#141312] min-w-[260px] self-start shadow-md rotate-1">
-                      <div className="text-[10px] text-[#DC2626] font-black uppercase tracking-wider mb-1 flex items-center gap-1">
-                        <Sparkles className="w-3 h-3 text-[#DC2626]" />
-                        REGISTRO CCPC OFICIAL:
-                      </div>
-                      <div className="font-bold text-sm leading-snug">
-                        {selectedMilestone.electionContext}
-                      </div>
-                    </div>
-                  )}
+          {/* Columna Derecha: Gráfica Comparativa 2012 vs 2024 */}
+          <div className="lg:col-span-6">
+            <SpiralPaperCard tilt="rotate-[0.5deg]">
+              <div className="flex justify-between items-center mb-4 pb-2 border-b border-dashed border-neutral-300">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#1D4ED8] font-bold block">
+                    ★ ANÁLISIS DE EVOLUCIÓN CENSAL
+                  </span>
+                  <h4 className="font-poster text-2xl sm:text-3xl text-[#141312]">
+                    CÓMO CAMBIÓ LA PARTICIPACIÓN
+                  </h4>
                 </div>
-              </SpiralPaperCard>
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
+                <span className="font-mono text-xs text-[#6B7280] font-bold">
+                  2012 vs 2024
+                </span>
+              </div>
 
-        {/* Manifiesto de Transición con ImpactQuote destacado */}
+              <p className="font-sans text-xs sm:text-sm text-[#4B5563] mb-6">
+                Comparativa por grupo de edad entre el pico juvenil de 2012 y la elección de 2024:
+              </p>
+
+              <ComparisonChart
+                before={data2012}
+                after={data2024}
+                beforeLabel="2012 (Máximo #YoSoy132)"
+                afterLabel="2024 (Presidencial)"
+              />
+            </SpiralPaperCard>
+          </div>
+        </div>
+
+        {/* Cita de Cierre de Acto */}
         <ImpactQuote
-          quote="Pero la primavera digital fue breve: lo que empezó como protesta en las calles terminó en algoritmos de desafección y fatiga informativa."
-          author="Crónica del Espejismo Cívico (2012–2024)"
+          quote="El tipo de elección mueve las cifras globales; la distancia entre generaciones, no tanto. Catorce puntos porcentuales separan sistemáticamente a los jóvenes de los adultos mayores."
+          author="CCPC INE — Diagnóstico Histórico 2009–2024"
           color="white"
           tilt="rotate-[-0.5deg]"
           className="w-full"
