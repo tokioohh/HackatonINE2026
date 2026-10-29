@@ -112,14 +112,7 @@ export function MexicoMap() {
           {/* Sutil cinta masking en una esquina como si estuviera pegado en la libreta */}
           <ScotchTape className="-top-2 left-4 w-24 h-5 opacity-75" tilt="-3deg" />
 
-          {/* Doodles en los espacios libres del mapa (Océano Pacífico, Norte y Golfo de México) */}
-          <DoodleStamp
-            src="/doodles/cactus.png"
-            alt="Cactus del norte"
-            width={85}
-            tilt={8}
-            className="absolute top-2 left-28 hidden md:block z-20"
-          />
+          {/* Doodles en los espacios libres del mapa (Océano Pacífico y Golfo de México) */}
           <DoodleStamp
             src="/doodles/INE.png"
             alt="Logotipo INE garabateado"
