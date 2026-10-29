@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ScotchTape, DoodleUnderline } from "@/components/ui/DoodleStickers";
+import { DoodleStamp } from "@/components/ui/ScrollDoodles";
 import { ExternalLink, ArrowUp } from "lucide-react";
 
 const STATEMENTS = [
@@ -16,6 +17,15 @@ export function ConcienciaSection() {
       id="conciencia"
       className="relative py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden"
     >
+      {/* Pirámide prehispánica en el margen superior */}
+      <DoodleStamp
+        src="/doodles/piramide.png"
+        alt="Pirámide mexicana prehispánica"
+        width={130}
+        tilt={-4}
+        className="absolute top-12 left-6 sm:left-14 hidden lg:block"
+      />
+
       {/* Franja Bandera Mexicana sutil en la parte superior */}
       <div className="max-w-4xl mx-auto h-2 flex rounded-full overflow-hidden shadow-xs mb-16">
         <div className="flex-1 bg-[#006847]" />

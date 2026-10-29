@@ -5,6 +5,7 @@ import { ArrowDown } from "lucide-react";
 import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterHeroText } from "@/components/ui/TypewriterHeroText";
 import { ScotchTape, DoodleUnderline } from "@/components/ui/DoodleStickers";
+import { DoodleStamp } from "@/components/ui/ScrollDoodles";
 
 export function HeroSection() {
   return (
@@ -14,6 +15,22 @@ export function HeroSection() {
     >
       {/* Scotch tape en la esquina superior izquierda como en la rama Oskar */}
       <ScotchTape className="top-5 left-6 w-28 sm:w-36 h-7 sm:h-9" tilt="-5deg" />
+
+      {/* Doodles dibujados en los márgenes de la portada */}
+      <DoodleStamp
+        src="/doodles/Sdibujo.png"
+        alt="S escolar"
+        width={75}
+        tilt={10}
+        className="absolute right-6 sm:right-12 md:right-20 top-24 hidden sm:block"
+      />
+      <DoodleStamp
+        src="/doodles/calendarioaz.png"
+        alt="Calendario electoral"
+        width={130}
+        tilt={-5}
+        className="absolute left-4 sm:left-10 md:left-16 bottom-20 hidden md:block"
+      />
 
       {/* Espaciador superior limpio para aire visual */}
       <div className="pt-4" />

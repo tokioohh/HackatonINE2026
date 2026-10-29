@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { getLostVotes, elections } from "@/lib/data";
 import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
+import { DoodleStamp } from "@/components/ui/ScrollDoodles";
 import { Calculator } from "lucide-react";
 
 export function LostVotesEstimate() {
@@ -37,60 +38,82 @@ export function LostVotesEstimate() {
           </h3>
         </motion.div>
 
-        {/* Tarjeta principal estilo libreta / expediente */}
+        {/* Comparativa liberada sin caja contenedora exterior: directo sobre el papel */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.85 }}
-          className="relative bg-[#FAF8F5] p-6 sm:p-10 border border-neutral-300 shadow-[4px_8px_25px_rgba(0,0,0,0.12)] rotate-[0.3deg] rounded-xs"
+          transition={{ duration: 0.8 }}
+          className="relative mt-8"
         >
-          <ScotchTape className="-top-3.5 left-1/2 -translate-x-1/2 w-32 h-6" tilt="-1deg" />
-
-          <div className="grid md:grid-cols-2 gap-8 items-center border-b border-dashed border-neutral-300 pb-8 mb-8">
-            {/* Dato Real 2024 */}
-            <div className="space-y-2 text-center md:text-left">
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#4B5563] block">
-                VOTARON EN 2024
+          {/* Fichas comparativas asimétricas */}
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto mb-10">
+            {/* Real 2024: Anotación con cinta */}
+            <div className="relative bg-white/90 p-6 border-2 border-black/80 shadow-[4px_4px_0px_#141312] rotate-[-1deg] text-center md:text-left">
+              <ScotchTape className="-top-3 left-6 w-24 h-5" tilt="2deg" />
+              <span className="font-mono text-xs font-black uppercase tracking-wider text-[#DC2626] block mb-1">
+                ● VOTOS REALES EN 2024
               </span>
               <div className="font-poster text-6xl sm:text-7xl text-[#141312] leading-none">
                 {(actual / 1_000_000).toFixed(1)}{" "}
-                <span className="text-3xl sm:text-4xl text-[#4B5563]">M</span>
+                <span className="text-3xl sm:text-4xl text-[#DC2626]">MILLONES</span>
               </div>
-              <p className="font-typewriter text-xs sm:text-sm text-[#4B5563]">
-                jóvenes de 18–24 años (participación del 47.1%)
+              <p className="font-typewriter text-xs sm:text-sm text-[#4B5563] mt-2">
+                jóvenes de 18–24 años acudieron a las urnas (tasa del 47.1%).
               </p>
             </div>
 
-            {/* Escenario Proyectado con tasa de 2012 */}
-            <div className="space-y-2 text-center md:text-left md:border-l md:border-dashed md:border-neutral-300 md:pl-8">
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#6B7280] block">
-                HABRÍAN VOTADO (CON TASA DE 2012)
+            {/* Escenario 2012: Recorte contrastante con inclinación opuesta */}
+            <div className="relative bg-[#F3F4F6]/90 p-6 border-2 border-dashed border-neutral-400 rotate-[1.5deg] text-center md:text-left">
+              <ScotchTape className="-top-3 right-6 w-24 h-5" tilt="-3deg" />
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#6B7280] block mb-1">
+                ○ CON LA TASA PICO DE 2012 (55.6%)
               </span>
-              <div className="font-poster text-6xl sm:text-7xl text-[#4B5563]/60 leading-none">
+              <div className="font-poster text-6xl sm:text-7xl text-[#6B7280] leading-none">
                 {(hypothetical / 1_000_000).toFixed(1)}{" "}
-                <span className="text-3xl sm:text-4xl text-[#4B5563]/60">M</span>
+                <span className="text-3xl sm:text-4xl text-[#9CA3AF]">MILLONES</span>
               </div>
-              <p className="font-typewriter text-xs sm:text-sm text-[#4B5563]">
-                con participación del 55.6%
+              <p className="font-typewriter text-xs sm:text-sm text-[#6B7280] mt-2">
+                habrían votado si se hubiera mantenido el récord juvenil.
               </p>
             </div>
           </div>
 
-          {/* Bloque de diferencia: ~1.2M votos adicionales */}
-          <div className="bg-[#141312] text-[#FAF8F5] p-5 sm:p-6 shadow-md rotate-[-0.5deg] text-center max-w-xl mx-auto">
-            <p className="font-typewriter text-xs sm:text-sm tracking-wider uppercase leading-relaxed">
-              Diferencia:{" "}
-              <span className="font-poster text-3xl sm:text-5xl text-[#FBBF24] block sm:inline sm:mx-2">
-                ~{(lostVotes / 1_000_000).toFixed(1)} millones
+          {/* Bloque central de diferencia: Sello destacado tipo Post-It / Recorte */}
+          <div className="relative bg-[#FFE66D] border-2 border-black p-6 sm:p-8 shadow-[6px_6px_0px_#141312] rotate-[-0.8deg] text-center max-w-2xl mx-auto">
+            <ScotchTape className="-top-3.5 left-1/2 -translate-x-1/2 w-32 h-6" tilt="1deg" />
+
+            {/* Doodles dibujados al margen del cálculo */}
+            <DoodleStamp
+              src="/doodles/3enraya.png"
+              alt="Tres en raya libreta"
+              width={120}
+              tilt={-6}
+              className="absolute -left-6 sm:-left-16 -top-8 hidden md:block"
+            />
+            <DoodleStamp
+              src="/doodles/pulgarvoto.png"
+              alt="Pulgar entintado de votación"
+              width={100}
+              tilt={10}
+              className="absolute -right-4 sm:-right-14 -bottom-10 hidden sm:block"
+            />
+
+            <span className="font-mono text-[11px] font-black uppercase tracking-widest text-[#B91C1C] block mb-1">
+              LA BRECHA INVISIBLE:
+            </span>
+            <p className="font-typewriter text-sm sm:text-base text-[#141312] uppercase leading-relaxed">
+              Diferencia de{" "}
+              <span className="font-poster text-4xl sm:text-6xl text-[#DC2626] block sm:inline sm:mx-2 underline decoration-wavy decoration-[#141312]">
+                ~{(lostVotes / 1_000_000).toFixed(1)}M
               </span>{" "}
-              de votos jóvenes adicionales.
+              de votos jóvenes ausentes.
             </p>
           </div>
 
-          {/* Nota metodológica oficial de dev */}
-          <p className="mt-6 text-center text-xs font-typewriter text-[#6B7280] max-w-2xl mx-auto leading-relaxed">
-            Cálculo: lista nominal 18–24 de 2024 (14.9M) × tasa de participación de 2012 (55.6%) − votos reales de 18–24 en 2024 (7.0M). Es un ejercicio simplificado: la composición del padrón y las condiciones de cada elección difieren.
+          {/* Nota metodológica oficial de dev al margen */}
+          <p className="mt-8 text-center text-xs font-typewriter text-[#6B7280] max-w-2xl mx-auto leading-relaxed">
+            * Cálculo: lista nominal 18–24 de 2024 (14.9M) × tasa de participación de 2012 (55.6%) − votos reales de 18–24 en 2024 (7.0M). Ejercicio cuantitativo basado en los Conteos Censales de Participación Ciudadana (CCPC INE).
           </p>
         </motion.div>
       </div>

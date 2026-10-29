@@ -5,6 +5,7 @@ import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { PostItNote } from "@/components/ui/NotebookPaper";
 import { ScotchTape } from "@/components/ui/DoodleStickers";
+import { DoodleStamp } from "@/components/ui/ScrollDoodles";
 import { HelpCircle } from "lucide-react";
 import { getLostVotes } from "@/lib/data";
 
@@ -84,68 +85,88 @@ export function ActThree() {
           </div>
         </motion.div>
 
-        {/* ═══ LAS 3 PREGUNTAS CLAVE TEXTUALES DE DEV ═══ */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Pregunta 1: ¿La brecha se está cerrando? */}
-          <PostItNote color="yellow" tilt="rotate-[-1deg]" className="w-full flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#DC2626] mb-3 border-b border-black/10 pb-1.5">
-                <HelpCircle className="w-4 h-4 shrink-0" />
-                <span>¿LA BRECHA SE ESTÁ CERRANDO?</span>
-              </div>
-              <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                No. El votante promedio tenía <strong className="text-[#DC2626]">42 años</strong> en 2012. En 2024 tiene <strong className="text-[#DC2626]">45</strong>. La proporción de votos jóvenes en el total pasó de 15% a 13%. El peso de los jóvenes en el resultado encoge.
-              </p>
-            </div>
-            <div className="pt-3 mt-4 border-t border-black/10 text-[10px] font-mono text-[#6B7280] uppercase">
-              ENVEJECIMIENTO DEL PADRÓN
-            </div>
-          </PostItNote>
+        {/* ═══ LAS 3 PREGUNTAS CLAVE TEXTUALES DE DEV (Composición desestructurada) ═══ */}
+        <div className="relative">
+          {/* Doodle Ojos vigilantes al margen superior derecho sin tapar el texto */}
+          <DoodleStamp
+            src="/doodles/ojos.png"
+            alt="Ojos observando el voto"
+            width={120}
+            tilt={6}
+            className="absolute -top-20 right-0 sm:right-6 hidden sm:block"
+          />
 
-          {/* Pregunta 2: ¿Los jóvenes votan menos que antes? */}
-          <PostItNote color="blue" tilt="rotate-[1.5deg]" className="w-full flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#0369A1] mb-3 border-b border-black/10 pb-1.5">
-                <HelpCircle className="w-4 h-4 shrink-0" />
-                <span>¿LOS JÓVENES VOTAN MENOS QUE ANTES?</span>
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+          {/* Pregunta 1: ¿La brecha se está cerrando? (Post-it amarillo inclinado a la izquierda) */}
+          <div className="relative transform md:-rotate-2 md:-translate-y-3 transition-transform hover:rotate-0">
+            <ScotchTape className="-top-3 left-6 w-24 h-5" tilt="3deg" />
+            <PostItNote color="yellow" tilt="rotate-0" className="w-full flex flex-col justify-between shadow-[4px_6px_0px_#141312]">
+              <div>
+                <div className="flex items-center gap-1.5 text-xs font-mono font-black text-[#DC2626] mb-3 border-b border-black/10 pb-1.5">
+                  <HelpCircle className="w-4 h-4 shrink-0 text-[#DC2626]" />
+                  <span>¿LA BRECHA SE ESTÁ CERRANDO?</span>
+                </div>
+                <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
+                  No. El votante promedio tenía <strong className="text-[#DC2626]">42 años</strong> en 2012. En 2024 tiene <strong className="text-[#DC2626]">45</strong>. La proporción de votos jóvenes en el total pasó de 15% a 13%. El peso de los jóvenes en el resultado encoge.
+                </p>
               </div>
-              <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                Depende de la comparación. En 2024, el <strong className="text-[#0369A1]">47%</strong> de los jóvenes inscritos votó — más que en 2009 (36%), 2015 (36%) y 2021 (42%). Pero menos que en el pico de 2012 (56%). El patrón varía con el tipo de elección, no con una tendencia lineal.
-              </p>
-            </div>
-            <div className="pt-3 mt-4 border-t border-black/10 text-[10px] font-mono text-[#6B7280] uppercase">
-              COMPORTAMIENTO CÍCLICO
-            </div>
-          </PostItNote>
+              <div className="pt-3 mt-4 border-t border-black/10 text-[10px] font-mono text-[#6B7280] font-bold uppercase">
+                ★ ENVEJECIMIENTO DEL PADRÓN
+              </div>
+            </PostItNote>
+          </div>
 
-          {/* Pregunta 3: ¿Cuántos votos más habría con la tasa de 2012? */}
-          <PostItNote color="pink" tilt="rotate-[-1.2deg]" className="w-full flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#9D174D] mb-3 border-b border-black/10 pb-1.5">
-                <HelpCircle className="w-4 h-4 shrink-0" />
-                <span>¿CUÁNTOS VOTOS MÁS HABRÍA CON LA TASA DE 2012?</span>
+          {/* Pregunta 2: ¿Los jóvenes votan menos que antes? (Ficha azul con ligero desnivel) */}
+          <div className="relative transform md:rotate-2 md:translate-y-4 transition-transform hover:rotate-0">
+            <ScotchTape className="-top-3 right-6 w-24 h-5" tilt="-2deg" />
+            <PostItNote color="blue" tilt="rotate-0" className="w-full flex flex-col justify-between shadow-[5px_5px_0px_#141312]">
+              <div>
+                <div className="flex items-center gap-1.5 text-xs font-mono font-black text-[#0369A1] mb-3 border-b border-black/10 pb-1.5">
+                  <HelpCircle className="w-4 h-4 shrink-0 text-[#0369A1]" />
+                  <span>¿LOS JÓVENES VOTAN MENOS?</span>
+                </div>
+                <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
+                  Depende de la comparación. En 2024, el <strong className="text-[#0369A1]">47%</strong> de los jóvenes inscritos votó — más que en 2009 (36%), 2015 (36%) y 2021 (42%). Pero menos que en el pico de 2012 (56%). El patrón varía con el tipo de elección, no con una tendencia lineal.
+                </p>
               </div>
-              <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                Escenario hipotético: si en 2024 los jóvenes hubieran participado al 55.6% (su máximo histórico, en 2012), habría habido aproximadamente:
-              </p>
-              <div className="my-2 py-1 px-3 bg-white/70 border border-pink-300 rounded-xs">
-                <span className="font-poster text-3xl sm:text-4xl text-[#DC2626]">
-                  {(lostVotes / 1_000_000).toFixed(1)} millones
-                </span>
-                <span className="block text-xs font-mono text-[#9D174D]">
-                  de votos jóvenes adicionales.
-                </span>
+              <div className="pt-3 mt-4 border-t border-black/10 text-[10px] font-mono text-[#6B7280] font-bold uppercase">
+                ★ COMPORTAMIENTO CÍCLICO
               </div>
-              <p className="font-typewriter text-xs text-[#6B7280]">
-                Un ejercicio con supuestos, no una predicción.
-              </p>
-            </div>
-            <div className="pt-3 mt-4 border-t border-black/10 text-[10px] font-mono text-[#6B7280] uppercase">
-              PROYECCIÓN HIPOTÉTICA
-            </div>
-          </PostItNote>
+            </PostItNote>
+          </div>
+
+          {/* Pregunta 3: ¿Cuántos votos más habría con la tasa de 2012? (Nota rosa con sello) */}
+          <div className="relative transform md:-rotate-1 md:-translate-y-1 transition-transform hover:rotate-0">
+            <ScotchTape className="-top-3 left-1/2 -translate-x-1/2 w-28 h-5" tilt="1deg" />
+            <PostItNote color="pink" tilt="rotate-0" className="w-full flex flex-col justify-between shadow-[4px_6px_0px_#141312]">
+              <div>
+                <div className="flex items-center gap-1.5 text-xs font-mono font-black text-[#9D174D] mb-3 border-b border-black/10 pb-1.5">
+                  <HelpCircle className="w-4 h-4 shrink-0 text-[#9D174D]" />
+                  <span>¿VOTOS CON TASA DE 2012?</span>
+                </div>
+                <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
+                  Escenario hipotético: si en 2024 los jóvenes hubieran participado al 55.6% (su máximo histórico, en 2012), habría habido aproximadamente:
+                </p>
+                <div className="my-3 py-1.5 px-3 bg-white/90 border border-pink-300 shadow-xs">
+                  <span className="font-poster text-3xl sm:text-4xl text-[#DC2626] block">
+                    {(lostVotes / 1_000_000).toFixed(1)} millones
+                  </span>
+                  <span className="block text-xs font-mono text-[#9D174D] font-bold">
+                    de votos jóvenes adicionales.
+                  </span>
+                </div>
+                <p className="font-typewriter text-xs text-[#6B7280]">
+                  Un ejercicio con supuestos, no una predicción.
+                </p>
+              </div>
+              <div className="pt-3 mt-4 border-t border-black/10 text-[10px] font-mono text-[#6B7280] font-bold uppercase">
+                ★ PROYECCIÓN HIPOTÉTICA
+              </div>
+            </PostItNote>
+          </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }

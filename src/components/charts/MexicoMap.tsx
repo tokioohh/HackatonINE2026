@@ -5,6 +5,7 @@ import { states, StateData } from "@/lib/data";
 import mexicoPaths from "@/lib/mexico-paths.json";
 import { AlertCircle, Calendar } from "lucide-react";
 import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
+import { DoodleStamp } from "@/components/ui/ScrollDoodles";
 
 const YEARS = [2009, 2012, 2015, 2018, 2021, 2024] as const;
 
@@ -42,7 +43,7 @@ export function MexicoMap() {
   };
 
   return (
-    <section id="mapa" className="py-12 border-b border-dashed border-neutral-300">
+    <section id="mapa" className="py-12 border-b border-dashed border-neutral-300 relative">
       <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-4 mb-8 pb-4 border-b border-dashed border-neutral-300">
         <div>
           <div className="flex items-center gap-2 mb-1">
@@ -60,10 +61,10 @@ export function MexicoMap() {
           </p>
         </div>
 
-        {/* Selector de Años estilo pestañas de libreta */}
-        <div className="flex items-center gap-1.5 bg-white p-2 border border-neutral-300 shadow-sm relative">
+        {/* Selector de Años estilo tira de masking tape / etiquetas sueltas */}
+        <div className="flex items-center gap-1.5 bg-[#FFFDF7] p-2 border-2 border-black/80 shadow-[3px_3px_0px_#141312] rotate-[-0.5deg] relative">
           <ScotchTape className="-top-3 right-4 w-16 h-4" tilt="1deg" />
-          <span className="text-[10px] font-mono text-[#6B7280] font-bold uppercase mr-1 flex items-center gap-1">
+          <span className="text-[10px] font-mono text-[#141312] font-black uppercase mr-1 flex items-center gap-1">
             <Calendar className="w-3 h-3 text-[#DC2626]" />
             AÑO:
           </span>
@@ -75,7 +76,7 @@ export function MexicoMap() {
                 onClick={() => setSelectedYear(y)}
                 className={`px-2.5 py-1 text-xs font-mono font-bold transition-all rounded-xs cursor-pointer ${
                   isYearActive
-                    ? "bg-[#FFE66D] text-[#141312] border border-[#141312] shadow-xs scale-105"
+                    ? "bg-[#FFE66D] text-[#141312] border-2 border-black shadow-[2px_2px_0px_#000] scale-105"
                     : "text-[#4B5563] hover:text-[#141312] hover:bg-neutral-100"
                 }`}
               >
@@ -86,18 +87,34 @@ export function MexicoMap() {
         </div>
       </div>
 
-      {/* Grid estable sin temblores (items-start) */}
+      {/* Grid orgánico: Mapa libre sobre el papel + Ficha bibliográfica inclinada */}
       <div className="grid lg:grid-cols-12 gap-8 items-start">
-        {/* SVG Mexico Map montado con cinta scotch */}
-        <div className="lg:col-span-8 relative flex flex-col items-center justify-center p-4 sm:p-6 bg-white border border-neutral-300 min-h-[480px] shadow-sm">
-          <ScotchTape className="-top-3 left-8 w-28 h-6" tilt="-2deg" />
-          <ScotchTape className="-top-3 right-8 w-28 h-6" tilt="3deg" />
+        {/* SVG Mexico Map: Sin caja rígida, descansa directo sobre el papel */}
+        <div className="lg:col-span-8 relative flex flex-col items-center justify-center p-2 sm:p-4 min-h-[460px]">
+          {/* Sutil cinta masking en una esquina como si estuviera pegado en la libreta */}
+          <ScotchTape className="-top-2 left-4 w-24 h-5 opacity-75" tilt="-3deg" />
+
+          {/* Doodles en los espacios libres del mapa (Océano Pacífico y Golfo de México) */}
+          <DoodleStamp
+            src="/doodles/INE.png"
+            alt="Logotipo INE garabateado"
+            width={110}
+            tilt={-4}
+            className="absolute top-1/3 left-2 sm:left-6 hidden sm:block z-20"
+          />
+          <DoodleStamp
+            src="/doodles/bandera.png"
+            alt="Bandera de México"
+            width={105}
+            tilt={5}
+            className="absolute top-6 right-8 sm:right-16 hidden md:block z-20"
+          />
 
           {/* SVG del mapa exacto de Oskar */}
           <svg
             viewBox="0 0 1000 650"
             className="w-full h-auto max-h-[500px] select-none"
-            style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.06))" }}
+            style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.08))" }}
           >
             {mexicoPaths.map((item) => {
               const stateData = statesMap.get(item.code);
@@ -122,8 +139,8 @@ export function MexicoMap() {
             })}
           </svg>
 
-          {/* Leyenda al pie del mapa */}
-          <div className="w-full mt-4 pt-3 border-t border-dashed border-neutral-200 flex flex-wrap justify-between items-center gap-3 text-[11px] font-mono">
+          {/* Leyenda al pie del mapa estilo anotación al margen */}
+          <div className="w-full mt-4 pt-3 border-t border-dashed border-neutral-300 flex flex-wrap justify-between items-center gap-3 text-[11px] font-mono">
             <span className="text-[#6B7280] font-bold">
               ESCALA ({selectedYear}):
             </span>
@@ -152,9 +169,9 @@ export function MexicoMap() {
           </div>
         </div>
 
-        {/* Ficha lateral fija del estado seleccionado (sin temblores) */}
-        <div className="lg:col-span-4 bg-[#FAF8F5] p-6 border border-neutral-300 shadow-sm relative min-h-[480px] flex flex-col justify-between">
-          <ScotchTape className="-top-3 left-6 w-20 h-5" tilt="-1deg" />
+        {/* Ficha bibliográfica / Post-it inclinado del estado seleccionado */}
+        <div className="lg:col-span-4 bg-[#FFFDF7] p-6 border-2 border-[#141312] shadow-[6px_6px_0px_#141312] rotate-[1.5deg] hover:rotate-0 transition-transform duration-300 relative min-h-[460px] flex flex-col justify-between">
+          <ScotchTape className="-top-3 right-8 w-24 h-5" tilt="2deg" />
 
           <div>
             <div className="flex justify-between items-start border-b border-black/15 pb-3 mb-4">
@@ -166,7 +183,7 @@ export function MexicoMap() {
                   {activeState.name}
                 </h4>
               </div>
-              <span className="text-xs font-mono font-bold bg-white px-2 py-1 border border-neutral-300 shadow-xs">
+              <span className="text-xs font-mono font-bold bg-[#FFE66D] px-2 py-1 border border-black shadow-xs rotate-[-2deg]">
                 {activeState.region}
               </span>
             </div>
@@ -220,7 +237,15 @@ export function MexicoMap() {
             </div>
           </div>
 
-          <div className="pt-4 border-t border-dashed border-neutral-300 text-[10px] font-mono text-[#6B7280]">
+          <div className="pt-4 border-t border-dashed border-neutral-300 text-[10px] font-mono text-[#6B7280] relative">
+            {/* Águila en la esquina de la ficha bibliográfica */}
+            <DoodleStamp
+              src="/doodles/Aguila.png"
+              alt="Águila mexicana"
+              width={105}
+              tilt={5}
+              className="absolute -bottom-10 -right-8 hidden md:block"
+            />
             <div>INE · Conteos Censales de Participación Ciudadana</div>
             <div className="text-[9px] text-[#9CA3AF] mt-0.5">
               Cálculo de participación juvenil sobre lista nominal de 18 a 24 años.
