@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ScotchTape, DoodleUnderline } from "@/components/ui/DoodleStickers";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 
 /* Chip de recorte de periódico / libreta para números clave */
 function NewspaperChip({
@@ -41,6 +42,25 @@ export function StatsSentence() {
       {/* Cintas adhesivas decorativas */}
       <ScotchTape className="top-8 left-10 w-28 h-6" tilt="-4deg" />
       <ScotchTape className="bottom-8 right-10 w-28 h-6" tilt="3deg" />
+
+      {/* Doodle tenue de fondo */}
+      <NotebookBgDoodle
+        src="/doodles/calendarioaz.png"
+        alt="Calendario fondo libreta"
+        width={180}
+        tilt={-10}
+        opacity={0.15}
+        className="left-8 bottom-12 hidden lg:block"
+      />
+
+      {/* Silueta de votante joven al margen */}
+      <DoodleStamp
+        src="/doodles/Usuario.png"
+        alt="Votante joven silueta"
+        width={105}
+        tilt={4}
+        className="absolute right-6 sm:right-16 top-1/2 -translate-y-1/2 hidden md:block"
+      />
 
       <div className="max-w-5xl mx-auto relative z-10 w-full">
         {/* Etiqueta de expediente */}

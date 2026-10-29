@@ -6,6 +6,7 @@ import { TypewriterText } from "@/components/ui/TypewriterText";
 import { PostItNote, SpiralPaperCard } from "@/components/ui/NotebookPaper";
 import { HandDrawnBarChart } from "@/components/charts/HandDrawnBarChart";
 import { ScotchTape } from "@/components/ui/DoodleStickers";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 import { ImpactQuote } from "@/components/ui/ImpactQuote";
 import { participationByAge } from "@/lib/data";
 
@@ -17,6 +18,24 @@ export function ActOne() {
       id="acto-1"
       className="relative min-h-screen py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden border-b border-dashed border-neutral-300"
     >
+      {/* Doodles tenues de fondo (marcas de lápiz en la libreta) */}
+      <NotebookBgDoodle
+        src="/doodles/cactus.png"
+        alt="Cactus fondo libreta"
+        width={140}
+        tilt={12}
+        opacity={0.16}
+        className="top-36 right-8 hidden lg:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/Sdibujo.png"
+        alt="S fondo libreta"
+        width={80}
+        tilt={-8}
+        opacity={0.14}
+        className="bottom-20 left-10 hidden md:block"
+      />
+
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Cabecera de Acto */}
         <motion.div
@@ -113,7 +132,15 @@ export function ActOne() {
           </div>
 
           {/* Columna Derecha: Gráfica de Barras Hand-Drawn de 2009 */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 relative">
+            {/* Doodle Casilla Marcada sobre la tarjeta de la gráfica */}
+            <DoodleStamp
+              src="/doodles/casillamarcada.png"
+              alt="Casilla marcada"
+              width={105}
+              tilt={-6}
+              className="absolute -top-7 -right-4 hidden sm:block z-20"
+            />
             <SpiralPaperCard tilt="rotate-[0.5deg]">
               <div className="flex justify-between items-center mb-4 pb-2 border-b border-dashed border-neutral-300">
                 <div>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ScotchTape, DoodleUnderline } from "@/components/ui/DoodleStickers";
-import { DoodleStamp } from "@/components/ui/ScrollDoodles";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 import { ExternalLink, ArrowUp } from "lucide-react";
 
 const STATEMENTS = [
@@ -17,13 +17,38 @@ export function ConcienciaSection() {
       id="conciencia"
       className="relative py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden"
     >
-      {/* Pirámide prehispánica en el margen superior */}
+      {/* Doodles tenues de fondo */}
+      <NotebookBgDoodle
+        src="/doodles/pulgarvoto.png"
+        alt="Pulgar fondo libreta"
+        width={120}
+        tilt={-10}
+        opacity={0.15}
+        className="bottom-20 left-12 hidden md:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/casillamarcada.png"
+        alt="Casilla fondo libreta"
+        width={125}
+        tilt={8}
+        opacity={0.14}
+        className="top-1/2 right-10 hidden lg:block"
+      />
+
+      {/* Doodles dibujados en los márgenes */}
       <DoodleStamp
         src="/doodles/piramide.png"
         alt="Pirámide mexicana prehispánica"
         width={130}
         tilt={-4}
         className="absolute top-12 left-6 sm:left-14 hidden lg:block"
+      />
+      <DoodleStamp
+        src="/doodles/Vota.png"
+        alt="Sello Vota a mano"
+        width={110}
+        tilt={7}
+        className="absolute top-16 right-6 sm:right-16 hidden lg:block"
       />
 
       {/* Franja Bandera Mexicana sutil en la parte superior */}

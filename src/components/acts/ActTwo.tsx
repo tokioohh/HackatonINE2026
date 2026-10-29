@@ -6,6 +6,7 @@ import { TypewriterText } from "@/components/ui/TypewriterText";
 import { PostItNote, SpiralPaperCard } from "@/components/ui/NotebookPaper";
 import { ComparisonChart } from "@/components/charts/ComparisonChart";
 import { ScotchTape } from "@/components/ui/DoodleStickers";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 import { ImpactQuote } from "@/components/ui/ImpactQuote";
 import { participationByAge } from "@/lib/data";
 
@@ -18,6 +19,24 @@ export function ActTwo() {
       id="acto-2"
       className="relative min-h-screen py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden border-b border-dashed border-neutral-300"
     >
+      {/* Doodles tenues de fondo (efecto libreta escolar) */}
+      <NotebookBgDoodle
+        src="/doodles/bandera.png"
+        alt="Bandera fondo libreta"
+        width={150}
+        tilt={-8}
+        opacity={0.15}
+        className="top-1/3 left-8 hidden lg:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/pulgarvoto.png"
+        alt="Pulgar fondo libreta"
+        width={110}
+        tilt={12}
+        opacity={0.14}
+        className="bottom-16 right-10 hidden md:block"
+      />
+
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Cabecera de Acto */}
         <motion.div
@@ -112,7 +131,15 @@ export function ActTwo() {
           </div>
 
           {/* Columna Derecha: Gráfica Comparativa 2012 vs 2024 */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 relative">
+            {/* Máscara de luchador al margen de la comparativa de votos */}
+            <DoodleStamp
+              src="/doodles/luchador.png"
+              alt="Máscara de lucha libre mexicana"
+              width={105}
+              tilt={-6}
+              className="absolute -top-7 -right-4 hidden sm:block z-20"
+            />
             <SpiralPaperCard tilt="rotate-[0.5deg]">
               <div className="flex justify-between items-center mb-4 pb-2 border-b border-dashed border-neutral-300">
                 <div>

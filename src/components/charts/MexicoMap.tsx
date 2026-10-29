@@ -5,7 +5,7 @@ import { states, StateData } from "@/lib/data";
 import mexicoPaths from "@/lib/mexico-paths.json";
 import { AlertCircle, Calendar } from "lucide-react";
 import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
-import { DoodleStamp } from "@/components/ui/ScrollDoodles";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 
 const YEARS = [2009, 2012, 2015, 2018, 2021, 2024] as const;
 
@@ -43,8 +43,26 @@ export function MexicoMap() {
   };
 
   return (
-    <section id="mapa" className="py-12 border-b border-dashed border-neutral-300 relative">
-      <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-4 mb-8 pb-4 border-b border-dashed border-neutral-300">
+    <section id="mapa" className="py-12 border-b border-dashed border-neutral-300 relative overflow-hidden">
+      {/* Doodles tenues de fondo (efecto libreta) */}
+      <NotebookBgDoodle
+        src="/doodles/piramide.png"
+        alt="Pirámide fondo libreta"
+        width={160}
+        tilt={-4}
+        opacity={0.14}
+        className="bottom-6 left-8 hidden lg:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/3enraya.png"
+        alt="3 en raya fondo libreta"
+        width={130}
+        tilt={6}
+        opacity={0.12}
+        className="top-12 right-12 hidden md:block"
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-4 mb-8 pb-4 border-b border-dashed border-neutral-300 relative z-10">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="urgent-tag flex items-center gap-1.5 text-[10px]">
@@ -94,7 +112,14 @@ export function MexicoMap() {
           {/* Sutil cinta masking en una esquina como si estuviera pegado en la libreta */}
           <ScotchTape className="-top-2 left-4 w-24 h-5 opacity-75" tilt="-3deg" />
 
-          {/* Doodles en los espacios libres del mapa (Océano Pacífico y Golfo de México) */}
+          {/* Doodles en los espacios libres del mapa (Océano Pacífico, Norte y Golfo de México) */}
+          <DoodleStamp
+            src="/doodles/cactus.png"
+            alt="Cactus del norte"
+            width={85}
+            tilt={8}
+            className="absolute top-2 left-28 hidden md:block z-20"
+          />
           <DoodleStamp
             src="/doodles/INE.png"
             alt="Logotipo INE garabateado"

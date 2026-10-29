@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { getLostVotes, elections } from "@/lib/data";
 import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
-import { DoodleStamp } from "@/components/ui/ScrollDoodles";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 import { Calculator } from "lucide-react";
 
 export function LostVotesEstimate() {
@@ -17,6 +17,24 @@ export function LostVotesEstimate() {
       id="votos-perdidos"
       className="relative py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden border-b border-dashed border-neutral-300"
     >
+      {/* Doodles tenues de fondo (marcas a lápiz en la libreta) */}
+      <NotebookBgDoodle
+        src="/doodles/casillamarcada.png"
+        alt="Casilla fondo libreta"
+        width={130}
+        tilt={-8}
+        opacity={0.14}
+        className="top-12 left-10 hidden lg:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/cactus.png"
+        alt="Cactus fondo libreta"
+        width={135}
+        tilt={10}
+        opacity={0.13}
+        className="bottom-10 right-14 hidden md:block"
+      />
+
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Cabecera de la sección con sello de goma */}
         <motion.div

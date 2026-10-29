@@ -4,10 +4,28 @@ import { motion } from "framer-motion";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { ScotchTape } from "@/components/ui/DoodleStickers";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 
 export function Footer() {
   return (
     <footer className="relative w-full min-h-screen py-20 px-4 sm:px-8 flex flex-col items-center justify-between overflow-hidden notebook-canvas">
+      {/* Doodles tenues de fondo en la hoja final */}
+      <NotebookBgDoodle
+        src="/doodles/Quetzalcoatl.png"
+        alt="Quetzalcóatl fondo libreta"
+        width={170}
+        tilt={-5}
+        opacity={0.14}
+        className="top-16 left-12 hidden lg:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/bandera.png"
+        alt="Bandera fondo libreta"
+        width={150}
+        tilt={8}
+        opacity={0.14}
+        className="bottom-24 right-14 hidden md:block"
+      />
       {/* ═══ POSTER FINAL ARRANCADO A PANTALLA COMPLETA ═══ */}
       <motion.div
         initial={{ opacity: 0, y: 50, rotate: -1 }}

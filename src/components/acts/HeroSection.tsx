@@ -5,7 +5,7 @@ import { ArrowDown } from "lucide-react";
 import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterHeroText } from "@/components/ui/TypewriterHeroText";
 import { ScotchTape, DoodleUnderline } from "@/components/ui/DoodleStickers";
-import { DoodleStamp } from "@/components/ui/ScrollDoodles";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 
 export function HeroSection() {
   return (
@@ -15,6 +15,24 @@ export function HeroSection() {
     >
       {/* Scotch tape en la esquina superior izquierda como en la rama Oskar */}
       <ScotchTape className="top-5 left-6 w-28 sm:w-36 h-7 sm:h-9" tilt="-5deg" />
+
+      {/* Doodles tenues de fondo (efecto bocetos a lápiz en la libreta) */}
+      <NotebookBgDoodle
+        src="/doodles/3enraya.png"
+        alt="Gato en libreta fondo"
+        width={150}
+        tilt={-10}
+        opacity={0.16}
+        className="top-16 left-12 hidden lg:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/ojos.png"
+        alt="Ojos fondo libreta"
+        width={140}
+        tilt={6}
+        opacity={0.14}
+        className="bottom-24 right-16 hidden md:block"
+      />
 
       {/* Doodles dibujados en los márgenes de la portada */}
       <DoodleStamp
@@ -30,6 +48,13 @@ export function HeroSection() {
         width={130}
         tilt={-5}
         className="absolute left-4 sm:left-10 md:left-16 bottom-20 hidden md:block"
+      />
+      <DoodleStamp
+        src="/doodles/Vota.png"
+        alt="Sello Vota a mano"
+        width={100}
+        tilt={-8}
+        className="absolute right-12 sm:right-28 bottom-24 hidden lg:block"
       />
 
       {/* Espaciador superior limpio para aire visual */}

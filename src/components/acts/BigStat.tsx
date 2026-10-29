@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { PersonMatrix100 } from "@/components/charts/PersonMatrix100";
 import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 import { PostItNote } from "@/components/ui/NotebookPaper";
 
 interface BigStatProps {
@@ -25,7 +26,33 @@ export function BigStat({
       id="gran-estadistica"
       className="relative min-h-[90vh] py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden border-b border-dashed border-neutral-300"
     >
+      {/* Doodles tenues de fondo */}
+      <NotebookBgDoodle
+        src="/doodles/Aguila.png"
+        alt="Águila fondo libreta"
+        width={160}
+        tilt={8}
+        opacity={0.14}
+        className="top-24 left-10 hidden md:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/Sdibujo.png"
+        alt="S fondo libreta"
+        width={90}
+        tilt={-10}
+        opacity={0.16}
+        className="bottom-12 right-16 hidden lg:block"
+      />
+
       <div className="max-w-6xl mx-auto relative z-10">
+        {/* Quetzalcóatl dibujado en el margen superior */}
+        <DoodleStamp
+          src="/doodles/Quetzalcoatl.png"
+          alt="Quetzalcóatl dibujado a lápiz"
+          width={130}
+          tilt={5}
+          className="absolute -top-12 right-4 sm:right-12 hidden md:block z-20"
+        />
         {/* Cabecera del BigStat */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}

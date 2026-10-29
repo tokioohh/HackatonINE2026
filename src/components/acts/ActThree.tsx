@@ -5,7 +5,7 @@ import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { PostItNote } from "@/components/ui/NotebookPaper";
 import { ScotchTape } from "@/components/ui/DoodleStickers";
-import { DoodleStamp } from "@/components/ui/ScrollDoodles";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 import { HelpCircle } from "lucide-react";
 import { getLostVotes } from "@/lib/data";
 
@@ -17,6 +17,24 @@ export function ActThree() {
       id="acto-3"
       className="relative min-h-screen py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden border-b border-dashed border-neutral-300"
     >
+      {/* Doodles tenues de fondo en libreta */}
+      <NotebookBgDoodle
+        src="/doodles/Usuario.png"
+        alt="Usuario fondo libreta"
+        width={130}
+        tilt={-6}
+        opacity={0.15}
+        className="top-28 left-8 hidden lg:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/casillamarcada.png"
+        alt="Casilla fondo libreta"
+        width={110}
+        tilt={10}
+        opacity={0.14}
+        className="bottom-20 left-12 hidden md:block"
+      />
+
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Cabecera de Acto */}
         <motion.div

@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { elections, participationByAge, ageGroups } from "@/lib/data";
 import { ScotchTape, DoodleCircle } from "@/components/ui/DoodleStickers";
+import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 import { SpiralPaperCard } from "@/components/ui/NotebookPaper";
 import { BarChart3, Filter } from "lucide-react";
 
@@ -33,7 +34,33 @@ export function ExplorerSection() {
       id="explora"
       className="relative py-24 px-4 sm:px-8 md:px-14 notebook-canvas text-[#111110] overflow-hidden border-b border-dashed border-neutral-300"
     >
+      {/* Doodles tenues de fondo */}
+      <NotebookBgDoodle
+        src="/doodles/cactus.png"
+        alt="Cactus fondo libreta"
+        width={140}
+        tilt={-6}
+        opacity={0.15}
+        className="top-20 left-10 hidden lg:block"
+      />
+      <NotebookBgDoodle
+        src="/doodles/calendarioaz.png"
+        alt="Calendario fondo libreta"
+        width={150}
+        tilt={10}
+        opacity={0.13}
+        className="bottom-16 right-12 hidden md:block"
+      />
+
       <div className="max-w-6xl mx-auto relative z-10">
+        {/* Doodle silueta joven al margen de los filtros */}
+        <DoodleStamp
+          src="/doodles/Usuario.png"
+          alt="Usuario silueta dibujada"
+          width={100}
+          tilt={-4}
+          className="absolute -top-10 right-4 hidden md:block z-20"
+        />
         {/* Cabecera */}
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-3 mb-10 pb-4 border-b border-dashed border-neutral-300">
           <div>
