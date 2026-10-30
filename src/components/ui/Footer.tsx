@@ -8,66 +8,66 @@ import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 
 export function Footer() {
   return (
-    <footer className="relative w-full min-h-screen flex flex-col justify-between items-center px-4 sm:px-8 pt-6 pb-4 overflow-hidden notebook-canvas bg-transparent">
+    <footer className="relative w-full min-h-screen flex flex-col justify-between items-center px-4 sm:px-8 pt-4 sm:pt-6 pb-4 overflow-hidden notebook-canvas bg-transparent">
       {/* Doodles tenues de fondo en la hoja final */}
       <NotebookBgDoodle
         src="/doodles/Quetzalcoatl.png"
         alt="Quetzalcóatl fondo libreta"
-        width={150}
+        width={160}
         tilt={-5}
         opacity={0.14}
-        className="top-8 left-10 hidden lg:block"
+        className="top-6 left-10 hidden lg:block"
       />
       <NotebookBgDoodle
         src="/doodles/bandera.png"
         alt="Bandera fondo libreta"
-        width={130}
+        width={140}
         tilt={8}
         opacity={0.14}
         className="bottom-14 right-12 hidden md:block"
       />
 
-      {/* ═══ POSTER FINAL: "TU VOTO TAMBIÉN VALE" (ESCALA ÓPTIMA: NUNCA SE CORTA AL BAJAR) ═══ */}
+      {/* ═══ POSTER FINAL: "TU VOTO TAMBIÉN VALE" (TAMAÑO HEROICO Y BALANCEADO) ═══ */}
       <motion.div
         initial={{ opacity: 0, y: 30, rotate: -1 }}
         whileInView={{ opacity: 1, y: 0, rotate: 0.5 }}
         viewport={{ once: true, margin: "-20px" }}
         transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto z-20 drop-shadow-[0_12px_25px_rgba(0,0,0,0.18)] my-auto select-none"
+        className="relative w-full max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto z-20 drop-shadow-[0_16px_36px_rgba(0,0,0,0.22)] my-auto select-none"
       >
-        <ScotchTape className="top-[20%] left-[10%] sm:left-[14%] w-20 sm:w-28 h-5 sm:h-7" tilt="-6deg" />
-        <ScotchTape className="top-[20%] right-[10%] sm:right-[14%] w-20 sm:w-28 h-5 sm:h-7" tilt="5deg" />
+        <ScotchTape className="top-[16%] left-[10%] sm:left-[14%] w-24 sm:w-36 md:w-44 h-6 sm:h-9 md:h-11" tilt="-6deg" />
+        <ScotchTape className="top-[16%] right-[10%] sm:right-[14%] w-24 sm:w-36 md:w-44 h-6 sm:h-9 md:h-11" tilt="5deg" />
 
         {/* Doodle Pulgar con tinta indeleble decorando la hoja arrancada */}
         <DoodleStamp
           src="/doodles/pulgarvoto.png"
           alt="Pulgar entintado: Tu voto también vale"
-          width={110}
+          width={135}
           tilt={12}
-          className="absolute -bottom-4 sm:-bottom-6 right-2 sm:right-6 md:right-10 z-30"
+          className="absolute -bottom-5 sm:-bottom-8 right-2 sm:right-6 md:right-12 z-30"
         />
 
-        <div className="relative w-full aspect-[1024/640] max-h-[380px] select-none flex items-center justify-center">
+        <div className="relative w-full aspect-[1024/682] max-h-[440px] sm:max-h-[480px] md:max-h-[520px] select-none flex items-center justify-center">
           <img
             src="/textures/notebook/footer-torn-paper.png"
             alt="Hoja arrancada: Tu voto también vale"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
           />
 
-          <div className="absolute top-[26%] bottom-[22%] left-[8%] right-[8%] flex flex-col items-center justify-center text-center gap-1.5 sm:gap-2.5 z-10">
+          <div className="absolute top-[22%] bottom-[18%] left-[6%] right-[6%] flex flex-col items-center justify-center text-center gap-2 sm:gap-3 md:gap-4 z-10">
             <div className="flex items-center justify-center w-full">
               <TypewriterText
                 text="TU VOTO"
                 speed={70}
                 delay={200}
-                className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-[#1F2937] tracking-[0.18em]"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase text-[#1F2937] tracking-[0.16em] sm:tracking-[0.2em]"
               />
             </div>
 
-            <div className="flex items-center justify-center w-full pt-0.5">
+            <div className="flex items-center justify-center w-full pt-0.5 sm:pt-1">
               <RansomNoteTitle
                 text="TAMBIÉN VALE"
-                size="lg"
+                size="xl"
                 className="justify-center"
               />
             </div>
