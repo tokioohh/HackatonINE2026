@@ -216,6 +216,6 @@ HackatonINE2026/
 
 ## 👥 Equipo y Créditos
 
-* **Desarrollo y Diseño:** Oskar & Equipo de Storytelling.
+* **Desarrollo y Diseño:** Oskar, Joe, Luis y René.
 * **Iniciativa:** Hackatón INE 2026 — *"Datos que Construyen Democracia"*.
 * **Licencia:** MIT License.
