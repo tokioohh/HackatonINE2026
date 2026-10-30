@@ -88,20 +88,20 @@ export function StatsSentence() {
           <NewspaperChip rotate="0.8deg" className="font-serif text-[#141312] border-2 border-[#141312]">
             6 elecciones
           </NewspaperChip>
-          <span>, la proporción de votos jóvenes pasó de </span>
+          <span>, la proporción de votos de menores de 35 pasó de </span>
           <NewspaperChip rotate="1.2deg" className="font-mono text-[#0369A1] bg-[#E0F2FE] border-[#38BDF8]">
-            15 de cada 100
+            37 de cada 100
           </NewspaperChip>
           <span> a solo </span>
           <NewspaperChip
             rotate="-1.5deg"
             color="#DC2626"
             bg="#FEE2E2"
-            className="font-poster text-4xl sm:text-6xl md:text-7xl border-2 border-[#DC2626] shadow-[3px_5px_15px_rgba(220,38,38,0.2)]"
+            className="font-poster text-3xl sm:text-6xl md:text-7xl border-2 border-[#DC2626] shadow-[3px_5px_15px_rgba(220,38,38,0.2)]"
           >
-            13 de cada 100
+            31 de cada 100
           </NewspaperChip>
-          <span>. Su peso en el resultado encoge mientras el padrón crece.</span>
+          <span>. Su peso en el resultado encoge mientras el padrón envejece.</span>
         </motion.p>
 
         {/* Garabato subrayado rojo */}

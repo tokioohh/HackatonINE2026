@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, ArrowUp } from "lucide-react";
 
 const CTA_PHRASES = [
-  "14.8 millones de jóvenes en la lista nominal. ¿Cuántos llegarán a la casilla?",
+  "36.8 millones de menores de 35 en la lista nominal. ¿Cuántos llegarán a la casilla?",
   "Si tú no hablas, alguien más decide por ti. Y ya lo han hecho — seis veces.",
   "La séptima elección no se gana con datos. Se gana con tu presencia.",
 ];

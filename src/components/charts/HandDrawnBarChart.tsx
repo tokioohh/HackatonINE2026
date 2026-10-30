@@ -5,7 +5,7 @@ import type { AgeGroupParticipation } from "@/lib/data";
 
 interface HandDrawnBarChartProps {
   data: AgeGroupParticipation;
-  highlightGroup?: string;
+  highlightGroups?: string[];
   year: number;
 }
 
@@ -21,7 +21,7 @@ const groupLabels: Record<string, string> = {
 
 export function HandDrawnBarChart({
   data,
-  highlightGroup = "18-24",
+  highlightGroups = ["18-24", "25-34"],
   year,
 }: HandDrawnBarChartProps) {
   const maxValue = 75;
@@ -31,7 +31,7 @@ export function HandDrawnBarChart({
       <div className="space-y-4">
         {groups.map((group, i) => {
           const value = data[group];
-          const isHighlight = group === highlightGroup;
+          const isHighlight = highlightGroups.includes(group);
           const widthPct = Math.min(100, (value / maxValue) * 100);
 
           return (
@@ -87,7 +87,7 @@ export function HandDrawnBarChart({
       {/* Nota al pie */}
       <div className="mt-5 pt-3 border-t border-dashed border-neutral-300 flex justify-between items-center text-[11px] font-mono text-[#6B7280]">
         <span className="italic font-typewriter text-[#DC2626]">
-          ↑ La brecha de 18–24 años era la más honda de todos los grupos.
+          ↑ Ambos grupos menores de 35 comparten la base más baja de participación.
         </span>
         <span className="font-bold">CCPC INE {year}</span>
       </div>

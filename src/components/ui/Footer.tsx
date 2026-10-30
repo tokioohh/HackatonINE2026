@@ -44,7 +44,7 @@ export function Footer() {
           alt="Pulgar entintado: Tu voto también vale"
           width={135}
           tilt={12}
-          className="absolute -bottom-5 sm:-bottom-8 right-2 sm:right-6 md:right-12 z-30"
+          className="absolute -bottom-5 sm:-bottom-8 right-2 sm:right-6 md:right-12 z-30 hidden sm:block"
         />
 
         <div className="relative w-full aspect-[1024/682] max-h-[440px] sm:max-h-[480px] md:max-h-[520px] select-none flex items-center justify-center">

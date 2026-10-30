@@ -72,7 +72,7 @@ export function MexicoMap() {
             <span className="font-mono text-xs text-[#DC2626] font-bold">INE CCPC // 32 ENTIDADES FEDERATIVAS</span>
           </div>
           <h3 className="font-poster text-3xl sm:text-5xl text-[#141312] tracking-wide uppercase">
-            PARTICIPACIÓN JUVENIL POR ESTADO
+            PARTICIPACIÓN 18–24 POR ESTADO
           </h3>
           <p className="font-sans text-xs sm:text-sm text-[#4B5563] mt-1 max-w-2xl">
             El color más oscuro indica mayor participación de 18–24 años. Selecciona un año y haz clic en un estado para ver su dato.
@@ -80,7 +80,7 @@ export function MexicoMap() {
         </div>
 
         {/* Selector de Años estilo tira de masking tape / etiquetas sueltas */}
-        <div className="flex items-center gap-1.5 bg-[#FFFDF7] p-2 border-2 border-black/80 shadow-[3px_3px_0px_#141312] rotate-[-0.5deg] relative">
+        <div className="flex flex-wrap items-center gap-1.5 bg-[#FFFDF7] p-2 border-2 border-black/80 shadow-[3px_3px_0px_#141312] rotate-[-0.5deg] relative">
           <ScotchTape className="-top-3 right-4 w-16 h-4" tilt="1deg" />
           <span className="text-[10px] font-mono text-[#141312] font-black uppercase mr-1 flex items-center gap-1">
             <Calendar className="w-3 h-3 text-[#DC2626]" />
@@ -108,7 +108,7 @@ export function MexicoMap() {
       {/* Grid orgánico: Mapa libre sobre el papel + Ficha bibliográfica inclinada */}
       <div className="grid lg:grid-cols-12 gap-8 items-start">
         {/* SVG Mexico Map: Sin caja rígida, descansa directo sobre el papel */}
-        <div className="lg:col-span-8 relative flex flex-col items-center justify-center p-2 sm:p-4 min-h-[460px]">
+        <div className="lg:col-span-8 min-w-0 relative flex flex-col items-center justify-center p-2 sm:p-4 min-h-[460px]">
           {/* Sutil cinta masking en una esquina como si estuviera pegado en la libreta */}
           <ScotchTape className="-top-2 left-4 w-24 h-5 opacity-75" tilt="-3deg" />
 
@@ -209,7 +209,7 @@ export function MexicoMap() {
             {/* Gran dato porcentual juvenil */}
             <div className="my-4">
               <span className="text-[11px] font-mono text-[#6B7280] uppercase tracking-wider block mb-1">
-                Participación juvenil en {selectedYear}:
+                Participación 18–24 en {selectedYear}:
               </span>
               <div className="font-poster text-6xl text-[#DC2626] leading-none">
                 <DoodleCircle color="#DC2626">
@@ -247,7 +247,7 @@ export function MexicoMap() {
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-[#4B5563]">Brecha interna con jóvenes:</span>
+                <span className="text-[#4B5563]">Brecha 18–24 vs general:</span>
                 <span className="font-bold text-[#DC2626]">
                   {(activeOverallRate - activeRate).toFixed(1)} pp
                 </span>

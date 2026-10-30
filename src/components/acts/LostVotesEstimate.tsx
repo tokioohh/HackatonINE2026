@@ -9,7 +9,7 @@ import { Calculator } from "lucide-react";
 export function LostVotesEstimate() {
   const lostVotes = getLostVotes();
   const e2024 = elections.find((e) => e.year === 2024)!;
-  const actual = e2024.youthVoters;
+  const actual = e2024.under35Voters;
   const hypothetical = actual + lostVotes;
 
   return (
@@ -52,7 +52,7 @@ export function LostVotesEstimate() {
           </div>
 
           <h3 className="font-serif text-2xl sm:text-4xl text-[#141312] leading-snug">
-            ¿Qué pasaría si los jóvenes de 2024 hubieran votado al mismo ritmo que los de 2012, cuando la participación juvenil alcanzó su máximo histórico (55.6%)?
+            ¿Qué pasaría si los menores de 35 en 2024 hubieran votado al mismo ritmo que en 2012, cuando la participación de este grupo alcanzó su máximo histórico (~54%)?
           </h3>
         </motion.div>
 
@@ -77,7 +77,7 @@ export function LostVotesEstimate() {
                 <span className="text-3xl sm:text-4xl text-[#DC2626]">MILLONES</span>
               </div>
               <p className="font-typewriter text-xs sm:text-sm text-[#4B5563] mt-2">
-                jóvenes de 18–24 años acudieron a las urnas (tasa del 47.1%).
+                menores de 35 años acudieron a las urnas (tasa del ~47%).
               </p>
             </div>
 
@@ -85,14 +85,14 @@ export function LostVotesEstimate() {
             <div className="relative bg-[#F3F4F6]/90 p-6 border-2 border-dashed border-neutral-400 rotate-[1.5deg] text-center md:text-left">
               <ScotchTape className="-top-3 right-6 w-24 h-5" tilt="-3deg" />
               <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#6B7280] block mb-1">
-                ○ CON LA TASA PICO DE 2012 (55.6%)
+                ○ CON LA TASA PICO DE 2012 (~54%)
               </span>
               <div className="font-poster text-6xl sm:text-7xl text-[#6B7280] leading-none">
                 {(hypothetical / 1_000_000).toFixed(1)}{" "}
                 <span className="text-3xl sm:text-4xl text-[#9CA3AF]">MILLONES</span>
               </div>
               <p className="font-typewriter text-xs sm:text-sm text-[#6B7280] mt-2">
-                habrían votado si se hubiera mantenido el récord juvenil.
+                habrían votado si se hubiera mantenido el máximo de participación.
               </p>
             </div>
           </div>
@@ -125,13 +125,13 @@ export function LostVotesEstimate() {
               <span className="font-poster text-4xl sm:text-6xl text-[#DC2626] block sm:inline sm:mx-2 underline decoration-wavy decoration-[#141312]">
                 ~{(lostVotes / 1_000_000).toFixed(1)}M
               </span>{" "}
-              de votos jóvenes ausentes.
+              de votos de menores de 35 ausentes.
             </p>
           </div>
 
           {/* Nota metodológica oficial de dev al margen */}
           <p className="mt-8 text-center text-xs font-typewriter text-[#6B7280] max-w-2xl mx-auto leading-relaxed">
-            * Cálculo: lista nominal 18–24 de 2024 (14.9M) × tasa de participación de 2012 (55.6%) − votos reales de 18–24 en 2024 (7.0M). Ejercicio cuantitativo basado en los Conteos Censales de Participación Ciudadana (CCPC INE).
+            * Cálculo: lista nominal menores de 35 en 2024 (36.8M) × tasa de participación de menores de 35 en 2012 (~54.3%) − votos reales de menores de 35 en 2024 (17.2M). Ejercicio cuantitativo basado en los Conteos Censales de Participación Ciudadana (CCPC INE).
           </p>
         </motion.div>
       </div>

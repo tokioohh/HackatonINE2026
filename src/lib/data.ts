@@ -11,6 +11,9 @@ export interface ElectionYear {
   totalVoters: number;
   youthVoters: number;
   listaNominal: number;
+  under35Participation: number;
+  under35Voters: number;
+  under35ShareOfVoters: number;
   type: "Presidencial" | "Intermedia";
   milestone: string;
   milestoneDetail: string;
@@ -48,42 +51,42 @@ export const MILESTONES: Record<
     type: "Intermedia",
     milestone: "Intermedia",
     milestoneDetail:
-      "Elección intermedia con baja participación general (43%). Solo 36% de los jóvenes inscritos votó — pero la diferencia con otros grupos ya era visible. La brecha no empezó después.",
+      "Elección intermedia con baja participación general (43%). Solo el 36% de los menores de 35 inscritos votó — 13 puntos por debajo de los mayores de 35. La brecha no empezó después.",
     platformSummary: "Elección Intermedia",
   },
   2012: {
     type: "Presidencial",
     milestone: "Presidencial",
     milestoneDetail:
-      "La participación subió en todos los grupos de edad. Los jóvenes alcanzaron su máximo en la serie: 55.6%. Coincidió con alta movilización política, pero los datos no miden qué la causó.",
+      "La participación subió en todos los grupos de edad. Los menores de 35 alcanzaron su máximo en la serie: ~54%. Coincidió con alta movilización política, pero los datos no miden qué la causó.",
     platformSummary: "Elección Presidencial",
   },
   2015: {
     type: "Intermedia",
     milestone: "Intermedia",
     milestoneDetail:
-      "Como en toda elección intermedia, la participación cayó para todos los grupos, no solo para los jóvenes. El 35.7% juvenil fue similar al de 2009. El patrón presidencial-intermedia se repite.",
+      "Como en toda elección intermedia, la participación cayó para todos los grupos, no solo para los jóvenes. Los menores de 35 volvieron al ~35%, similar a 2009. El patrón presidencial-intermedia se repite.",
     platformSummary: "Elección Intermedia",
   },
   2018: {
     type: "Presidencial",
     milestone: "Presidencial",
     milestoneDetail:
-      "Otra elección presidencial, otra subida general. Los jóvenes llegaron al 51%, pero no alcanzaron el nivel de 2012. La brecha con los mayores de 45 se mantuvo en 14 puntos.",
+      "Otra elección presidencial, otra subida general. Los menores de 35 llegaron al ~51%, pero no alcanzaron el nivel de 2012. La brecha con los mayores de 35 se mantuvo en ~11 puntos.",
     platformSummary: "Elección Presidencial",
   },
   2021: {
     type: "Intermedia",
     milestone: "Intermedia",
     milestoneDetail:
-      "Elección intermedia en contexto de pandemia. La participación general fue del 50% y la juvenil del 42%. Tercera vez consecutiva que la intermedia baja respecto a la presidencial anterior.",
+      "Elección intermedia en contexto de pandemia. La participación general fue del 50% y la de menores de 35, del ~41%. Tercera vez consecutiva que la intermedia baja respecto a la presidencial anterior.",
     platformSummary: "Elección Intermedia",
   },
   2024: {
     type: "Presidencial",
     milestone: "Presidencial",
     milestoneDetail:
-      "México eligió a su primera presidenta. La participación juvenil fue del 47% — mayor que en 2009, 2015 y 2021, pero menor que en 2012 y 2018. La brecha con otros grupos persiste.",
+      "México eligió a su primera presidenta. La participación de menores de 35 fue del ~47% — mayor que en 2009, 2015 y 2021, pero menor que en 2012 y 2018. La brecha con los mayores persiste.",
     platformSummary: "Elección Presidencial",
   },
 };
@@ -97,18 +100,25 @@ export const elections: ElectionYear[] = (electionsRaw as Array<{
   averageVoterAge: number;
   youthShareOfVoters: number;
   youthVoters: number;
-  ageGroups: Record<string, { participation: number }>;
-}>).map((e) => ({
-  year: e.year,
-  overallParticipation: Number(e.overallParticipation.toFixed(1)),
-  youthParticipation: Number(e.youthParticipation.toFixed(1)),
-  averageVoterAge: Number(e.averageVoterAge.toFixed(2)),
-  youthShareOfVoters: Number(e.youthShareOfVoters.toFixed(1)),
-  totalVoters: e.totalVoted,
-  youthVoters: e.youthVoters,
-  listaNominal: e.totalListaNominal,
-  ...MILESTONES[e.year],
-}));
+  ageGroups: Record<string, { participation: number; voted: number; listaNominal: number }>;
+}>).map((e) => {
+  const u35Voted = e.ageGroups["18-24"].voted + e.ageGroups["25-34"].voted;
+  const u35LN = e.ageGroups["18-24"].listaNominal + e.ageGroups["25-34"].listaNominal;
+  return {
+    year: e.year,
+    overallParticipation: Number(e.overallParticipation.toFixed(1)),
+    youthParticipation: Number(e.youthParticipation.toFixed(1)),
+    averageVoterAge: Number(e.averageVoterAge.toFixed(2)),
+    youthShareOfVoters: Number(e.youthShareOfVoters.toFixed(1)),
+    totalVoters: e.totalVoted,
+    youthVoters: e.youthVoters,
+    listaNominal: e.totalListaNominal,
+    under35Participation: Number(((u35Voted / u35LN) * 100).toFixed(1)),
+    under35Voters: u35Voted,
+    under35ShareOfVoters: Number(((u35Voted / e.totalVoted) * 100).toFixed(1)),
+    ...MILESTONES[e.year],
+  };
+});
 
 export const ageGroups = [
   { label: "18-24", key: "youth", name: "Jóvenes (18–24)" },
@@ -188,20 +198,21 @@ export const states: StateData[] = (statesRaw as Array<{
 });
 
 export function getLostVotes(): number {
-  const peakElection = (electionsRaw as Array<{
+  const raw = electionsRaw as Array<{
     year: number;
-    youthParticipation: number;
-    ageGroups: Record<string, { listaNominal: number }>;
-  }>).find((e) => e.year === 2012)!;
-  const currentElection = (electionsRaw as Array<{
-    year: number;
-    youthVoters: number;
-    ageGroups: Record<string, { listaNominal: number }>;
-  }>).find((e) => e.year === 2024)!;
-  const peakRate = peakElection.youthParticipation / 100;
-  const currentYouthLN = currentElection.ageGroups["18-24"].listaNominal;
-  const hypotheticalVotes = currentYouthLN * peakRate;
-  return Math.round(hypotheticalVotes - currentElection.youthVoters);
+    ageGroups: Record<string, { listaNominal: number; voted: number }>;
+  }>;
+  const peak = raw.find((e) => e.year === 2012)!;
+  const current = raw.find((e) => e.year === 2024)!;
+
+  const peakU35Voted = peak.ageGroups["18-24"].voted + peak.ageGroups["25-34"].voted;
+  const peakU35LN = peak.ageGroups["18-24"].listaNominal + peak.ageGroups["25-34"].listaNominal;
+  const peakRate = peakU35Voted / peakU35LN;
+
+  const curU35LN = current.ageGroups["18-24"].listaNominal + current.ageGroups["25-34"].listaNominal;
+  const curU35Voted = current.ageGroups["18-24"].voted + current.ageGroups["25-34"].voted;
+
+  return Math.round(curU35LN * peakRate - curU35Voted);
 }
 
 export interface AgeDetailEntry {

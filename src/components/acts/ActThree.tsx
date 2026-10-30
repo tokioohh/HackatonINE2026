@@ -118,7 +118,7 @@ export function ActThree() {
               <span className="uppercase font-bold text-[#141312]">
                 REGISTRO CENSAL: ELECCIÓN FEDERAL 2024
               </span>
-              <span>CCPC · 59.7% PARTICIPACIÓN TOTAL</span>
+              <span>CCPC · 55.8% PARTICIPACIÓN TOTAL</span>
             </div>
           </div>
         </motion.div>
@@ -145,7 +145,7 @@ export function ActThree() {
                   <span>¿LA BRECHA SE ESTÁ CERRANDO?</span>
                 </div>
                 <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                  No. El votante promedio tenía <strong className="text-[#DC2626]">42 años</strong> en 2012. En 2024 tiene <strong className="text-[#DC2626]">45</strong>. La proporción de votos jóvenes en el total pasó de 15% a 13%. El peso de los jóvenes en el resultado encoge.
+                  No. El votante promedio tenía <strong className="text-[#DC2626]">42 años</strong> en 2012. En 2024 tiene <strong className="text-[#DC2626]">45</strong>. La proporción de votos de menores de 35 pasó de 37% a 31%. El peso de la generación joven en el resultado encoge.
                 </p>
               </div>
               <div className="pt-3 mt-4 border-t border-black/10 text-[10px] font-mono text-[#6B7280] font-bold uppercase">
@@ -164,7 +164,7 @@ export function ActThree() {
                   <span>¿LOS JÓVENES VOTAN MENOS?</span>
                 </div>
                 <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                  Depende de la comparación. En 2024, el <strong className="text-[#0369A1]">47%</strong> de los jóvenes inscritos votó — más que en 2009 (36%), 2015 (36%) y 2021 (42%). Pero menos que en el pico de 2012 (56%). El patrón varía con el tipo de elección, no con una tendencia lineal.
+                  Depende de la comparación. En 2024, el <strong className="text-[#0369A1]">~47%</strong> de los menores de 35 inscritos votó — más que en 2009 (36%), 2015 (35%) y 2021 (41%). Pero menos que en el pico de 2012 (~54%). El patrón varía con el tipo de elección, no con una tendencia lineal.
                 </p>
               </div>
               <div className="pt-3 mt-4 border-t border-black/10 text-[10px] font-mono text-[#6B7280] font-bold uppercase">
@@ -183,14 +183,14 @@ export function ActThree() {
                   <span>¿VOTOS CON TASA DE 2012?</span>
                 </div>
                 <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                  Escenario hipotético: si en 2024 los jóvenes hubieran participado al 55.6% (su máximo histórico, en 2012), habría habido aproximadamente:
+                  Escenario hipotético: si en 2024 los menores de 35 hubieran participado al ~54% (su máximo, en 2012), habría habido aproximadamente:
                 </p>
                 <div className="my-3 py-1.5 px-3 bg-white/90 border border-pink-300 shadow-xs">
                   <span className="font-poster text-3xl sm:text-4xl text-[#DC2626] block">
                     {(lostVotes / 1_000_000).toFixed(1)} millones
                   </span>
                   <span className="block text-xs font-mono text-[#9D174D] font-bold">
-                    de votos jóvenes adicionales.
+                    de votos adicionales de menores de 35.
                   </span>
                 </div>
                 <p className="font-typewriter text-xs text-[#6B7280]">

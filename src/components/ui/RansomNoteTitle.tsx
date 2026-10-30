@@ -122,7 +122,7 @@ export function RansomNoteTitle({ text, size = "xl", className = "" }: RansomNot
   const heightClasses = {
     sm: "h-7 sm:h-9 md:h-11",
     md: "h-9 sm:h-12 md:h-15 lg:h-18",
-    lg: "h-11 sm:h-16 md:h-20 lg:h-24",
+    lg: "h-7 sm:h-16 md:h-20 lg:h-24",
     xl: "h-12 sm:h-18 md:h-24 lg:h-30 xl:h-34",
   };
 

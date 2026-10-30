@@ -18,7 +18,7 @@ export function BigStat({
   figure = "12.8",
   unit = "%",
   claim = "De cada 100 votos en 2024,",
-  caption = "solo 13 vinieron de alguien de 18 a 24 años. El 47% de los jóvenes inscritos sí votó — pero su proporción en el total sigue siendo la menor de todos los grupos de edad.",
+  caption = "solo 13 vinieron de alguien de 18 a 24 años — el subgrupo más joven del padrón. Junto con los de 25–34, los menores de 35 aportaron apenas 31 de cada 100 votos, pese a representar el 37% de la lista nominal.",
   source = "Fuente: CCPC INE 2024 — Conteo censal de participación ciudadana",
 }: BigStatProps) {
   return (
@@ -86,7 +86,7 @@ export function BigStat({
           {/* Arena del enfrentamiento */}
           <div className="relative w-full max-w-7xl mx-auto">
             {/* Grid de batalla con dos lados */}
-            <div className="grid grid-cols-[1fr_auto_1fr] gap-4 sm:gap-8 md:gap-16 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 sm:gap-8 md:gap-16 items-center">
 
               {/* LADO IZQUIERDO: JÓVENES (18-24) */}
               <motion.div
@@ -115,7 +115,7 @@ export function BigStat({
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                    className="inline-block font-poster text-[10rem] sm:text-[14rem] md:text-[18rem] lg:text-[22rem] text-[#DC2626] leading-none tracking-tighter drop-shadow-[8px_8px_0px_rgba(0,0,0,0.15)]"
+                    className="inline-block font-poster text-[6rem] sm:text-[10rem] md:text-[18rem] lg:text-[22rem] text-[#DC2626] leading-none tracking-tighter drop-shadow-[8px_8px_0px_rgba(0,0,0,0.15)]"
                     style={{
                       WebkitTextStroke: "3px #141312",
                       paintOrder: "stroke fill"
@@ -153,11 +153,11 @@ export function BigStat({
                   </div>
 
                   {/* VS Ransom Note Style */}
-                  <div className="relative bg-yellow-400 border-4 border-black px-4 py-6 sm:px-6 sm:py-8 rotate-[-3deg] shadow-[8px_8px_0px_#141312]">
-                    <span className="font-poster text-5xl sm:text-7xl md:text-8xl text-black leading-none block transform -skew-x-6">
+                  <div className="relative bg-yellow-400 border-4 border-black px-4 py-3 sm:px-6 sm:py-8 rotate-[-3deg] shadow-[8px_8px_0px_#141312] flex md:block items-center gap-1">
+                    <span className="font-poster text-4xl sm:text-7xl md:text-8xl text-black leading-none block transform -skew-x-6">
                       V
                     </span>
-                    <span className="font-poster text-5xl sm:text-7xl md:text-8xl text-black leading-none block transform skew-x-6 -mt-2">
+                    <span className="font-poster text-4xl sm:text-7xl md:text-8xl text-black leading-none block transform skew-x-6 md:-mt-2">
                       S
                     </span>
                   </div>
@@ -203,7 +203,7 @@ export function BigStat({
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                    className="inline-block font-poster text-[10rem] sm:text-[14rem] md:text-[18rem] lg:text-[22rem] text-[#1D4ED8] leading-none tracking-tighter drop-shadow-[8px_8px_0px_rgba(0,0,0,0.15)]"
+                    className="inline-block font-poster text-[6rem] sm:text-[10rem] md:text-[18rem] lg:text-[22rem] text-[#1D4ED8] leading-none tracking-tighter drop-shadow-[8px_8px_0px_rgba(0,0,0,0.15)]"
                     style={{
                       WebkitTextStroke: "3px #141312",
                       paintOrder: "stroke fill"

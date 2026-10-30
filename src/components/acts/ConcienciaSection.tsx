@@ -7,7 +7,7 @@ import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
 
 const STATEMENTS = [
   "Tu voto vale exactamente lo mismo que el de cualquier otro. El problema es que no está.",
-  "14.8 millones de jóvenes están en la lista nominal. Su peso en el resultado depende de que lleguen a la casilla.",
+  "36.8 millones de menores de 35 están en la lista nominal. Su peso en el resultado depende de que lleguen a la casilla.",
   "En 2027 habrá otra elección federal. Los datos de las últimas seis muestran el espacio que queda por llenar.",
 ];
 

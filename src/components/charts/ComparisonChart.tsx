@@ -47,7 +47,7 @@ export function ComparisonChart({
           const beforeVal = before[group];
           const afterVal = after[group];
           const diff = afterVal - beforeVal;
-          const isYouth = group === "18-24";
+          const isYouth = group === "18-24" || group === "25-34";
 
           return (
             <div key={group} className="space-y-1">
@@ -100,7 +100,7 @@ export function ComparisonChart({
 
       <div className="mt-5 pt-3 border-t border-dashed border-neutral-300 flex justify-between items-center text-[11px] font-mono text-[#6B7280]">
         <span className="font-typewriter text-[#DC2626]">
-          La distancia entre jóvenes y adultos mayores se mantuvo en ~14 pp.
+          La distancia entre menores y mayores de 35 se mantuvo entre 13 y 15 pp.
         </span>
         <span className="font-bold">CCPC INE</span>
       </div>

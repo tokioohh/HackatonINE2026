@@ -77,7 +77,7 @@ function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlid
       Math.max(0, (index - 0.2) / total),
       (index + 0.3) / total,
     ],
-    ["0%", `${election.youthParticipation}%`]
+    ["0%", `${election.under35Participation}%`]
   );
 
   return (
@@ -125,7 +125,7 @@ function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlid
           <div className="relative z-10 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Columna Izquierda: Año en gran tamaño y narrativa oficial */}
             <div className="md:col-span-7 space-y-5">
-              <h3 className="font-poster text-5xl sm:text-7xl md:text-8xl text-[#141312] leading-[0.92] uppercase tracking-wide">
+              <h3 className="font-poster text-3xl sm:text-5xl md:text-8xl text-[#141312] leading-[0.92] uppercase tracking-wide">
                 <span className="text-[#DC2626]">{election.year}</span> · {election.milestone}
               </h3>
 
@@ -136,7 +136,7 @@ function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlid
               <div className="pt-2 text-xs font-mono text-[#6B7280] flex items-center gap-4 border-t border-dashed border-neutral-300">
                 <span>PADRÓN TOTAL: <strong>{(election.overallParticipation).toFixed(1)}%</strong></span>
                 <span>•</span>
-                <span>JÓVENES (18–24): <strong>{(election.youthParticipation).toFixed(1)}%</strong></span>
+                <span>MENORES DE 35: <strong>{(election.under35Participation).toFixed(1)}%</strong></span>
               </div>
             </div>
 
@@ -155,11 +155,11 @@ function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlid
                 </div>
               </div>
 
-              {/* Barra de jóvenes (18-24) */}
+              {/* Barra de menores de 35 */}
               <div>
                 <div className="flex justify-between items-center text-xs font-mono mb-1.5">
-                  <span className="font-bold text-[#DC2626] uppercase">Participación juvenil (18–24)</span>
-                  <span className="font-bold text-[#DC2626]">{election.youthParticipation}%</span>
+                  <span className="font-bold text-[#DC2626] uppercase">Participación menores de 35</span>
+                  <span className="font-bold text-[#DC2626]">{election.under35Participation}%</span>
                 </div>
                 <div className="w-full h-5 bg-neutral-200 border border-neutral-300 relative overflow-hidden">
                   <motion.div
@@ -181,9 +181,9 @@ function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlid
 
               {/* Proporción en el total de votantes */}
               <div className="pt-3 border-t border-dashed border-neutral-300 flex justify-between items-center text-xs font-mono">
-                <span className="text-[#6B7280]">PESO JUVENIL EN URNAS:</span>
+                <span className="text-[#6B7280]">PESO &lt;35 EN URNAS:</span>
                 <span className="font-bold text-[#141312] px-2 py-0.5 bg-yellow-100 border border-yellow-300">
-                  {election.youthShareOfVoters}% de los votos
+                  {election.under35ShareOfVoters}% de los votos
                 </span>
               </div>
             </div>
@@ -271,7 +271,7 @@ export function HorizontalTimeline() {
 
         {/* Barra inferior de navegación interactiva por años */}
         <div className="relative z-20 pb-5 pt-3 px-4 sm:px-8 md:px-14 bg-[#FAF8F5]/95 backdrop-blur-xs border-t border-dashed border-neutral-300">
-          <div className="max-w-5xl mx-auto flex items-center justify-between gap-2">
+          <div className="max-w-5xl mx-auto flex items-center justify-between gap-1 sm:gap-2">
             {elections.map((election, i) => {
               const isActive = activeYearIndex === i;
               return (
@@ -285,7 +285,7 @@ export function HorizontalTimeline() {
                     const target = top + (i / (elections.length - 1)) * (height - vh);
                     window.scrollTo({ top: target, behavior: "smooth" });
                   }}
-                  className={`group flex-1 flex flex-col items-center py-1 px-1 rounded-xs transition-all cursor-pointer ${
+                  className={`group flex-1 min-w-0 flex flex-col items-center py-1 px-0.5 sm:px-1 rounded-xs transition-all cursor-pointer ${
                     isActive ? "bg-white border border-[#DC2626] shadow-xs" : "hover:bg-neutral-100"
                   }`}
                   aria-label={`Ir al año ${election.year}`}
@@ -296,13 +296,13 @@ export function HorizontalTimeline() {
                     }`}
                   />
                   <span
-                    className={`font-poster text-sm sm:text-base leading-none transition-colors ${
+                    className={`font-poster text-xs sm:text-base leading-none transition-colors ${
                       isActive ? "text-[#DC2626]" : "text-[#141312] group-hover:text-[#DC2626]"
                     }`}
                   >
                     {election.year}
                   </span>
-                  <span className="text-[10px] font-mono text-[#6B7280] uppercase hidden sm:block pt-0.5">
+                  <span className="text-[10px] font-mono text-[#6B7280] uppercase hidden sm:block pt-0.5 truncate max-w-full">
                     {election.milestone}
                   </span>
                 </button>

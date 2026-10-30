@@ -99,7 +99,7 @@ export function HeroSection() {
           >
             <ScotchTape className="-top-3 right-6 w-20 h-5" tilt="2deg" />
             <p className="font-serif italic text-lg sm:text-2xl text-[#374151] leading-snug">
-              &ldquo;De 2009 a 2024, los jóvenes de 18 a 24 votan menos que cualquier otro grupo. Los datos muestran cuánto. No por qué.&rdquo;
+              &ldquo;De 2009 a 2024, los menores de 35 votan significativamente menos que el resto. Los datos muestran cuánto. No por qué.&rdquo;
             </p>
             <div className="pt-2 max-w-[200px] mx-auto opacity-75">
               <DoodleUnderline color="#DC2626" />

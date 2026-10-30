@@ -115,13 +115,13 @@ export function ActTwo() {
           <div className="lg:col-span-6 space-y-6">
             <PostItNote color="yellow" tilt="rotate-[-1deg]" className="w-full">
               <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                En las elecciones presidenciales la participación sube para todos los grupos de edad. En <strong>2012</strong> los jóvenes alcanzaron su máximo: <strong>55.6%</strong>. En <strong>2018</strong> llegaron al <strong>51%</strong>. En <strong>2024</strong>, al <strong>47%</strong>.
+                En las elecciones presidenciales la participación sube para todos los grupos de edad. En <strong>2012</strong> los menores de 35 alcanzaron su máximo: <strong>~54%</strong>. En <strong>2018</strong> llegaron al <strong>~51%</strong>. En <strong>2024</strong>, al <strong>~47%</strong>.
               </p>
             </PostItNote>
 
             <div className="bg-white/80 p-6 border border-neutral-300 shadow-sm space-y-4">
               <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
-                El patrón se repite en cada presidencial: todos votan más, pero <strong className="text-[#DC2626]">la brecha entre jóvenes y adultos mayores se mantiene en torno a 14 puntos porcentuales</strong>.
+                El patrón se repite en cada presidencial: todos votan más, pero <strong className="text-[#DC2626]">la brecha entre menores y mayores de 35 oscila entre 11 y 15 puntos porcentuales, sin tendencia clara de cierre</strong>.
               </p>
               <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
                 El tipo de elección mueve las cifras; la distancia entre grupos, no tanto.
@@ -129,7 +129,7 @@ export function ActTwo() {
 
               <div className="pt-3 border-t border-dashed border-neutral-300 flex justify-between items-center text-xs font-mono">
                 <span className="font-bold text-[#141312]">BRECHA GENERACIONAL:</span>
-                <span className="font-bold text-[#DC2626]">~14 PUNTOS CONSTANTES</span>
+                <span className="font-bold text-[#DC2626]">11–15 PUNTOS PERSISTENTE</span>
               </div>
             </div>
           </div>

@@ -88,7 +88,7 @@ export function ExplorerSection() {
         {/* Contenedor tipo libreta con pestaña y cinta scotch */}
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           {/* Selector de Grupos estilo pestañas adhesivas */}
-          <div className="lg:col-span-4 bg-white p-5 border border-neutral-300 shadow-sm relative space-y-3">
+          <div className="lg:col-span-4 min-w-0 bg-white p-5 border border-neutral-300 shadow-sm relative space-y-3">
             <ScotchTape className="-top-3 left-6 w-20 h-5" tilt="-2deg" />
 
             <div className="flex items-center gap-2 pb-2 border-b border-dashed border-neutral-300">
@@ -127,7 +127,7 @@ export function ExplorerSection() {
           </div>
 
           {/* Gráfica SVG interactiva en libreta escolar */}
-          <div className="lg:col-span-8 bg-[#FAF8F5] p-6 sm:p-8 border border-neutral-300 shadow-md relative rounded-xs">
+          <div className="lg:col-span-8 min-w-0 bg-[#FAF8F5] p-6 sm:p-8 border border-neutral-300 shadow-md relative rounded-xs">
             <ScotchTape className="-top-3.5 right-12 w-28 h-6" tilt="1deg" />
 
             {/* Leyenda superior */}
@@ -252,7 +252,7 @@ export function ExplorerSection() {
               </svg>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-dashed border-neutral-300 flex justify-between items-center text-[11px] font-mono text-[#6B7280]">
+            <div className="mt-4 pt-3 border-t border-dashed border-neutral-300 flex flex-wrap justify-between items-center gap-2 text-[11px] font-mono text-[#6B7280]">
               <span>Las barras rojas muestran el grupo seleccionado; las barras grises indican el promedio nacional.</span>
               <span className="font-bold">INE CCPC 2009–2024</span>
             </div>

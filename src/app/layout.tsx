@@ -53,12 +53,12 @@ const sans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "EL VOTO JOVEN — Una Crónica Visual en Tres Actos | Hackatón INE 2026",
-  description: "Expediente interactivo de periodismo de datos sobre el colapso de la participación juvenil en México (2009–2024). Datos oficiales CCPC del INE.",
+  description: "Expediente interactivo de periodismo de datos sobre la brecha de participación electoral de los menores de 35 en México (2009–2024). Datos oficiales CCPC del INE.",
   keywords: ["INE", "Hackatón INE 2026", "Voto Joven", "Participación Ciudadana", "Storytelling con datos", "CCPC"],
   authors: [{ name: "Equipo El Voto Joven" }],
   openGraph: {
     title: "EL VOTO JOVEN — Una Crónica Visual en Tres Actos",
-    description: "¿Por qué los jóvenes mexicanos dejaron de votar en plena era digital? Expediente con datos censales del INE.",
+    description: "¿Por qué los menores de 35 en México votan menos que el resto? Expediente con datos censales del INE.",
     locale: "es_MX",
     type: "website",
   },

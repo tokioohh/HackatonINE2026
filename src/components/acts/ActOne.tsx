@@ -68,7 +68,7 @@ export function ActOne() {
           </div>
 
           <p className="font-serif text-xl sm:text-2xl text-[#4B5563] max-w-3xl italic mt-2">
-            La brecha entre jóvenes y adultos mayores ya existía antes de las redes sociales, antes de los memes y antes de TikTok. Es el punto de partida de esta historia.
+            La brecha entre menores y mayores de 35 ya existía antes de las redes sociales, antes de los memes y antes de TikTok. Es el punto de partida de esta historia.
           </p>
         </motion.div>
 
@@ -114,16 +114,16 @@ export function ActOne() {
           <div className="lg:col-span-6 space-y-6">
             <PostItNote color="yellow" tilt="rotate-[-1deg]" className="w-full">
               <p className="font-serif text-base sm:text-lg text-[#1F2937] leading-relaxed">
-                2009. Elección intermedia. Las campañas eran carteles pegados en las bardas y anuncios en la tele a las ocho de la noche. La participación general fue baja — <strong>43%</strong> — y la de los jóvenes de 18 a 24 fue aún menor.
+                2009. Elección intermedia. Las campañas eran carteles pegados en las bardas y anuncios en la tele a las ocho de la noche. La participación general fue baja — <strong>43%</strong> — y la de los menores de 35 fue aún peor: tanto los de 18–24 (<strong>36%</strong>) como los de 25–34 (<strong>35%</strong>) quedaron muy por debajo.
               </p>
             </PostItNote>
 
             <div className="bg-white/80 p-6 border border-neutral-300 shadow-sm space-y-4">
               <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
-                De cada 10 jóvenes inscritos para votar, solo <strong className="text-[#DC2626]">4 fueron a la casilla</strong>. Pero no era un problema exclusivo de los jóvenes: el grupo de 25–34 participó casi igual (35%). La brecha real estaba con los mayores de 45, que superaban el 50%.
+                De cada 10 menores de 35 inscritos, solo <strong className="text-[#DC2626]">3 o 4 fueron a la casilla</strong>. No era un problema de un solo grupo: 18–24 y 25–34 participaron casi igual (~35%). La brecha real estaba con los mayores de 35, que superaban el 43%, y los de 45+, que pasaban del 50%.
               </p>
               <p className="font-sans text-sm sm:text-base text-[#374151] leading-relaxed">
-                La brecha entre jóvenes y adultos mayores ya existía antes de las redes sociales, antes de los memes y antes de TikTok. Es el punto de partida de esta historia.
+                La brecha entre menores y mayores de 35 ya existía antes de las redes sociales, antes de los memes y antes de TikTok. Es el punto de partida de esta historia.
               </p>
 
               {/* Anotación manuscrita al margen */}
@@ -160,14 +160,14 @@ export function ActOne() {
                 </span>
               </div>
 
-              <HandDrawnBarChart data={data2009} highlightGroup="18-24" year={2009} />
+              <HandDrawnBarChart data={data2009} year={2009} />
             </SpiralPaperCard>
           </div>
         </div>
 
         {/* Dato de Impacto */}
         <ImpactQuote
-          quote="Participación juvenil 2009: 36.3% — La más baja de todos los grupos de edad."
+          quote="Participación de menores de 35 en 2009: ~36% — 13 puntos por debajo de los mayores de 35."
           author="INE — Conteos Censales de Participación Ciudadana"
           color="white"
           tilt="rotate-[-0.5deg]"
