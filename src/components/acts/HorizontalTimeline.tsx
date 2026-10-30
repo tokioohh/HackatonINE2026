@@ -5,16 +5,6 @@ import { motion, useScroll, useTransform, type MotionValue } from "framer-motion
 import { elections } from "@/lib/data";
 import { ScotchTape } from "@/components/ui/DoodleStickers";
 
-/* Estilos de tarjeta por época para dar variedad de fanzine / cuaderno */
-const ERA_THEMES = [
-  { accent: "#B91C1C", tag: "INTERMEDIA", stamp: "2009 // ARCHIVO", badgeBg: "bg-red-100 text-red-800" },
-  { accent: "#0284C7", tag: "PRESIDENCIAL", stamp: "2012 // PICO CÍVICO", badgeBg: "bg-sky-100 text-sky-800" },
-  { accent: "#7C3AED", tag: "INTERMEDIA", stamp: "2015 // TRANSICIÓN", badgeBg: "bg-purple-100 text-purple-800" },
-  { accent: "#D97706", tag: "PRESIDENCIAL", stamp: "2018 // ALTERNANCIA", badgeBg: "bg-amber-100 text-amber-800" },
-  { accent: "#059669", tag: "INTERMEDIA", stamp: "2021 // PANDEMIA", badgeBg: "bg-emerald-100 text-emerald-800" },
-  { accent: "#DC2626", tag: "PRESIDENCIAL", stamp: "2024 // PRESENTE", badgeBg: "bg-rose-100 text-rose-800" },
-];
-
 interface ElectionSlideProps {
   election: (typeof elections)[0];
   index: number;
@@ -23,8 +13,6 @@ interface ElectionSlideProps {
 }
 
 function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlideProps) {
-  const theme = ERA_THEMES[index] || ERA_THEMES[0];
-
   // Opacidad y transición suave al pasar por el viewport
   const cardOpacity = useTransform(
     scrollYProgress,
@@ -63,19 +51,10 @@ function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlid
           </div>
 
           <div className="relative z-10 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-            {/* Columna Izquierda: Año, tipo y narrativa oficial de dev */}
-            <div className="md:col-span-7 space-y-4">
-              <div className="flex items-center gap-2.5 flex-wrap">
-                <span className={`px-2.5 py-0.5 text-xs font-mono font-bold uppercase rounded-xs border border-current ${theme.badgeBg}`}>
-                  Elección {election.milestone} {election.year}
-                </span>
-                <span className="font-mono text-xs text-[#DC2626] font-bold tracking-wider">
-                  ★ {theme.stamp}
-                </span>
-              </div>
-
-              <h3 className="font-poster text-4xl sm:text-6xl text-[#141312] leading-none uppercase tracking-wide">
-                {election.year} · {election.milestone}
+            {/* Columna Izquierda: Año en gran tamaño y narrativa oficial */}
+            <div className="md:col-span-7 space-y-5">
+              <h3 className="font-poster text-5xl sm:text-7xl md:text-8xl text-[#141312] leading-[0.92] uppercase tracking-wide">
+                <span className="text-[#DC2626]">{election.year}</span> · {election.milestone}
               </h3>
 
               <p className="font-serif italic text-base sm:text-xl text-[#374151] leading-relaxed">
