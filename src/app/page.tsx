@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { HeroSection } from "@/components/acts/HeroSection";
 import { ActOne } from "@/components/acts/ActOne";
@@ -53,14 +54,17 @@ export default function Home() {
 
       {/* 12. Franja fotográfica documental: Materiales Electorales INE */}
       <div className="relative h-[40vh] min-h-[280px] overflow-hidden border-y border-dashed border-neutral-300">
-        <img
-          src="/images/elecciones-federales-de-mexico-de-2024-18.jpg"
-          alt="Materiales electorales del INE"
-          className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-110"
+        <Image
+          src="/images/elecciones-mx/08-preparacion-casilla-cdmx-2024.jpg"
+          alt="Ciudadanos preparando casillas electorales, CDMX 2024"
+          fill
+          sizes="100vw"
+          quality={85}
+          className="object-cover grayscale contrast-110"
         />
         <div className="absolute inset-0 bg-neutral-900/40" />
         <div className="absolute bottom-4 left-6 sm:left-12 text-white font-mono text-xs drop-shadow-md">
-          Materiales electorales oficiales, Elección Federal 2024 · INE
+          Preparación de casillas, CDMX 2024 · Foto: ProtoplasmaKid (CC BY-SA 4.0)
         </div>
       </div>
 

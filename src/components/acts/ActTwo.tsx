@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterText } from "@/components/ui/TypewriterText";
@@ -85,10 +86,13 @@ export function ActTwo() {
             <ScotchTape className="-top-3 right-12 w-28 h-6" tilt="-3deg" />
 
             <div className="relative aspect-[16/9] overflow-hidden bg-neutral-900 border border-neutral-200">
-              <img
+              <Image
                 src="/images/votacion-elecciones-federales-de-mexico-de-2018.jpg"
                 alt="Casilla electoral durante las elecciones federales de México 2018"
-                className="w-full h-full object-cover filter contrast-105"
+                fill
+                sizes="(max-width: 768px) 100vw, 896px"
+                quality={85}
+                className="object-cover contrast-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-4 right-4 text-white text-xs font-mono drop-shadow-md">

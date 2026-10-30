@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { RansomNoteTitle } from "@/components/ui/RansomNoteTitle";
 import { TypewriterText } from "@/components/ui/TypewriterText";
@@ -82,15 +83,34 @@ export function ActThree() {
             <ScotchTape className="-top-3 left-14 w-28 h-6" tilt="-2deg" />
             <ScotchTape className="-top-3 right-14 w-28 h-6" tilt="3deg" />
 
-            <div className="relative aspect-[16/9] overflow-hidden bg-neutral-900 border border-neutral-200">
-              <img
-                src="/images/tinta-electoral.jpg"
-                alt="Pulgar con tinta indeleble después de votar en las elecciones de México 2024"
-                className="w-full h-full object-cover filter contrast-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-4 right-4 text-white text-xs font-mono drop-shadow-md">
-                Tinta indeleble electoral, 2024 · Foto: Battroid (CC BY 4.0)
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="relative aspect-[16/9] overflow-hidden bg-neutral-900 border border-neutral-200">
+                <Image
+                  src="/images/elecciones-mx/17-fila-votantes-hospital-2024.jpg"
+                  alt="Ciudadanos esperando para votar en casilla especial, Hospital 20 de Noviembre, CDMX 2024"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 448px"
+                  quality={85}
+                  className="object-cover contrast-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-2 left-3 right-3 text-white text-[10px] sm:text-xs font-mono drop-shadow-md">
+                  Fila para votar, CDMX 2024 · Foto: ProtoplasmaKid (CC BY-SA 4.0)
+                </div>
+              </div>
+              <div className="relative aspect-[16/9] overflow-hidden bg-neutral-900 border border-neutral-200">
+                <Image
+                  src="/images/elecciones-mx/18-verificacion-credencial-2024.jpg"
+                  alt="Presidente de casilla verificando credencial de elector, elecciones federales 2024"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 448px"
+                  quality={85}
+                  className="object-cover contrast-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-2 left-3 right-3 text-white text-[10px] sm:text-xs font-mono drop-shadow-md">
+                  Verificación de credencial, CDMX 2024 · Foto: ProtoplasmaKid (CC BY-SA 4.0)
+                </div>
               </div>
             </div>
 

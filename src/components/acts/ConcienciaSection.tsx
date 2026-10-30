@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ScotchTape, DoodleUnderline } from "@/components/ui/DoodleStickers";
 import { DoodleStamp, NotebookBgDoodle } from "@/components/ui/ScrollDoodles";
@@ -110,15 +111,18 @@ export function ConcienciaSection() {
         {/* Fotografía de Materiales Electorales INE */}
         <div className="relative max-w-xl mx-auto bg-white p-3 border border-neutral-300 shadow-md rotate-[0.5deg]">
           <ScotchTape className="-top-3 left-1/2 -translate-x-1/2 w-28 h-5" tilt="1deg" />
-          <div className="aspect-[16/9] overflow-hidden bg-neutral-900">
-            <img
-              src="/images/elecciones-federales-de-mexico-de-2024-18.jpg"
-              alt="Materiales electorales del INE: bolígrafos y tinta indeleble"
-              className="w-full h-full object-cover filter contrast-105"
+          <div className="relative aspect-[16/9] overflow-hidden bg-neutral-900">
+            <Image
+              src="/images/elecciones-mx/10-personas-votando-cdmx-2018.jpg"
+              alt="Personas votando en las elecciones generales de México, CDMX 2018"
+              fill
+              sizes="(max-width: 768px) 100vw, 576px"
+              quality={85}
+              className="object-cover contrast-105"
             />
           </div>
           <p className="text-[10px] font-mono text-[#6B7280] text-center pt-2">
-            Materiales electorales oficiales del INE · Licencia libre CC
+            Jornada electoral, CDMX 2018 · Foto: ProtoplasmaKid (CC BY-SA 4.0)
           </p>
         </div>
       </div>

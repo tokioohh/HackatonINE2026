@@ -123,9 +123,34 @@ export function Footer() {
             </p>
             <ul className="space-y-0.5 text-[10px]">
               <li>ProtoplasmaKid (CC BY-SA 4.0)</li>
-              <li>Battroid (CC BY 4.0)</li>
-              <li>Randal Sheppard (CC BY-SA 2.0)</li>
+              <li>WendyAvilesR (CC0)</li>
+              <li>PetrohsW (CC BY-SA 4.0)</li>
             </ul>
+          </div>
+        </div>
+
+        {/* Equipo de desarrollo */}
+        <div className="mt-6 pt-4 border-t border-dashed border-neutral-300/80">
+          <p className="font-bold uppercase text-[#141312] text-center mb-3 text-xs tracking-wider">
+            EQUIPO DE DESARROLLO
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-[10px] font-mono text-[#4B5563]">
+            <div className="text-center">
+              <p className="font-semibold text-[#141312]">Luis Fernando</p>
+              <p className="uppercase">López Padilla</p>
+            </div>
+            <div className="text-center">
+              <p className="font-semibold text-[#141312]">Oskar Armenta</p>
+              <p className="uppercase">Muñoz</p>
+            </div>
+            <div className="text-center">
+              <p className="font-semibold text-[#141312]">René Gaspar</p>
+              <p className="uppercase">Montaño</p>
+            </div>
+            <div className="text-center">
+              <p className="font-semibold text-[#141312]">Joe Brayan</p>
+              <p className="uppercase">Barrios Secundino</p>
+            </div>
           </div>
         </div>
       </motion.div>

@@ -1,9 +1,49 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { elections } from "@/lib/data";
 import { ScotchTape } from "@/components/ui/DoodleStickers";
+
+const TIMELINE_PHOTOS: Record<number, { src: string; alt: string; credit: string; tilt: string }> = {
+  2009: {
+    src: "/images/elecciones-mx/04-fila-adultos-mayores-2024.jpg",
+    alt: "Fila preferencial en casilla electoral",
+    credit: "PetrohsW · CC BY-SA 4.0",
+    tilt: "rotate-[2.5deg]",
+  },
+  2012: {
+    src: "/images/elecciones-mx/11-ciudadano-votando-2012.jpg",
+    alt: "Ciudadano depositando boleta, elecciones 2012",
+    credit: "ProtoplasmaKid · CC BY-SA 4.0",
+    tilt: "rotate-[-1.8deg]",
+  },
+  2015: {
+    src: "/images/elecciones-mx/12-bloques-boletas-cdmx-2024.jpg",
+    alt: "Bloques de boletas listas para usar",
+    credit: "ProtoplasmaKid · CC BY-SA 4.0",
+    tilt: "rotate-[3deg]",
+  },
+  2018: {
+    src: "/images/elecciones-mx/09-votante-silla-ruedas-2018.jpg",
+    alt: "Votante en silla de ruedas, elecciones 2018",
+    credit: "ProtoplasmaKid · CC BY-SA 4.0",
+    tilt: "rotate-[-2.2deg]",
+  },
+  2021: {
+    src: "/images/elecciones-mx/02-casilla-edomex-2024.jpg",
+    alt: "Casilla de votación en domicilio, Estado de México",
+    credit: "PetrohsW · CC BY-SA 4.0",
+    tilt: "rotate-[1.5deg]",
+  },
+  2024: {
+    src: "/images/elecciones-mx/01-boleta-2024-sonora.jpg",
+    alt: "Boleta de votación presidencial 2024",
+    credit: "WendyAvilesR · CC0",
+    tilt: "rotate-[-2.8deg]",
+  },
+};
 
 interface ElectionSlideProps {
   election: (typeof elections)[0];
@@ -13,11 +53,21 @@ interface ElectionSlideProps {
 }
 
 function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlideProps) {
-  // Opacidad y transición suave al pasar por el viewport
+  const isFirst = index === 0;
+  const isLast = index === total - 1;
+
   const cardOpacity = useTransform(
     scrollYProgress,
-    [index / total, (index + 0.5) / total, Math.min(1, (index + 1) / total)],
-    [0.55, 1, 0.55]
+    isFirst
+      ? [0, 0.5 / total, 1 / total]
+      : isLast
+        ? [index / total, (index + 0.5) / total, 1]
+        : [index / total, (index + 0.5) / total, (index + 1) / total],
+    isFirst
+      ? [1, 1, 0.35]
+      : isLast
+        ? [0.35, 1, 1]
+        : [0.35, 1, 0.35]
   );
 
   // Animación de la barra de participación juvenil sincronizada con el scroll
@@ -49,6 +99,28 @@ function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlid
           >
             {election.year}
           </div>
+
+          {/* Foto polaroid pegada — visible en lg+ */}
+          {TIMELINE_PHOTOS[election.year] && (
+            <div className={`absolute -top-6 -right-4 z-20 hidden lg:block ${TIMELINE_PHOTOS[election.year].tilt}`}>
+              <div className="w-48 xl:w-56 bg-white p-2 border border-neutral-300 shadow-[4px_8px_20px_rgba(0,0,0,0.18)]">
+                <ScotchTape className="-top-3 left-1/2 -translate-x-1/2 w-24 h-5" tilt="1deg" />
+                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+                  <Image
+                    src={TIMELINE_PHOTOS[election.year].src}
+                    alt={TIMELINE_PHOTOS[election.year].alt}
+                    fill
+                    sizes="224px"
+                    quality={80}
+                    className="object-cover"
+                  />
+                </div>
+                <p className="text-[9px] font-mono text-[#9CA3AF] text-center pt-1.5 leading-tight">
+                  {TIMELINE_PHOTOS[election.year].credit}
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="relative z-10 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Columna Izquierda: Año en gran tamaño y narrativa oficial */}
