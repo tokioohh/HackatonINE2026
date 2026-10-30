@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { elections } from "@/lib/data";
@@ -196,15 +196,15 @@ function ElectionSlide({ election, index, total, scrollYProgress }: ElectionSlid
 
 export function HorizontalTimeline() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
   const [activeYearIndex, setActiveYearIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
-  // useScroll mapeado a la sección de 500vh
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Desplazamiento horizontal de las 6 tarjetas (100vw cada una)
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-83.333%"]);
   const progressBarWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
@@ -218,10 +218,120 @@ export function HorizontalTimeline() {
     });
   }, [scrollYProgress]);
 
+  const scrollToSlide = useCallback((index: number) => {
+    if (!containerRef.current) return;
+    const top = containerRef.current.offsetTop;
+    const height = containerRef.current.offsetHeight;
+    const vh = window.innerHeight;
+    const target = top + (index / (elections.length - 1)) * (height - vh);
+    window.scrollTo({ top: target, behavior: "smooth" });
+  }, []);
+
+  const dragState = useRef({
+    active: false,
+    startX: 0,
+    startY: 0,
+    startScroll: 0,
+    decided: false,
+    horizontal: false,
+  });
+
+  const handleDragStart = useCallback((clientX: number, clientY: number) => {
+    dragState.current = {
+      active: true,
+      startX: clientX,
+      startY: clientY,
+      startScroll: window.scrollY,
+      decided: false,
+      horizontal: false,
+    };
+  }, []);
+
+  const handleDragMove = useCallback((clientX: number, clientY: number, preventDefault: () => void) => {
+    const s = dragState.current;
+    if (!s.active || !containerRef.current) return;
+
+    const dx = clientX - s.startX;
+    const dy = clientY - s.startY;
+
+    if (!s.decided && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
+      s.decided = true;
+      s.horizontal = Math.abs(dx) > Math.abs(dy);
+      if (s.horizontal) setIsDragging(true);
+    }
+
+    if (!s.decided || !s.horizontal) return;
+    preventDefault();
+
+    const height = containerRef.current.offsetHeight;
+    const vh = window.innerHeight;
+    const scrollable = height - vh;
+    const scrollPerSlide = scrollable / (elections.length - 1);
+    const dragThreshold = window.innerWidth * 0.35;
+    const scrollDelta = (-dx / dragThreshold) * scrollPerSlide;
+
+    window.scrollTo({ top: s.startScroll + scrollDelta });
+  }, []);
+
+  const handleDragEnd = useCallback(() => {
+    const s = dragState.current;
+    if (s.horizontal && containerRef.current) {
+      const top = containerRef.current.offsetTop;
+      const height = containerRef.current.offsetHeight;
+      const vh = window.innerHeight;
+      const scrollable = height - vh;
+      const progress = Math.max(0, Math.min(1, (window.scrollY - top) / scrollable));
+      const nearest = Math.round(progress * (elections.length - 1));
+      scrollToSlide(nearest);
+    }
+    s.active = false;
+    s.decided = false;
+    s.horizontal = false;
+    setIsDragging(false);
+  }, [scrollToSlide]);
+
+  useEffect(() => {
+    const el = stickyRef.current;
+    if (!el) return;
+
+    const onTouchStart = (e: TouchEvent) => {
+      handleDragStart(e.touches[0].clientX, e.touches[0].clientY);
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      handleDragMove(e.touches[0].clientX, e.touches[0].clientY, () => e.preventDefault());
+    };
+    const onTouchEnd = () => handleDragEnd();
+
+    const onMouseDown = (e: MouseEvent) => {
+      handleDragStart(e.clientX, e.clientY);
+    };
+    const onMouseMove = (e: MouseEvent) => {
+      if (!dragState.current.active) return;
+      handleDragMove(e.clientX, e.clientY, () => e.preventDefault());
+    };
+    const onMouseUp = () => handleDragEnd();
+
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchend", onTouchEnd);
+    el.addEventListener("mousedown", onMouseDown);
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("mousedown", onMouseDown);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+    };
+  }, [handleDragStart, handleDragMove, handleDragEnd]);
+
   return (
     <section ref={containerRef} id="timeline" className="relative h-[500vh]">
       {/* Contenedor fijo a pantalla completa durante el scroll */}
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-between notebook-canvas border-b border-dashed border-neutral-300">
+      <div ref={stickyRef} className={`sticky top-0 h-screen overflow-hidden flex flex-col justify-between notebook-canvas border-b border-dashed border-neutral-300 select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`} style={{ touchAction: "pan-y" }}>
         {/* Cabecera superior fijada */}
         <div className="relative z-20 pt-8 sm:pt-10 px-4 sm:px-8 md:px-14 flex items-center justify-between border-b border-dashed border-neutral-300/80 pb-3 bg-[#FAF8F5]/90 backdrop-blur-xs">
           <div>
@@ -239,7 +349,7 @@ export function HorizontalTimeline() {
           </div>
 
           <div className="text-right hidden sm:block font-mono text-xs text-[#6B7280]">
-            <span>DESPLAZA HACIA ABAJO PARA NAVEGAR EL CRONOGRAMA LATERAL ↓</span>
+            <span>DESLIZA HORIZONTALMENTE O SCROLLEA PARA NAVEGAR ↔ ↓</span>
           </div>
         </div>
 
@@ -277,14 +387,7 @@ export function HorizontalTimeline() {
               return (
                 <button
                   key={election.year}
-                  onClick={() => {
-                    if (!containerRef.current) return;
-                    const top = containerRef.current.offsetTop;
-                    const height = containerRef.current.offsetHeight;
-                    const vh = window.innerHeight;
-                    const target = top + (i / (elections.length - 1)) * (height - vh);
-                    window.scrollTo({ top: target, behavior: "smooth" });
-                  }}
+                  onClick={() => scrollToSlide(i)}
                   className={`group flex-1 min-w-0 flex flex-col items-center py-1 px-0.5 sm:px-1 rounded-xs transition-all cursor-pointer ${
                     isActive ? "bg-white border border-[#DC2626] shadow-xs" : "hover:bg-neutral-100"
                   }`}
